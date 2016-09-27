@@ -79,7 +79,8 @@ Set
 \begin{align*}
 \delta(e)&=1 \qquad \text{if } v_0 \in e \\
 		&=0 \qquad \text{otherwise.}
-\end{align*} Now consider a cycle $C$ in $G$. If $v_0\notin C$, then $\delta(e)=0$ for all $e\in C$. If $v_0\in C$ then  1 occurs exactly twice (for the edges adjacent to $v_0$) and 0 at least twice as the length of C is at least four.
+\end{align*} 
+Now consider a cycle $C$ in $G$. If $v_0\notin C$, then $\delta(e)=0$ for all $e\in C$. If $v_0\in C$ then  1 occurs exactly twice (for the edges adjacent to $v_0$) and 0 at least twice as the length of C is at least four.
 
 If there exists an edge which is not associated to $v_0$, then $\delta(E)=\{0,1\}$. Otherwise, the graph $G$ is a star, i.e., it has clearly a nontrivial bidistance.
 
@@ -93,7 +94,7 @@ Now we focus on graphs which do not satisfy the condition of Theorem~\ref{thm:ve
 \begin{defn}
 Let $G=(V,E)$ be a connected graph such that for all $v\in V$ there is some $C_3\subset G$ such that $v\in C_3$. We define a relation on $E\times E$ by 
 $$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff e_1=e_2 \text{ or } \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
-Let $S_1, \dots, S_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$. The subgraph of $G$ spanned by $S_i$  is called a \emph{\trcomp{} (triangle-component)} if $|S_i|\geq 3$, and a \emph{connecting edge} otherwise.
+Let $S_1, \dots, S_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$. The subgraph of $G$ with vertices $\{v\in V \colon \exists\, e\in S_i (v\in e)\}$ and edges $S_i$ is called a \emph{\trcomp{} (triangle-component)} if $|S_i|\geq 3$, and a \emph{connecting edge} otherwise.
 \end{defn}
 
 \begin{rem}
@@ -204,17 +205,32 @@ The vertex $u$ connects $r$ \trcomps{} which one of them can contain $v$. But th
 Let $n\geq 2$ be the number of \trcomps{} in a Laman graph. The following statements hold:
 \begin{enumerate}[i)]
 	\item $\cv{n} \leq 1$.
-	\item If $\cv{n} = 1$, then $\cv{k}=0$ for all $2<k<n$.
-	\item If $n\geq 5$, then $\cv{n-1} \leq 1$.
-	\item If $n\geq 5$ and $\cv{n-1} = 1$, then $\cv{k}=0$ for all $2<k<n-1$.
-\end{enumerate}s
+	\item If $\cv{n} = 1$, then $\cv{k}=0$ for all $2\leq k<n$.
+	\item If $n\geq 4$, then $\cv{n-1} \leq 1$.
+	\item If $\cv{n-1} = 1$, then $\cv{k}=0$ for all $3\leq k<n-1$.
+\end{enumerate}
 \end{col}
 \begin{proof}
 We always take two connecting vertices to get a contradiction with Lemma~\ref{lem:twoConnectingVertices}:
 \begin{enumerate}[i)]
-	\item $n+n >n +1$
-	\item $n +
+	\item $n+n >n +1$.
+	\item $n +k>n+1$.
+	\item $n-1+n-1>n+1$ for $n\geq 4$.
+	\item $n-1+k>n+1$
 \end{enumerate}
+\end{proof}
+
+\begin{thm}
+Let $G$ be a Laman graph with at least two \trcomps{}. If there is a \trcomp{} $T$ of $G$ such that no pair of its connecting vertices is adjacent, then there exists a nontrivial bidistance.
+\end{thm}
+\begin{proof}
+Set 
+\begin{align*}
+\delta(e)&=1 \qquad \text{if } e\in T \\
+		&=0 \qquad \text{otherwise.}
+\end{align*} 
+All cycles going through $T$ contains 1 at least twice as there is no edge between connecting vertices. Also, there are at least two 0, if a cycle is not only in $T$. Obviously, $\delta(E)=\{0,1\}$ as there are at least two \trcomps{}.
+
 \end{proof}
 
 \end{document}

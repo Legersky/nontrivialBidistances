@@ -1,0 +1,220 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{cite}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+% \usepackage[IL2]{fontenc}  
+% \usepackage{amsmath,amsthm} 
+% \usepackage{amsfonts}
+\usepackage{amsmath, amsthm, amssymb, units, dsfont}
+
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{english}
+
+\usepackage[pdfauthor={Jan Legersk\'y},
+            pdfproducer={Jan Legersk\'y},
+            pdfcreator={pdflatex},
+            pdfencoding=unicode]{hyperref}
+           
+\usepackage{enumerate}
+\usepackage[pdftex]{graphicx,color}
+
+
+\newcommand{\komentar}[1]{\textcolor{red}{#1} \newline}
+
+\newcommand{\trcomp}{$\triangle$-component}
+\newcommand{\trcomps}{$\triangle$-components}
+\newcommand{\cv}[1]{c_v^{(#1)}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{col}[thm]{Corollary}
+\newtheorem{rem}[thm]{Remark}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exmp}{Example}[section]
+
+\begin{document}
+We consider bidistances only for the trivial weight vector $w$, i.e., $w(e)=0$ for all $e\in E$.
+
+\section{Vertex which is not contained in $C_3\subset G$}
+\begin{lem}
+If $(G,G)$ is a bigraph, where $G$ is a simple graph, then $(d_G, -d_G)$ is a bidistance if and only if the minimum of $d_G$ occurs more than once in every cycle of $G$ and the same for the maximum.
+\end{lem}
+\begin{proof}
+The maximum of $d_G$ corresponds to the minimum of $-d_G$ and vice versa. The claim follows by the definition of bidistance.
+\end{proof}
+
+\begin{col}
+A bigraph $(G,G)$ has a nontrivial bidistance $(d_G, -d_G)$ iff there exists an edge labelling $\delta:E\rightarrow \{0,1\}$ such that $\delta(E)=\{0,1\}$ and for every cycle in $G$, neither 0 or 1 occurs exactly once.
+\end{col}
+\begin{proof}
+$\implies$: We may assume that $d_G(E)$ has at least one positive element, otherwise take $-d_G$. Set
+\begin{align*}
+\delta(e)&=1 \qquad \text{if } d_G(e)>0 \\
+		&=0 \qquad \text{otherwise.}
+\end{align*}
+If we consider a cycle $C$ in $G$, then there are following possibilities:
+\begin{enumerate}
+	\item $\max_{e\in C} d_G(e) \leq 0 \implies \delta(e)=0$ for all $e \in C$.
+	\item If $\max_{e\in C} d_G(e) > 0 \geq \min_{e\in C} d_G(e)$, then $\delta(e)=1$ for at least two distinct edges by the previous lemma and the same for $\delta(e)=0$.
+	\item $\min_{e\in C} d_G(e) > 0 \implies \delta(e)=1$ for all $e \in C$.
+\end{enumerate}
+$\impliedby$: Take $d_G(e)=\delta(e)$ for all $e\in E$ if $\delta(\bar{e})=0$, or $d_G(e)=1-\delta(e)$ if $\delta(\bar{e})=1$, where $\bar{e}$ is the distinguished edge.
+\end{proof}
+
+By "A graph has a nontrivial bidistance" we mean that the bigraph $(G,G)$ has a nontrivial bidistance.
+
+\begin{rem}
+Obviously, if a disconnected graph has at least two components which contain an edge, then it has a nontrivial bidistance. Also any tree has a nontrivial bidistance.
+\end{rem}
+
+\begin{thm}
+\label{thm:vertexNotInTriangle}
+Let $G=(V,E)$ be a connected graph such that $|V|\geq 3$. If there is a vertex $v_0 \in V$ such that it is not contained in any triangle $C_3\subset G$, then $G$ allows a nontrivial bidistance. Moreover, $G$ has a non-rigid realization (informal proof...).
+\end{thm}
+\begin{proof}
+Set
+\begin{align*}
+\delta(e)&=1 \qquad \text{if } v_0 \in e \\
+		&=0 \qquad \text{otherwise.}
+\end{align*} Now consider a cycle $C$ in $G$. If $v_0\notin C$, then $\delta(e)=0$ for all $e\in C$. If $v_0\in C$ then  1 occurs exactly twice (for the edges adjacent to $v_0$) and 0 at least twice as the length of C is at least four.
+
+If there exists an edge which is not associated to $v_0$, then $\delta(E)=\{0,1\}$. Otherwise, the graph $G$ is a star, i.e., it has clearly a nontrivial bidistance.
+
+To obtain a non-rigid realization, put all neighbours of $v_0$ to the same point $p$. This is allowed as they are non-adjacent. Now the vertex $v_0$ can rotate around $p$.
+\end{proof}
+
+\section{All vertices in some $C_3\subset G$}
+Now we focus on graphs which do not satisfy the condition of Theorem~\ref{thm:vertexNotInTriangle}.
+ 
+
+\begin{defn}
+Let $G=(V,E)$ be a connected graph such that for all $v\in V$ there is some $C_3\subset G$ such that $v\in C_3$. We define a relation on $E\times E$ by 
+$$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff e_1=e_2 \text{ or } \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
+Let $S_1, \dots, S_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$. The subgraph of $G$ spanned by $S_i$  is called a \emph{\trcomp{} (triangle-component)} if $|S_i|\geq 3$, and a \emph{connecting edge} otherwise.
+\end{defn}
+
+\begin{rem}
+Every vertex is in some \trcomp{} as it is contained in some $C_3$.
+\end{rem}
+%\begin{rem}If there is a vertex which is not in any \trcomp{},i.e., it is an endpoint of a connecting edge, then the graph has a nontrivial bidistance.
+%\end{rem}
+\begin{rem}
+The vertices of an connecting edge has degree at least three, i.e., a connecting edge always connects two \trcomps{}.
+\end{rem}
+
+\begin{rem}
+There might be \trcomps{} $T,T'$ such that $V_T \cap V_{T'}\neq \emptyset$, the vertices in the intersection are called \emph{connecting vertices}. But always $E_T \cap E_{T'}= \emptyset$.
+\end{rem}
+
+\begin{lem}
+If $T=(V_T, E_T)$ is a \trcomp{}, then $|E_T|\geq 2|V_T|-3$. Particularly, there is equality when $T$ is a \trcomp{} of a Laman graph.
+\label{lem:sizeTriangleComponent}
+\end{lem}
+\begin{proof}
+If all vertices are of degree at least four, then $$2|E_T|=\sum_{v\in V_T} \deg(v) \geq 4|V_T|\,,$$ which implies $|E_T|\geq 2|V_T|\geq 2|V_T|-3$.
+
+If there is a vertex $v\in V_T$ such that $\deg(v)<4$, we proceed by induction with the respect to the number of vertices. Obviously, the inequality holds for triangle. If the degree of $v$ is two, then by induction assumption
+$$
+|E_T|=|E_{T\setminus v}|+2\geq 2 |V_{T\\v}|-3 +2\geq 2 (|V_{T\setminus v}|+1)-3=2 |V_{T}|-3\,.
+$$
+We have two cases for $\deg(v)=3$. Firstly, $T\setminus v$ is a \trcomp{}. Now $$|E_T|=|E_{T\setminus v}|+3\geq 2 |V_{T\\v}|-3 +3\geq 2 (|V_{T\setminus v}|+1)-2\geq 2 |V_{T}|-3\,.$$ Secondly, $T\setminus v$ consists of two \trcomps{} $T_1$ and $T_2$. We have
+\begin{align*}
+|E_T|=|E_{T_1}|+|E_{T_1}|+3 &\geq (2 |V_{T_1}|-3)+(2 |V_{T_2}|-3) +3 \\
+			&= 2(|V_{T_1}| +|V_{T_2}|)-3=2 |V_{T}|-3\,,
+\end{align*}
+where we use the fact that $|T_1 \cap T_2|=1$.
+\end{proof}
+
+\begin{lem}
+Let $d_G$ be a bidistance of a graph $G$. If $T=(V_T, E_T)$ is a \trcomp{} of $G$, then $d_G(e)=d_G(e')$ for all $e,e'\in E_T$.
+\end{lem}
+\begin{proof}
+It is enough to prove that $e \sim_{\!\!\bigtriangleup} e'$ implies that $d_G(e)=d_G(e')$. That must be true, otherwise the maximum or minimum occurs only once in $C_3\subset G$ such that $e,e'\in C_3$.
+\end{proof}
+
+\begin{lem}
+If $G$ is a Laman graph, then there is no connecting edge with both vertices in the same \trcomp{} $T=(V_T, E_T)$.
+\end{lem}
+\begin{proof}
+Lemma~\ref{lem:sizeTriangleComponent} gives $|E_T|= 2|V_T|-3$. If there is a connecting edge with both vertices in $T$, then
+$$
+|E_{T\cup e}|=|E_T| +1 =2|V_T| -3+1\,,
+$$
+which contradicts that $G$ is Laman.
+\end{proof}
+
+\begin{lem}
+\label{lem:threeEdgesOrVertexAndEdge}
+Let $G$ be a Laman graph. If $T_1$ and $T_2$ are its \trcomps{}, then they can be connected by at most three connecting edges or by one vertex with possibly one connecting edge. If there are three connecting edges, then they do not have a common vertex.
+\end{lem}
+\begin{proof}
+Let $c_v$ be the number of connecting vertices, i.e., $c_v=|V_{T_1}\cap V_{T_2}|$, and $c_e$ be the number of connecting edges between $T_1$ and $T_2$. Using that $|E_{T_i}|= 2|V_{T_i}|-3$ and the Laman condition, we have
+\begin{align*}
+2(|V_{T_1}|+|V_{T_2}|)-6 +c_e&=|E_{T_1}|+|E_{T_2}|+c_e=|E_{H}| \\
+&\leq 2|V_H| -3=2(|V_{T_1}|+|V_{T_2}|-c_v)-3\,,
+\end{align*}
+where subgraph $H$ is given by the union of $T_1$, $T_2$ and connecting edges. Hence $c_e+2c_v \leq 3$ which implies the first part of the statement. For the second one, assume that there are three connecting vertices with the common vertex  $v\in T_2$. If $H'$ is a subgraph obtained by union of $T_1$, $v$ and the connecting vertices, then
+$$
+|E_{H'}|=|E_{T_1}|+3=2|V_T|=2(|V_T|+1)-2=2|V_{H'}|-2\,,
+$$
+which is a contradiction with the Laman condition.
+\end{proof}
+
+\begin{defn}
+Let $T_1, \dots, T_n$ be \trcomps{} of a Laman graph $G=(V,E)$. Denote by $c_e$ the number of all connecting vertices and by $\cv{k}$ the number of connecting vertices such that exactly $k$ \trcomps{} intersect in each of them.
+\end{defn}
+
+\begin{lem}
+If  $T_1, \dots, T_n$ are \trcomps{} of a Laman graph $G=(V,E)$, then
+$$
+3(n-1)=c_e + 2\sum_{k=2}^n \cv{k}(k-1)\,.
+$$
+\end{lem}
+\begin{proof}
+For every $T_i=(V_i,E_i)$ the equality $|E_i|=2|V_i|-3$ holds. For the number of vertices, we have
+$$
+|V|=\sum_{i=1}^n |V_i| - \sum_{k=2}^n \cv{k}(k-1)\,.
+$$
+Now we can obtain
+\begin{align*}
+c_e+\sum_{i=1}^n (2|V_i|-3)&=c_e + \sum_{i=1}^n |E_i|= |E|\\
+	&=2|V|-3 = 2\sum_{i=1}^n |V_i| - 2\sum_{k=2}^n \cv{k}(k-1) -3\,.
+\end{align*}
+Hence
+$$-3n + c_e= - 2\sum_{k=2}^n \cv{k}(k-1) -3\,,
+$$
+which gives the claim.
+\end{proof}
+
+\begin{lem}
+\label{lem:twoConnectingVertices}
+If $u,v\in V$ are two connecting vertices such that they are in the intersection of $r$, resp. $s$, \trcomps{}, then
+$$
+r+s\leq n+1\,.
+$$
+\end{lem}
+\begin{proof}
+The vertex $u$ connects $r$ \trcomps{} which one of them can contain $v$. But there must be another $s-1$ \trcomps{} which contain $v$, otherwise there are two \trcomps{} that are connected by two vertices which contradicts Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. Hence, there is at least $r+s-1$ distinct \trcomps{}.
+\end{proof}
+
+\begin{col}
+Let $n\geq 2$ be the number of \trcomps{} in a Laman graph. The following statements hold:
+\begin{enumerate}[i)]
+	\item $\cv{n} \leq 1$.
+	\item If $\cv{n} = 1$, then $\cv{k}=0$ for all $2<k<n$.
+	\item If $n\geq 5$, then $\cv{n-1} \leq 1$.
+	\item If $n\geq 5$ and $\cv{n-1} = 1$, then $\cv{k}=0$ for all $2<k<n-1$.
+\end{enumerate}s
+\end{col}
+\begin{proof}
+We always take two connecting vertices to get a contradiction with Lemma~\ref{lem:twoConnectingVertices}:
+\begin{enumerate}[i)]
+	\item $n+n >n +1$
+	\item $n +
+\end{enumerate}
+\end{proof}
+
+\end{document}

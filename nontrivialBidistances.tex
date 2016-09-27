@@ -34,6 +34,7 @@
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
 \newtheorem{exmp}{Example}[section]
+\newtheorem{conj}{Conjecture}
 
 \begin{document}
 We consider bidistances only for the trivial weight vector $w$, i.e., $w(e)=0$ for all $e\in E$.
@@ -236,7 +237,7 @@ All cycles going through $T$ contains 1 at least twice as there is no edge betwe
 \end{proof}
 
 \begin{cor}
-Let $T_1,T_2$ and $T_3$ be distinct \trcomps{} of a Laman graph. If $T_1$ has only two connecting vertices $u$ and $v_1$, $T_2$ has only two connecting vertices $u$ and $v_2$ and $v_1, v_2\in T_3$, then  the graph has a nontrivial bidistance.
+Let $T_1,T_2$ and $T_3$ be distinct \trcomps{} of a Laman graph. If $T_1$ has only two connecting vertices $u$ and $v_1$, $T_2$ has only two connecting vertices $u$ and $v_2$, and $v_1, v_2\in T_3$, then  the graph has a nontrivial bidistance.
 \end{cor}
 \begin{proof}
 We have $uv_1\notin E$ or $uv_2\notin E$ or $v_1v_2\notin E$, otherwise $T_1,T_2$ and $T_3$ coincide.
@@ -247,7 +248,16 @@ If $v_1v_2\notin E$, we set
 \delta(e)&=1 \qquad \text{if } e\in T_1\cup T_2 \\
 		&=0 \qquad \text{otherwise.}
 \end{align*} 
-If a cycle goes through $T_1$ or $T_2$, then it must go through  $v_1, u$ and $v_2$. Therefore, 1 is there at least twice. At the same time, there are at least two 0 since  $v_1v_2\notin E$.
+If a cycle goes through $T_1$ or $T_2$, then it must go through  $v_1, u$ and $v_2$. Therefore, the label 1 is there at least twice. At the same time, there are at least two labels 0 since  $v_1v_2\notin E$.
 \end{proof}
+
+\begin{thm}
+Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. If $n=1$, then there is no nontrivial bidistance. If $n=2,3,4,5$, then $G$ allows nontrivial bidistance.
+\end{thm}
+
+\begin{conj}
+Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. There exists a nontrivial bidistance iff $n>1$.
+\end{conj}
+
 
 \end{document}

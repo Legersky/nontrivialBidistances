@@ -262,9 +262,24 @@ $$
 which implies the statement.
 \end{proof}
 
+\begin{defn}
+Let $G=(V,E)$ be a graph and $H=(W,F)$ be its subgraph. We say that the $H$ \emph{can be replaced by} a graph $H'=(W',F')$ in $G$ iff
+$$
+W'\cap V=\{v\in W | \exists\, u\in V \colon uv\in E\}\,.
+$$
+The graph obtained by the replacement is defined as
+$$
+G_{H\rightarrow H'}=\left((V\setminus W)\cup W', (E\setminus F)\cup F'\right)\,.
+$$
+\end{defn}
+
 \begin{lem}
-Let $T=(V_T,E_T)$ be a \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$ and connecting edges $u_1u'_1,  \dots ,u_su'_s$ where $u_1, \dots u_s \in V_T$ and $u'_1, \dots u'_s \in V_T$. If $L=(V_L,E_L)$ is a Laman graph with vertices $V_L=\{v_1, \dots, v_r\}\cup\{u_1, \dots u_s\}$ and $T$ is a Laman graph, then the graph $G'=((V\setminus V_T)\cup V_L, (E\setminus E_T)\cup E_L$, i.e., the \trcomp{} $T$ is replaced by $L$, is a Laman graph iff $G$ is a Laman graph.
+Let $L$ and $L'$ are Laman graphs such that $L$ can be replaced by $L'$ in a graph $G$. If $G$ is a Laman graph, then $G_{L\rightarrow L'}$ is also a Laman graph.
 \end{lem}
+
+\begin{cor}
+Let $T=(V_T,E_T)$ be a \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$ and connecting edges $u_1u'_1,  \dots ,u_su'_s$ where $u_1, \dots u_s \in V_T$ and $u'_1, \dots u'_s \in V_T$. If $L=(V_L,E_L)$ is a Laman graph with vertices $V_L=\{v_1, \dots, v_r\}\cup\{u_1, \dots u_s\}$ and $T$ is a Laman graph, then the graph $G_{T\rightarrow L}$, i.e., the \trcomp{} $T$ is replaced by $L$, is a Laman graph iff $G$ is a Laman graph.
+\end{cor}
 
 \begin{thm}
 Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Set 

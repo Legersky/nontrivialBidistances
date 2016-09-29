@@ -260,7 +260,12 @@ E_{con}&=E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\,.
 If $\{u_1, \dots, u_s\}$ are in the different connected component(s) of the graph $G'=(V\setminus V_{ncon},E\setminus E_{con})$ than $\{v_1, \dots, v_s\}$, then there exists a nontrivial bidistance.
 \end{thm}
 \begin{proof}
-The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which 
+We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$.
+The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which is does not stay in a connected component of $G'$ must go through the given \trcomps{} or connecting edges at least twice.
+
+If there is $T_i$ such that $u_i v_i \notin E$, then there exists a nontrivial bidistance by Theorem~\ref{thm:componentWithNonadjacentVertices}.
+Otherwise, we may assume that there are only connecting edges  $u_1 v_1, \dots u_r v_r$ instead of \trcomps{} $T_1, \dots, T_r$ according to Lemma ???.
+To be more precise, set $\delta(e)=1$ for all $e \in E_{con}$ and $\delta(e)=0$ otherwise. 
 \end{proof}
 
 \begin{thm}

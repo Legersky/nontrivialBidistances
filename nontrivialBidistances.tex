@@ -251,6 +251,21 @@ If $v_1v_2\notin E$, we set
 If a cycle goes through $T_1$ or $T_2$, then it must go through  $v_1, u$ and $v_2$. Therefore, the label 1 is there at least twice. At the same time, there are at least two labels 0 since  $v_1v_2\notin E$.
 \end{proof}
 
+\begin{lem}
+Let $G=(V,E)$ be a Laman graph. If $H_1=(V_1,E_1)$ and $H_2=(V_2,E_2)$ are induced subgraphs of $G$ such that $V_1 \cap V_2=\emptyset$ and $V=V_1\cup V_2$, then the set $E_c=\{uv\in E | u\in H_1 \text{ and } v\in H_2\}$ contains at least three edges.
+\end{lem}
+\begin{proof}
+Set $E'=E\setminus(E_1 \cup E_2)$. Now
+$$
+2(|V_1|+|V_2|)-3=2|V|-3=|E|=|E_1|+|E_2|+|E_c| \leq 2(|V_1|+|V_2|)-6 +|E_c|\,,
+$$
+which implies the statement.
+\end{proof}
+
+\begin{lem}
+Let $T=(V_T,E_T)$ be a \trcomp{} of a graph $G$ with connecting vertices $v_1, \dots, v_r$ and connecting edges $u_1u'_1,  \dots ,u_su'_s$ where $u_1, \dots u_s \in V_T$ and $u'_1, \dots u'_s \in V_T$. If $L=(V_L,E_L)$ is a Laman graph with vertices $V_L=\{v_1, \dots, v_r\}\cup\{u_1, \dots u_s\}$, then the graph $G'=((V\setminus V_T)\cup V_L, (E\setminus V_T)\cup E_L$, i.e., the \trcomp{} $T$ is replaced by $L$, is a Laman graph iff $G$ is a Laman graph.
+\end{lem}
+
 \begin{thm}
 Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Set 
 \begin{align*}
@@ -260,7 +275,7 @@ E_{con}&=E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\,.
 If $\{u_1, \dots, u_s\}$ are in the different connected component(s) of the graph $G'=(V\setminus V_{ncon},E\setminus E_{con})$ than $\{v_1, \dots, v_s\}$, then there exists a nontrivial bidistance.
 \end{thm}
 \begin{proof}
-We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$.
+We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$ by Lemma XXX and YYY.
 The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which is does not stay in a connected component of $G'$ must go through the given \trcomps{} or connecting edges at least twice.
 
 If there is $T_i$ such that $u_i v_i \notin E$, then there exists a nontrivial bidistance by Theorem~\ref{thm:componentWithNonadjacentVertices}.

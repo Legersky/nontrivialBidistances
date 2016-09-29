@@ -252,7 +252,12 @@ If a cycle goes through $T_1$ or $T_2$, then it must go through  $v_1, u$ and $v
 \end{proof}
 
 \begin{thm}
-
+Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where $u_i, v_i\in V_i$, $T_i=(V_i,E_i)$ and  and let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Let 
+\begin{align*}
+V'&=\left(V\setminus(V_1 \cup \dots \cup V_r)\right)\cup \{u_1, \dots u_r\}\cup \{v_1, \dots v_r\} \qquad \text{and} \\
+E'&=E\setminus \left(E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\right)\,.
+\end{align*}
+If the graph $(V',E')$ is disconnected, then there exists a nontrivial bidistance.
 \end{thm}
 
 \begin{thm}

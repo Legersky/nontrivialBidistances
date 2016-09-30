@@ -275,18 +275,36 @@ $$
 \end{defn}
 
 \begin{lem}
-Let $L$ and $L'$ be Laman graphs such that $L$ can be replaced by $L'$ in a graph $G$. If $G$ is a Laman graph, then $G_{L\rightarrow L'}$ is also a Laman graph.
+Let $L=(V_L, E_L)$ and $L'=(V_{L'}, E_{L'})$ be Laman graphs such that $L$ can be replaced by $L'$ in a graph $G=(V,E)$. If $G$ is a Laman graph, then $G_{L\rightarrow L'}=(V',E')$ is also a Laman graph. 
 \end{lem}
 \begin{proof}
-CHECK ALL
+The Laman condition on the whole graph holds:
+$$
+|E'|=|E|- |E_{L}|+ |E_{L'}|=2(|V|- |V_{L}|+ |V_{L'}|)-3+3-3=2|V'|-3\,.
+$$
+Suppose in contradiction that there exist a subgraph ${H'}=(V_{H'},E_{H'})$ of $G_{L\rightarrow L'}$ such that $|E_{H'}|> 2|V_{H'}|-3$. Set 
+\begin{align*}
+ V_{in}&=V_{H'}\cap V_{L'}, &E_{in}&=E_{H'}\cap E_{L'}, \\
+ V_{out}&=V_{H'} \setminus V_{in}, & E_{out}&=E_{H'} \setminus E_{in}
+\end{align*}
 
-Suppose in contradiction that there exist a subgraph $H=(V_H,E_H)$ of $G$ such that $E_H|> 2|V_H|-3$. Then TADY POKRACOVAT!!!!!!!!!!!!!!1
+Since $(V_{in}, E_{in})$ is a subgraph of the Laman graph $L'$, we have
+$$
+2|V_{in}|-3 +|E_{out}|\geq  |E_{in}|+|E_{out}|=|E_{H'}|> 2|V_{{H'}}|-3=2|V_{in}|+2|V_{out}|-3\,.
+$$
+Hence, $|E_{out}|>2|V_{out}|$. Take the subgraph $H=(V_L \cup V_{out}, E_L \cup E_{out})$ of $G$. Using that $|E_L|=2|V_L|-3$, we obtain
+$$|E_H|=|E_L|+|E_{out}|>2|V_L|-3+2|V_{out}|=2|V_H|-3\,,$$
+which is  a contradiction with $G$ being a  Laman graph.
 \end{proof}
 
 \begin{cor}
 \label{cor:replaceTrcompByLaman}
-Let $T=(V_T,E_T)$ be a \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$ and connecting edges $u_1u'_1,  \dots ,u_su'_s$ where $u_1, \dots u_s \in V_T$ and $u'_1, \dots u'_s \in V_T$. If $L=(V_L,E_L)$ is a Laman graph with vertices $V_L=\{v_1, \dots, v_r\}\cup\{u_1, \dots u_s\}$ and $T$ is a Laman graph, then the graph $G_{T\rightarrow L}$, i.e., the \trcomp{} $T$ is replaced by $L$, is a Laman graph iff $G$ is a Laman graph.
+Let $T=(V_T,E_T)$ be a \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$. If $L=(V_L,E_L)$ is a Laman graph with the set of vertices $V_L=\{v_1, \dots, v_r\}$ and $T$ is a Laman graph, then the graph $G_{T\rightarrow L}$ is a Laman graph iff $G$ is a Laman graph.
 \end{cor}
+
+\begin{lem}
+Let $T=(V_T,E_T)$ be a \trcomp{} of a Laman graph $G=(V,E)$ with only two connecting vertices $u,v$, If $uv\in E$, then $G$ has a nontrivial bidistance iff $G_{T\rightarrow uv}$ has a nontrivial bidistance.
+\end{lem}
 
 \begin{thm}
 Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Set 

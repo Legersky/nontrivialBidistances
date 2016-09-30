@@ -325,12 +325,13 @@ $\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in
 
 
 \begin{thm}
-Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Set 
-\begin{align*}
-V_{ncon}&=\left\{v\in V_1 \cup \dots \cup V_r | v\notin \{u_1, \dots u_r\}\cup \{v_1, \dots v_r\} \right\} \qquad \text{and} \\
-E_{con}&=E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\,.
-\end{align*}
-If $\{u_1, \dots, u_s\}$ are in the different connected component(s) of the graph $G'=(V\setminus V_{ncon},E\setminus E_{con})$ than $\{v_1, \dots, v_s\}$, then there exists a nontrivial bidistance.
+Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Let $G'$ be the graph obtained from $G$ by replacing $T_i$, resp. $u_iv_i$, by $(\{u_i, v_i\}, \emptyset)$ for all $i\in \{1, \dots, s\}$.
+% Set 
+%\begin{align*}
+%V_{ncon}&=\left\{v\in V_1 \cup \dots \cup V_r | v\notin \{u_1, \dots u_r\}\cup \{v_1, \dots v_r\} \right\} \qquad \text{and} \\
+%E_{con}&=E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\,.
+%\end{align*}
+If $\{u_1, \dots, u_s\}$ are in the different connected component(s) of the graph $G'$ than $\{v_1, \dots, v_s\}$, then there exists a nontrivial bidistance.
 \end{thm}
 \begin{proof}
 We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$ by Lemma~\ref{lem:numEdgesBetweenTwoParts} and Corollary~\ref{cor:replaceTrcompByLaman}.
@@ -338,8 +339,11 @@ We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r
 If there is $T_i$ such that $u_i v_i \notin E$, then there exists a nontrivial bidistance by Theorem~\ref{thm:componentWithNonadjacentVertices}.
 Otherwise, we may assume that there are only connecting edges  $u_1 v_1, \dots u_r v_r$ instead of \trcomps{} $T_1, \dots, T_r$ according to Lemma~\ref{lem:trcompToEdge}.
 
-The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which is does not stay in a connected component of $G'$ must go through the given  connecting edges at least twice.
+The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which does not stay in a connected component of $G'$ must go through the given  connecting edges at least twice.
 
+Notice that each connected component contains some $u_i$ or $v_j$, otherwise $G$ is not connected. 
+
+We may assume that all $\{u_1, \dots, u_s\}$ are in the same connected component $U$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\{u_1, \dots, u_s\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\{v_1, \dots, v_s\}$ are in one connected component $V$.
 
 To be more precise, set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwise. 
 \end{proof}

@@ -98,7 +98,7 @@ Now we focus on graphs which do not satisfy the condition of Theorem~\ref{thm:ve
 \begin{defn}
 Let $G=(V,E)$ be a connected graph such that for all $v\in V$ there is some $C_3\subset G$ such that $v\in C_3$. We define a relation on $E\times E$ by 
 $$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff e_1=e_2 \text{ or } \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
-Let $S_1, \dots, S_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$. The subgraph of $G$ with vertices $\{v\in V \colon \exists\, e\in S_i (v\in e)\}$ and edges $S_i$ is called a \emph{\trcomp{} (triangle-component)} if $|S_i|\geq 3$, and a \emph{connecting edge} otherwise.
+Let $E_1, \dots, E_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in S_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} if $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
 \end{defn}
 
 \begin{rem}
@@ -246,6 +246,8 @@ We use Corollary~\ref{cor:binaryLabelling} for the proof. Set
 		&=0 \qquad \text{otherwise.}
 \end{align*} 
 All cycles going through $T$ contains 1 at least twice as there is no edge between connecting vertices. Also, there are at least two 0, if a cycle is not only in $T$, by Lemma~\ref{lem:noEdgeInSameComponent}. Obviously, $\delta(E)=\{0,1\}$ as there are at least two \trcomps{}.
+
+A non-rigid realization can be obtained by putting all connecting vertices into one point. This is possible since they are non-adjacent. The \trcomp{} can rotate around this point.
 \end{proof}
 
 \begin{cor}
@@ -261,6 +263,8 @@ If $v_1v_2\notin E$, we set
 		&=0 \qquad \text{otherwise.}
 \end{align*} 
 If a cycle goes through $T_1$ or $T_2$, then it must go through  $v_1, u$ and $v_2$. Therefore, the label 1 is there at least twice. At the same time, there are at least two labels 0 since  $v_1v_2\notin E$.
+
+If we place $v_1$ and $v_2$ into one point, then $T_1$ and $T_2$ can rotate around this point.
 \end{proof}
 
 \begin{lem}
@@ -350,6 +354,8 @@ The idea is following: since the graph $G'\subset G$ is disconnected, every cycl
 We may assume that all $\{u_1, \dots, u_s\}$ are in the same connected component $M$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\{u_1, \dots, u_s\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\{v_1, \dots, v_s\}$ are in one connected component $N$. Thus $G'$ consists of only two connected components $M$ and $N$, otherwise $G$ is not connected. In fact, $M$ and $N$ are induced subgraphs of $G$ linked by the connecting edges $\{u_1v_1, \dots, u_sv_s\}$.
 
 Set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C\subset M$ or  $C\subset N$, then all labels are 0. Otherwise, $C$ contains some $u_iv_i$ and $u_jv_j$ such that $u_iv_i\neq u_jv_j$. Hence, the label 1 is in $C$ at least twice. If $u_i\neq u_j$ and $v_j\neq v_j$, then there must be at least one edge in $M\cap C$ and at least one edge in $N\cap C$.  If $u_i=u_j$, then $v_i$ and $v_j$ are non-adjacent, otherwise $u_iv_i \sim_{\!\!\bigtriangleup} u_jv_j$. Thus, there are at least two edges in $C\cap N$. The case $v_i=v_j$ is analogous. Therefore, the label 0 is in $C$ at least twice.
+
+If we choose such a realization that all edges $\{u_1v_1, \dots, u_sv_s\}$ are parallel and have the same length, then $M$ can around $N$ along a circle.
 \end{proof}
 
 \begin{thm}

@@ -341,11 +341,9 @@ Otherwise, we may assume that there are only connecting edges  $u_1 v_1, \dots u
 
 The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which does not stay in a connected component of $G'$ must go through the given  connecting edges at least twice.
 
-Notice that each connected component contains some $u_i$ or $v_j$, otherwise $G$ is not connected. 
+We may assume that all $\{u_1, \dots, u_s\}$ are in the same connected component $M$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\{u_1, \dots, u_s\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\{v_1, \dots, v_s\}$ are in one connected component $N$. Thus $G'$ consists of only two connected components $M$ and $N$, otherwise $G$ is not connected. In fact, $M$ and $N$ are induced subgraphs of $G$ linked by the connecting edges $\{u_1v_1, \dots, u_sv_s\}$.
 
-We may assume that all $\{u_1, \dots, u_s\}$ are in the same connected component $U$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\{u_1, \dots, u_s\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\{v_1, \dots, v_s\}$ are in one connected component $V$.
-
-To be more precise, set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwise. 
+Set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C\subset M$ or  $C\subset N$, then all labels are 0. Otherwise, $C$ contains some $u_iv_i$ and $u_jv_j$ such that $u_iv_i\neq u_jv_j$. Hence, the label 1 is in $C$ at least twice. If $u_i\neq u_j$ and $v_j\neq v_j$, then there must be at least one edge in $M\cap C$ and at least one edge in $N\cap C$.  If $u_i=u_j$, then $v_i$ and $v_j$ are non-adjacent, otherwise $u_iv_i \sim_{\!\!\bigtriangleup} u_jv_j$. Thus, there are at least two edges in $C\cap N$. The case $v_i=v_j$ is analogous. Therefore, the label 0 is in $C$ at least twice.
 \end{proof}
 
 \begin{thm}

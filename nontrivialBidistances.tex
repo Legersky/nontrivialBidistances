@@ -126,7 +126,7 @@ Let $G=(V,E)$ be a graph. A vertex $v\in V$ is called \emph{multiple vertex of m
 \end{defn}
 
 \begin{lem}
-If $T=(V_T, E_T)$ is a \trcomp{}, then $|E_T|\geq 2|V_T|-3$. Particularly, there is equality when $T$ is a \trcomp{} of a Laman graph.
+If $T=(V_T, E_T)$ is a \trcomp{}, then $|E_T|\geq 2|V_T|-3$.
 \label{lem:sizeTriangleComponent}
 \end{lem}
 \begin{proof}
@@ -148,10 +148,12 @@ where we use the fact that $|T_1 \cap T_2|=1$.
 
 \begin{lem}
 \label{lem:noEdgeInSameComponent}
-If $G$ is a Laman graph, then there is no connecting edge with both vertices in the same \trcomp{} $T=(V_T, E_T)$.
+If $T=(V_T, E_T)$ is a \trcomp{} of  a Laman graph $G$, then $T$ is a Laman graph and there is no connecting edge with both vertices in $T$.
 \end{lem}
 \begin{proof}
-Lemma~\ref{lem:sizeTriangleComponent} gives $|E_T|= 2|V_T|-3$. If there is a connecting edge with both vertices in $T$, then
+The Laman conditions and Lemma~\ref{lem:sizeTriangleComponent} give $|E_T|= 2|V_T|-3$, hence $T$ is a Laman graph.
+
+If there is a connecting edge with both vertices in $T$, then
 $$
 |E_{T\cup e}|=|E_T| +1 =2|V_T| -3+1\,,
 $$
@@ -235,7 +237,7 @@ We always take two connecting vertices to get a contradiction with Lemma~\ref{le
 
 \begin{thm}
 \label{thm:componentWithNonadjacentVertices}
-Let $G$ be a Laman graph with at least two \trcomps{}. If there is a \trcomp{} $T$ of $G$ such that no pair of its connecting vertices is adjacent, then there exists a nontrivial bidistance.
+Let $G$ be a Laman graph with at least two \trcomps{}. If there is a \trcomp{} $T$ of $G$ such that no pair of its connecting vertices is adjacent, then there exists a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{thm}
 \begin{proof}
 We use Corollary~\ref{cor:binaryLabelling} for the proof. Set 
@@ -247,7 +249,7 @@ All cycles going through $T$ contains 1 at least twice as there is no edge betwe
 \end{proof}
 
 \begin{cor}
-Let $T_1$ and $T_2$ be distinct \trcomps{} or connecting edges of a Laman graph. If $T_i$ has only two connecting vertices $u$ and $v_i$ (or $T_i=uv_i$ if $T_i$ is a connecting edge) for $i\in\{1,2\}$, then  the graph has a nontrivial bidistance.
+Let $T_1$ and $T_2$ be distinct \trcomps{} or connecting edges of a Laman graph $G$. If $T_i$ has only two connecting vertices $u$ and $v_i$ (or $T_i=uv_i$ if $T_i$ is a connecting edge) for $i\in\{1,2\}$, then  the graph $G$ has a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{cor}
 \begin{proof}
 We have $uv_1\notin E$ or $uv_2\notin E$ or $v_1v_2\notin E$, otherwise $T_1$ and $T_2$ coincide.
@@ -335,7 +337,7 @@ Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{}
 %V_{ncon}&=\left\{v\in V_1 \cup \dots \cup V_r | v\notin \{u_1, \dots u_r\}\cup \{v_1, \dots v_r\} \right\} \qquad \text{and} \\
 %E_{con}&=E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\,.
 %\end{align*}
-If $\{u_1, \dots, u_s\}$ are in the different connected component(s) of the graph $G'$ than $\{v_1, \dots, v_s\}$, then there exists a nontrivial bidistance.
+If $\{u_1, \dots, u_s\}$ are in the different connected component(s) of the graph $G'$ than $\{v_1, \dots, v_s\}$, then there exists a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{thm}
 \begin{proof}
 We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$ by Lemma~\ref{lem:numEdgesBetweenTwoParts} and Corollary~\ref{cor:replaceTrcompByLaman}.
@@ -353,7 +355,7 @@ Set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwi
 \begin{thm}
 Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. If $n=1$, then there is no nontrivial bidistance. If $n=2,3,4$ or $5$, then $G$ allows nontrivial bidistance.
 \end{thm}
-\begin{proof}
+\begin{proof}[Proof (sketch)]
 If $n=1$, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}, i.e. 0.
 
 For $n=2,3,4$ or $5$, we consider all valid combinations of $c_e$ and $\cv{k}$ according to Lemma~\ref{lem:numCvCe} and Corollary~\ref{cor:validCv}. We construct all possible valid connections of $n$ \trcomps{} for given $c_e$ and $\cv{k}$ by using Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. For most of them, the existence of a bidistance follows from Theorem~\ref{thm:componentWithNonadjacentVertices} and \ref{thm:cutToTwoParts}, otherwise we find a nontrivial bidistance ad hoc.

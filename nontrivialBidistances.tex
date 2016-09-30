@@ -110,6 +110,7 @@ From now on, we implicitly assume that $G=(V,E)$ is such that for all $v\in V$ t
 \end{rem}
 
 \begin{lem}
+\label{lem:bidistanceInTrcomp}
 Let $d_G$ be a bidistance of a graph $G$. If $T=(V_T, E_T)$ is a \trcomp{} of $G$, then $d_G(e)=d_G(e')$ for all $e,e'\in E_T$.
 \end{lem}
 \begin{proof}
@@ -179,6 +180,7 @@ Let $T_1, \dots, T_n$ be \trcomps{} of a Laman graph $G=(V,E)$. Denote by $c_e$ 
 \end{defn}
 
 \begin{lem}
+\label{lem:numCvCe}
 If  $T_1, \dots, T_n$ are \trcomps{} of a Laman graph $G=(V,E)$, then
 $$
 3(n-1)=c_e + 2\sum_{k=2}^n \cv{k}(k-1)\,.
@@ -212,6 +214,7 @@ The vertex $u$ connects $r$ \trcomps{} which one of them can contain $v$. But th
 \end{proof}
 
 \begin{cor}
+\label{cor:validCv}
 Let $n\geq 2$ be the number of \trcomps{} in a Laman graph. The following statements hold:
 \begin{enumerate}[i)]
 	\item $\cv{n} \leq 1$.
@@ -325,6 +328,7 @@ $\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in
 
 
 \begin{thm}
+\label{thm:cutToTwoParts}
 Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Let $G'$ be the graph obtained from $G$ by replacing $T_i$, resp. $u_iv_i$, by $(\{u_i, v_i\}, \emptyset)$ for all $i\in \{1, \dots, s\}$.
 % Set 
 %\begin{align*}
@@ -349,6 +353,11 @@ Set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwi
 \begin{thm}
 Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. If $n=1$, then there is no nontrivial bidistance. If $n=2,3,4$ or $5$, then $G$ allows nontrivial bidistance.
 \end{thm}
+\begin{proof}
+If $n=1$, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}, i.e. 0.
+
+For $n=2,3,4$ or $5$, we consider all valid combinations of $c_e$ and $\cv{k}$ according to Lemma~\ref{lem:numCvCe} and Corollary~\ref{cor:validCv}. We construct all possible valid structures for given $n,c_e$ and $\cv{k}$ by using Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. For most of them, the existence of a bidistance follows from Theorem~\ref{thm:componentWithNonadjacentVertices} and \ref{thm:cutToTwoParts}, otherwise we find a nontrivial bidistance ad hoc.
+\end{proof}
 
 \begin{conj}
 Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. There exists a nontrivial bidistance iff $n>1$.

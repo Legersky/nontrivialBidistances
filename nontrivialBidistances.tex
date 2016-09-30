@@ -49,7 +49,7 @@ The maximum of $d_G$ corresponds to the minimum of $-d_G$ and vice versa. The cl
 
 \begin{cor}
 \label{cor:binaryLabelling}
-A bigraph $(G,G)$ has a nontrivial bidistance $(d_G, -d_G)$ iff there exists an edge labelling $\delta:E\rightarrow \{0,1\}$ such that $\delta(E)=\{0,1\}$ and for every cycle in $G$, neither 0 or 1 occurs exactly once.
+A bigraph $(G,G)$ has a nontrivial bidistance $(d_G, -d_G)$ iff there exists an edge labeling $\delta:E\rightarrow \{0,1\}$ such that $\delta(E)=\{0,1\}$ and for every cycle in $G$, neither 0 or 1 occurs exactly once.
 \end{cor}
 \begin{proof}
 $\implies$: We may assume that $d_G(E)$ has at least one positive element, otherwise take $-d_G$. Set
@@ -303,8 +303,18 @@ Let $T=(V_T,E_T)$ be a \trcomp{} of a graph $G=(V,E)$ with connecting vertices $
 \end{cor}
 
 \begin{lem}
-Let $T=(V_T,E_T)$ be a \trcomp{} of a Laman graph $G=(V,E)$ with only two connecting vertices $u,v$, If $uv\in E$, then $G$ has a nontrivial bidistance iff $G_{T\rightarrow uv}$ has a nontrivial bidistance.
+Let $T=(V_T,E_T)$ be a \trcomp{} of a Laman graph $G=(V,E)$ with only two connecting vertices $u$ and $v$. If $uv\in E$, then $G$ has a nontrivial bidistance iff $G_{T\rightarrow uv}$ has a nontrivial bidistance.
 \end{lem}
+\begin{proof}
+Note that $G_{T\rightarrow uv}$ is a subgraph of $G$. Let $\delta_G$ and $\delta_{G_{T\rightarrow uv}}$ by the edge labelings which correspond to the bidistances of $G$ and $G_{T\rightarrow uv}$ according to Lemma~\ref{cor:binaryLabelling}.
+
+$\implies$: The restriction of $\delta_G$ to  $G_{T\rightarrow uv}$ gives the labeling $\delta_{G_{T\rightarrow uv}}$.
+
+$\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in G_{T\rightarrow uv}$ and $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(uv)$ for all $e\in T$. Since for every cycle going through $uv$, the label $\delta_{G_{T\rightarrow uv}}(uv)$ occurs at least twice, it must occur at least twice in arbitrary cycle through $T$.
+\end{proof}
+
+
+
 
 \begin{thm}
 Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Set 

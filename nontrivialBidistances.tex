@@ -367,6 +367,25 @@ If $n=1$, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceIn
 For $n=2,3,4$ or $5$, we consider all valid combinations of $c_e$ and $\cv{k}$ according to Lemma~\ref{lem:numCvCe} and Corollary~\ref{cor:validCv}. We construct all possible valid connections of $n$ \trcomps{} for given $c_e$ and $\cv{k}$ by using Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. For most of them, the existence of a bidistance follows from Theorem~\ref{thm:componentWithNonadjacentVertices} and \ref{thm:cutToTwoParts}, otherwise we find a nontrivial bidistance ad hoc.
 \end{proof}
 
+\begin{thm}
+Let $G$ be a Laman graph constructed only by Henneberg moves of type I. The graph $G$ has a nontrivial bidistance iff the number of \trcomps{} is at least two.
+\end{thm}
+\begin{proof}
+$\implies$: If there is only one \trcomp{}, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}.
+
+$\impliedby$:
+Let $(\{v_0,v_1\}, \{v_0v_1\})= G_1, \dots, G_s=G$ be a sequence of graphs given by a sequence of Henneberg moves of type I, $G_i=(V_i,E_i)$. For each $G_i$, we construct an edge labeling $\delta_i$ which corresponds to a bidistance of $G_i$ according to Corollary~\ref{cor:binaryLabelling} by induction. Set $\delta_0(uv)=0$. Let $\delta_{i-1}$ be the edge labelling of $G_{i-1}$ and the new vertex $v_i$ is linked to vertices $u,v \in G_{i-1}$.
+We distinguish two cases:
+\begin{enumerate}[a)]
+	\item If $uv\in E_{i-1}$, then $\delta_i(e)=\delta_{i-1}(e)$ for all $e \in E_{i-1}$ and $\delta_{i}(uv_i)=\delta_{i}(vv_i)=\delta_{i-1}(uv)$.
+	\item If $uv\notin E_{i-1}$, then $\delta_i(e)=0$ for all $e \in E_{i-1}$ and $\delta_{i-1}(uv_i)=\delta_{i-1}(vv_i)=1$.
+\end{enumerate}
+For any cycle in $G_i$, neither 0 or 1 for $\delta_i$ occurs exactly ones. The reasoning for a) is the same as in Lemma~\ref{lem:trcompToEdge} and for b) as in Theorem~\ref{thm:vertexNotInTriangle}.
+
+If all moves are of type a), then clearly $G$ has only one \trcomp{}. Otherwise, we have a nontrivial bidistance for the graph $G$.
+\end{proof}
+
+
 \begin{conj}
 Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. There exists a nontrivial bidistance iff $n>1$.
 \end{conj}

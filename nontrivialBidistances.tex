@@ -333,7 +333,12 @@ $\implies$: The restriction of $\delta_G$ to  $G_{T\rightarrow uv}$ gives the la
 $\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in E_{G_{T\rightarrow uv}}$ and $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(uv)$ for all $e\in E_T$. Since for every cycle going through $uv$, the label $\delta_{G_{T\rightarrow uv}}(uv)$ occurs at least twice, it must occur at least twice in arbitrary cycle going  through $T$.
 \end{proof}
 
-
+\begin{thm}
+Let $G=(V,E)$ be a Laman graph. If $V_{c}=\{v_1, \dots v_r\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. 
+\end{thm}
+\begin{proof}
+Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \{v\}$ and $V_N\cup \{v\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $M \subset G$, resp. $N \subset G$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $_v)i$ and $v_j$ such that $v_i, v_j\in C$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels ) and at least two labels 1 within the cycle.
+\end{proof}
 
 
 \begin{thm}

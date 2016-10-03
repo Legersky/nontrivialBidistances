@@ -38,13 +38,17 @@
 
 \begin{document}
 \begin{defn}
+If $G$ is a graph, then $V_G$ is the set of vertices of $G$ and $E_G$ is the set of edges of $G$.
+\end{defn}
+
+\begin{defn}
 \emph{A graph $G=(V,E)$ has a nontrivial bidistance} if the bigraph $(G,G)$ has a nontrivial bidistance with the trivial weight vector $w$, i.e., $w(e)=0$ for all $e\in E$.
 \end{defn}
 
 
-\section{Vertex which is not contained in $C_3\subset G$}
+\section{Graphs with a vertex which is not contained in $C_3\subset G$}
 \begin{lem}
-If $(G,G)$ is a bigraph, where $G$ is a simple graph, then $(d_G, -d_G)$ is a bidistance if and only if the minimum of $d_G$ occurs more than once in every cycle of $G$ and the same for the maximum.
+A graph $G$ has a bidistance $d_G$ if and only if the minimum of $d_G$ occurs more than once in every cycle of $G$ and the same for the maximum.
 \end{lem}
 \begin{proof}
 The maximum of $d_G$ corresponds to the minimum of $-d_G$ and vice versa. The claim follows by the definition of bidistance.
@@ -52,7 +56,7 @@ The maximum of $d_G$ corresponds to the minimum of $-d_G$ and vice versa. The cl
 
 \begin{cor}
 \label{cor:binaryLabelling}
-A bigraph $(G,G)$ has a nontrivial bidistance $(d_G, -d_G)$ iff there exists an edge labeling $\delta:E\rightarrow \{0,1\}$ such that $\delta(E)=\{0,1\}$ and for every cycle in $G$, neither 0 or 1 occurs exactly once.
+A graph $G$ has a nontrivial bidistance $d_G$ iff there exists an edge labeling $\delta:E\rightarrow \{0,1\}$ such that $\delta(E)=\{0,1\}$ and for every cycle in $G$, neither 0 or 1 occurs exactly once.
 \end{cor}
 \begin{proof}
 $\implies$: We may assume that $d_G(E)$ has at least one positive element, otherwise take $-d_G$. Set
@@ -91,7 +95,7 @@ If there exists an edge which is not associated to $v_0$, then $\delta(E)=\{0,1\
 To obtain a non-rigid realization, put all neighbours of $v_0$ to the same point $p$. This is allowed as they are non-adjacent. Now the vertex $v_0$ can rotate around $p$.
 \end{proof}
 
-\section{All vertices in some $C_3\subset G$}
+\section{Graphs with all vertices in some $C_3\subset G$}
 Now we focus on graphs which do not satisfy the condition of Theorem~\ref{thm:vertexNotInTriangle}.
  
 
@@ -111,7 +115,7 @@ From now on, we implicitly assume that $G=(V,E)$ is such that for all $v\in V$ t
 
 \begin{lem}
 \label{lem:bidistanceInTrcomp}
-Let $d_G$ be a bidistance of a graph $G$. If $T=(V_T, E_T)$ is a \trcomp{} of $G$, then $d_G(e)=d_G(e')$ for all $e,e'\in E_T$.
+Let $d_G$ be a bidistance of a graph $G$. If $T$ is a \trcomp{} of $G$, then $d_G(e)=d_G(e')$ for all $e,e'\in E_T$.
 \end{lem}
 \begin{proof}
 It is enough to prove that $e \sim_{\!\!\bigtriangleup} e'$ implies that $d_G(e)=d_G(e')$. That must be true, otherwise the maximum or minimum occurs only once in $C_3\subset G$ such that $e,e'\in C_3$.
@@ -126,7 +130,7 @@ Let $G=(V,E)$ be a graph. A vertex $v\in V$ is called \emph{multiple vertex of m
 \end{defn}
 
 \begin{lem}
-If $T=(V_T, E_T)$ is a \trcomp{}, then $|E_T|\geq 2|V_T|-3$.
+If $T$ is a \trcomp{}, then $|E_T|\geq 2|V_T|-3$.
 \label{lem:sizeTriangleComponent}
 \end{lem}
 \begin{proof}
@@ -134,21 +138,21 @@ If all vertices are of degree at least four, then $$2|E_T|=\sum_{v\in V_T} \deg(
 
 If there is a vertex $v\in V_T$ such that $\deg(v)<4$, we proceed by induction with the respect to the number of vertices. Obviously, the inequality holds for triangle. If the degree of $v$ is two, then by induction assumption
 $$
-|E_T|=|E_{T\setminus v}|+2\geq 2 |V_{T\\v}|-3 +2\geq 2 (|V_{T\setminus v}|+1)-3=2 |V_{T}|-3\,.
+|E_T|=|E_{T\setminus v}|+2\geq 2 |V_{T\setminus v}|-3 +2\geq 2 (|V_{T\setminus v}|+1)-3=2 |V_{T}|-3\,.
 $$
 We have two cases for $\deg(v)=3$. Firstly, $T\setminus v$ is a \trcomp{}. Now $$|E_T|=|E_{T\setminus v}|+3\geq 2 |V_{T\\v}|-3 +3\geq 2 (|V_{T\setminus v}|+1)-2\geq 2 |V_{T}|-3\,.$$ Secondly, $T\setminus v$ consists of two \trcomps{} $T_1$ and $T_2$. We have
 \begin{align*}
 |E_T|=|E_{T_1}|+|E_{T_1}|+3 &\geq (2 |V_{T_1}|-3)+(2 |V_{T_2}|-3) +3 \\
 			&= 2(|V_{T_1}| +|V_{T_2}|)-3=2 |V_{T}|-3\,,
 \end{align*}
-where we use the fact that $|T_1 \cap T_2|=1$.
+where we use the fact that $|V_{T_1} \cap V_{T_2}|=1$.
 \end{proof}
 
 
 
 \begin{lem}
 \label{lem:noEdgeInSameComponent}
-If $T=(V_T, E_T)$ is a \trcomp{} of  a Laman graph $G$, then $T$ is a Laman graph and there is no connecting edge with both vertices in $T$.
+If $T$ is a \trcomp{} of  a Laman graph $G$, then $T$ is a Laman graph and there is no connecting edge with both vertices in $T$.
 \end{lem}
 \begin{proof}
 The Laman conditions and Lemma~\ref{lem:sizeTriangleComponent} give $|E_T|= 2|V_T|-3$, hence $T$ is a Laman graph.
@@ -162,15 +166,15 @@ which contradicts that $G$ is Laman.
 
 \begin{lem}
 \label{lem:threeEdgesOrVertexAndEdge}
-Let $G$ be a Laman graph. If $T_1$ and $T_2$ are its \trcomps{}, then they can be connected by at most three connecting edges or by one multiple vertex with possibly one connecting edge. If there are three connecting edges, then they do not have a common vertex.
+Let $G$ be a Laman graph. If $T_1$ and $T_2$ are its \trcomps{}, then they can be connected by at most three connecting edges or by one multiple vertex with possibly one connecting edge. If there are three connecting edges, then all three cannot have a common vertex.
 \end{lem}
 \begin{proof}
-Let $c_v$ be the number of connecting vertices, i.e., $c_v=|V_{T_1}\cap V_{T_2}|$, and $c_e$ be the number of connecting edges between $T_1$ and $T_2$. Using that $|E_{T_i}|= 2|V_{T_i}|-3$ and the Laman condition, we have
+Let $c_v$ be the number of multiple vertices, i.e., $c_v=|V_{T_1}\cap V_{T_2}|$, and $c_e$ be the number of connecting edges between $T_1$ and $T_2$. Using that $|E_{T_i}|= 2|V_{T_i}|-3$ and the Laman condition, we have
 \begin{align*}
 2(|V_{T_1}|+|V_{T_2}|)-6 +c_e&=|E_{T_1}|+|E_{T_2}|+c_e=|E_{H}| \\
 &\leq 2|V_H| -3=2(|V_{T_1}|+|V_{T_2}|-c_v)-3\,,
 \end{align*}
-where subgraph $H$ is given by the union of $T_1$, $T_2$ and connecting edges. Hence $c_e+2c_v \leq 3$ which implies the first part of the statement. For the second one, assume that there are three connecting edges with the common vertex  $v\in T_2$. If $H'$ is a subgraph obtained by union of $T_1$, $v$ and the connecting vertices, then
+where subgraph $H$ is given by the union of $T_1$, $T_2$ and connecting edges. Hence $c_e+2c_v \leq 3$ which implies the first part of the statement. For the second one, assume that there are three connecting edges with the common vertex  $v\in T_2$. If $H'$ is the subgraph obtained by union of $T_1$, $v$ and the connecting vertices, then
 $$
 |E_{H'}|=|E_{T_1}|+3=2|V_T|=2(|V_T|+1)-2=2|V_{H'}|-2\,,
 $$
@@ -178,7 +182,7 @@ which is a contradiction with the Laman condition.
 \end{proof}
 
 \begin{defn}
-Let $T_1, \dots, T_n$ be \trcomps{} of a Laman graph $G=(V,E)$. Denote by $c_e$ the number of all connecting edges and by $\cv{k}$ the number of multiple vertices of multiplicity $k$.
+Let $T_1, \dots, T_n$ be \trcomps{} of a Laman graph $G$. Denote by $c_e$ the number of all connecting edges and by $\cv{k}$ the number of multiple vertices of multiplicity $k$.
 \end{defn}
 
 \begin{lem}
@@ -226,7 +230,7 @@ Let $n\geq 2$ be the number of \trcomps{} in a Laman graph. The following statem
 \end{enumerate}
 \end{cor}
 \begin{proof}
-We always take two connecting vertices to get a contradiction with Lemma~\ref{lem:twoConnectingVertices}:
+We always take two multiple vertices to get a contradiction with Lemma~\ref{lem:twoConnectingVertices}:
 \begin{enumerate}[i)]
 	\item $n+n >n +1$.
 	\item $n +k>n+1$.
@@ -237,7 +241,7 @@ We always take two connecting vertices to get a contradiction with Lemma~\ref{le
 
 \begin{thm}
 \label{thm:componentWithNonadjacentVertices}
-Let $G$ be a Laman graph with at least two \trcomps{}. If there is a \trcomp{} $T$ of $G$ such that no pair of its connecting vertices is adjacent, then there exists a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
+Let $G$ be a Laman graph with at least two \trcomps{}. If there is a \trcomp{} $T$ in $G$ such that no pair of its connecting vertices is adjacent, then $G$ has a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{thm}
 \begin{proof}
 We use Corollary~\ref{cor:binaryLabelling} for the proof. Set 
@@ -245,7 +249,7 @@ We use Corollary~\ref{cor:binaryLabelling} for the proof. Set
 \delta(e)&=1 \qquad \text{if } e\in T \\
 		&=0 \qquad \text{otherwise.}
 \end{align*} 
-All cycles going through $T$ contains 1 at least twice as there is no edge between connecting vertices. Also, there are at least two 0, if a cycle is not only in $T$, by Lemma~\ref{lem:noEdgeInSameComponent}. Obviously, $\delta(E)=\{0,1\}$ as there are at least two \trcomps{}.
+All cycles going through $T$ contains the label 1 at least twice as there is no edge between connecting vertices. Also, there are at least two labels 0, if a cycle is not only in $T$, since there is no connecting edge with both endpoints in $T$ by Lemma~\ref{lem:noEdgeInSameComponent}. Obviously, $\delta(E)=\{0,1\}$ as there are at least two \trcomps{}.
 
 A non-rigid realization can be obtained by putting all connecting vertices into one point. This is possible since they are non-adjacent. The \trcomp{} can rotate around this point.
 \end{proof}
@@ -272,33 +276,32 @@ If we place $v_1$ and $v_2$ into one point, then $T_1$ and $T_2$ can rotate arou
 Let $G=(V,E)$ be a Laman graph. If $H_1=(V_1,E_1)$ and $H_2=(V_2,E_2)$ are induced subgraphs of $G$ such that $V_1 \cap V_2=\emptyset$ and $V=V_1\cup V_2$, then the set $E_c=\{uv\in E | u\in H_1 \text{ and } v\in H_2\}$ contains at least three edges.
 \end{lem}
 \begin{proof}
-Set $E'=E\setminus(E_1 \cup E_2)$. Now
+The statement follows from
 $$
-2(|V_1|+|V_2|)-3=2|V|-3=|E|=|E_1|+|E_2|+|E_c| \leq 2(|V_1|+|V_2|)-6 +|E_c|\,,
+2(|V_1|+|V_2|)-3=2|V|-3=|E|=|E_1|+|E_2|+|E_c| \leq 2(|V_1|+|V_2|)-6 +|E_c|\,.
 $$
-which implies the statement.
 \end{proof}
 
 \begin{defn}
-Let $G=(V,E)$ be a graph and $H=(W,F)$ be its subgraph. We say that the $H$ \emph{can be replaced by} a graph $H'=(W',F')$ in $G$ iff
+Let $G=(V,E)$ be a graph and $H$ be its subgraph. We say that the $H$ \emph{can be replaced by} a graph $H'$ in $G$ iff
 $$
-W'\cap V=\{v\in W | \exists\, u\in V \colon uv\in E\}\,.
+V_{H'}\cap V=\{v\in V_H | \exists\, u\in V \colon uv\in E\}\,.
 $$
 The graph obtained by the replacement is defined as
 $$
-G_{H\rightarrow H'}=\left((V\setminus W)\cup W', (E\setminus F)\cup F'\right)\,.
+G_{H\rightarrow H'}=\left((V\setminus V_H)\cup V_{H'}, (E\setminus E_H)\cup E_{H'}\right)\,.
 $$
 \end{defn}
 
 \begin{lem}
-Let $L=(V_L, E_L)$ and $L'=(V_{L'}, E_{L'})$ be Laman graphs such that $L$ can be replaced by $L'$ in a graph $G=(V,E)$. If $G$ is a Laman graph, then $G_{L\rightarrow L'}=(V',E')$ is also a Laman graph. 
+Let $L$ and $L'$ be Laman graphs such that $L$ can be replaced by $L'$ in a graph $G=(V,E)$. If $G$ is a Laman graph, then $G_{L\rightarrow L'}=(V',E')$ is also a Laman graph. 
 \end{lem}
 \begin{proof}
 The Laman condition on the whole graph holds:
 $$
 |E'|=|E|- |E_{L}|+ |E_{L'}|=2(|V|- |V_{L}|+ |V_{L'}|)-3+3-3=2|V'|-3\,.
 $$
-Suppose in contradiction that there exist a subgraph ${H'}=(V_{H'},E_{H'})$ of $G_{L\rightarrow L'}$ such that $|E_{H'}|> 2|V_{H'}|-3$. Set 
+Suppose in contradiction that there exist a subgraph $H'$ of $G_{L\rightarrow L'}$ such that $|E_{H'}|> 2|V_{H'}|-3$. Set 
 \begin{align*}
  V_{in}&=V_{H'}\cap V_{L'}, &E_{in}&=E_{H'}\cap E_{L'}, \\
  V_{out}&=V_{H'} \setminus V_{in}, & E_{out}&=E_{H'} \setminus E_{in}
@@ -308,26 +311,26 @@ Since $(V_{in}, E_{in})$ is a subgraph of the Laman graph $L'$, we have
 $$
 2|V_{in}|-3 +|E_{out}|\geq  |E_{in}|+|E_{out}|=|E_{H'}|> 2|V_{{H'}}|-3=2|V_{in}|+2|V_{out}|-3\,.
 $$
-Hence, $|E_{out}|>2|V_{out}|$. Take the subgraph $H=(V_L \cup V_{out}, E_L \cup E_{out})$ of $G$. Using that $|E_L|=2|V_L|-3$, we obtain
+Hence, $|E_{out}|>2|V_{out}|$. We take the subgraph $H=(V_L \cup V_{out}, E_L \cup E_{out})$ of $G$. Using that $|E_L|=2|V_L|-3$, we obtain
 $$|E_H|=|E_L|+|E_{out}|>2|V_L|-3+2|V_{out}|=2|V_H|-3\,,$$
 which is  a contradiction with $G$ being a  Laman graph.
 \end{proof}
 
 \begin{cor}
 \label{cor:replaceTrcompByLaman}
-Let $T=(V_T,E_T)$ be a \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$. If $L=(V_L,E_L)$ is a Laman graph with the set of vertices $V_L=\{v_1, \dots, v_r\}$ and $T$ is a Laman graph, then the graph $G_{T\rightarrow L}$ is a Laman graph iff $G$ is a Laman graph.
+Let $T$ be a \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$. If $L$ is a Laman graph with the set of vertices $V_L=\{v_1, \dots, v_r\}$ and $T$ is a Laman graph, then the graph $G_{T\rightarrow L}$ is a Laman graph iff $G$ is a Laman graph.
 \end{cor}
 
 \begin{lem}
 \label{lem:trcompToEdge}
-Let $T=(V_T,E_T)$ be a \trcomp{} of a Laman graph $G=(V,E)$ with only two connecting vertices $u$ and $v$. If $uv\in E$, then $G$ has a nontrivial bidistance iff $G_{T\rightarrow uv}$ has a nontrivial bidistance.
+Let $T$ be a \trcomp{} of a Laman graph $G=(V,E)$ with only two connecting vertices $u$ and $v$. If $uv\in E$, then $G$ has a nontrivial bidistance iff $G_{T\rightarrow uv}$ has a nontrivial bidistance.
 \end{lem}
 \begin{proof}
 Note that $G_{T\rightarrow uv}$ is a subgraph of $G$. Let $\delta_G$ and $\delta_{G_{T\rightarrow uv}}$ by the edge labelings which correspond to the bidistances of $G$ and $G_{T\rightarrow uv}$ according to Lemma~\ref{cor:binaryLabelling}.
 
 $\implies$: The restriction of $\delta_G$ to  $G_{T\rightarrow uv}$ gives the labeling $\delta_{G_{T\rightarrow uv}}$.
 
-$\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in G_{T\rightarrow uv}$ and $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(uv)$ for all $e\in T$. Since for every cycle going through $uv$, the label $\delta_{G_{T\rightarrow uv}}(uv)$ occurs at least twice, it must occur at least twice in arbitrary cycle through $T$.
+$\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in E_{G_{T\rightarrow uv}}$ and $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(uv)$ for all $e\in E_T$. Since for every cycle going through $uv$, the label $\delta_{G_{T\rightarrow uv}}(uv)$ occurs at least twice, it must occur at least twice in arbitrary cycle going  through $T$.
 \end{proof}
 
 
@@ -341,7 +344,7 @@ Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{}
 %V_{ncon}&=\left\{v\in V_1 \cup \dots \cup V_r | v\notin \{u_1, \dots u_r\}\cup \{v_1, \dots v_r\} \right\} \qquad \text{and} \\
 %E_{con}&=E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\,.
 %\end{align*}
-If $\{u_1, \dots, u_s\}$ are in the different connected component(s) of the graph $G'$ than $\{v_1, \dots, v_s\}$, then there exists a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
+If $u_1, \dots, u_s$ are in the different connected component(s) of the graph $G'$ than $v_1, \dots, v_s$, then there exists a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{thm}
 \begin{proof}
 We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$ by Lemma~\ref{lem:numEdgesBetweenTwoParts} and Corollary~\ref{cor:replaceTrcompByLaman}.
@@ -351,11 +354,20 @@ Otherwise, we may assume that there are only connecting edges  $u_1 v_1, \dots u
 
 The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which does not stay in a connected component of $G'$ must go through the given  connecting edges at least twice.
 
-We may assume that all $\{u_1, \dots, u_s\}$ are in the same connected component $M$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\{u_1, \dots, u_s\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\{v_1, \dots, v_s\}$ are in one connected component $N$. Thus $G'$ consists of only two connected components $M$ and $N$, otherwise $G$ is not connected. In fact, $M$ and $N$ are induced subgraphs of $G$ linked by the connecting edges $\{u_1v_1, \dots, u_sv_s\}$.
+We may assume that all $u_1, \dots, u_s$ are in the same connected component $M$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\{u_1, \dots, u_s\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\{v_1, \dots, v_s\}$ are in one connected component $N$. Thus $G'$ consists of only two connected components $M$ and $N$, otherwise $G$ is not connected. In fact, $M$ and $N$ are induced subgraphs of $G$ linked by the connecting edges $\{u_1v_1, \dots, u_sv_s\}$.
 
 Set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C\subset M$ or  $C\subset N$, then all labels are 0. Otherwise, $C$ contains some $u_iv_i$ and $u_jv_j$ such that $u_iv_i\neq u_jv_j$. Hence, the label 1 is in $C$ at least twice. If $u_i\neq u_j$ and $v_j\neq v_j$, then there must be at least one edge in $M\cap C$ and at least one edge in $N\cap C$.  If $u_i=u_j$, then $v_i$ and $v_j$ are non-adjacent, otherwise $u_iv_i \sim_{\!\!\bigtriangleup} u_jv_j$. Thus, there are at least two edges in $C\cap N$. The case $v_i=v_j$ is analogous. Therefore, the label 0 is in $C$ at least twice.
 
-If we choose such a realization that all edges $\{u_1v_1, \dots, u_sv_s\}$ are parallel and have the same length, then $M$ can around $N$ along a circle.
+If we choose such a realization that all edges $\{u_1v_1, \dots, u_sv_s\}$ are parallel and have the same length, then $M$ can move around $N$ along a circle.
+\end{proof}
+
+\begin{cor}
+If $G$ is a Laman graph with $n$ \trcomps{} such that $\sum_{k=2}^n \cv{k}(k-1) < n-1$ (or equivalently $c_e>n-1$), then $G$ has a nontrivial bidistance.
+\end{cor}
+\begin{proof}
+The equivalent assumption condition follows from Lemma~\ref{lem:numCvCe}.
+
+Each multiple vertex with multiplicity $k$ can connect at most $k-1$ \trcomps{} to the previous one. Thus, at most $1+\sum_{k=2}^n \cv{k}(k-1)$ \trcomps{} can be connected by multiple vertices. Therefore, if $1+\sum_{k=2}^n \cv{k}(k-1) <n$, then there exists a \trcomp{} connected only by connecting edge. Theorem~\ref{thm:cutToTwoParts} implies that $G$ has a nontrivial bidistance.
 \end{proof}
 
 \begin{thm}
@@ -364,7 +376,7 @@ Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. If $n=1$, then there 
 \begin{proof}[Proof (sketch)]
 If $n=1$, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}, i.e. 0.
 
-For $n=2,3,4$ or $5$, we consider all valid combinations of $c_e$ and $\cv{k}$ according to Lemma~\ref{lem:numCvCe} and Corollary~\ref{cor:validCv}. We construct all possible valid connections of $n$ \trcomps{} for given $c_e$ and $\cv{k}$ by using Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. For most of them, the existence of a bidistance follows from Theorem~\ref{thm:componentWithNonadjacentVertices} and \ref{thm:cutToTwoParts}, otherwise we find a nontrivial bidistance ad hoc.
+For $n=2,3,4$ or $5$, we consider all valid combinations of $c_e$ and $\cv{k}$ according to Lemma~\ref{lem:numCvCe} and Corollary~\ref{cor:validCv}. We construct all possible valid connections of $n$ \trcomps{} for given $c_e$ and $\cv{k}$ by using Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. For most of them, the existence of a bidistance follows from Theorem~\ref{thm:componentWithNonadjacentVertices} or \ref{thm:cutToTwoParts}, otherwise we find a nontrivial bidistance ad hoc.
 \end{proof}
 
 \begin{thm}
@@ -374,7 +386,7 @@ Let $G$ be a Laman graph constructed only by Henneberg moves of type I. The grap
 $\implies$: If there is only one \trcomp{}, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}.
 
 $\impliedby$:
-Let $(\{v_0,v_1\}, \{v_0v_1\})= G_1, \dots, G_s=G$ be a sequence of graphs given by a sequence of Henneberg moves of type I, $G_i=(V_i,E_i)$. For each $G_i$, we construct an edge labeling $\delta_i$ which corresponds to a bidistance of $G_i$ according to Corollary~\ref{cor:binaryLabelling} by induction. Set $\delta_0(uv)=0$. Let $\delta_{i-1}$ be the edge labelling of $G_{i-1}$ and the new vertex $v_i$ is linked to vertices $u,v \in G_{i-1}$.
+Let $(\{v_0,v_1\}, \{v_0v_1\})= G_1, \dots, G_s=G$ be a sequence of graphs given by a sequence of Henneberg moves of type I, $G_i=(V_i,E_i)$. For each $G_i$, we construct by induction an edge labeling $\delta_i$ which corresponds to a bidistance of $G_i$ according to Corollary~\ref{cor:binaryLabelling}. Set $\delta_0(uv)=0$. Let $\delta_{i-1}$ be the edge labelling of $G_{i-1}$ and the new vertex $v_i$ is linked to vertices $u,v \in G_{i-1}$.
 We distinguish two cases:
 \begin{enumerate}[a)]
 	\item If $uv\in E_{i-1}$, then $\delta_i(e)=\delta_{i-1}(e)$ for all $e \in E_{i-1}$ and $\delta_{i}(uv_i)=\delta_{i}(vv_i)=\delta_{i-1}(uv)$.

@@ -337,7 +337,7 @@ $\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in
 Let $G=(V,E)$ be a Laman graph. If $V_{c}=\{v_1, \dots v_r\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. Moreover, $G$ has a non-rigid realization.
 \end{thm}
 \begin{proof}
-Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \{v\}$ and $V_N\cup \{v\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $M \subset G$, resp. $N \subset G$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $_v)i$ and $v_j$ such that $v_i, v_j\in C$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels  and at least two labels 1 within the cycle.
+Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \{v\}$ and $V_N\cup \{v\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $M \subset G$, resp. $N \subset G$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $v_i$ and $v_j$ such that $v_i, v_j\in C$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels 0 and at least two labels 1 within the cycle.
 
 A non-rigid realization can be obtained by putting all connecting vertices into one point. The \trcomp{} can rotate around this point.
 \end{proof}
@@ -393,7 +393,7 @@ Let $G$ be a Laman graph constructed only by Henneberg moves of type I. The grap
 $\implies$: If there is only one \trcomp{}, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}.
 
 $\impliedby$:
-Let $(\{v_0,v_1\}, \{v_0v_1\})= G_1, \dots, G_s=G$ be a sequence of graphs given by a sequence of Henneberg moves of type I, $G_i=(V_i,E_i)$. For each $G_i$, we construct by induction an edge labeling $\delta_i$ which corresponds to a bidistance of $G_i$ according to Corollary~\ref{cor:binaryLabelling}. Set $\delta_0(uv)=0$. Let $\delta_{i-1}$ be the edge labelling of $G_{i-1}$ and the new vertex $v_i$ is linked to vertices $u,v \in G_{i-1}$.
+Let $(\{v_0,v_1\}, \{v_0v_1\})= G_1, \dots, G_s=G$ be a sequence of graphs given by a sequence of Henneberg moves of type I, $G_i=(V_i,E_i)$. For each $G_i$, we construct by induction an edge labeling $\delta_i$ which corresponds to a bidistance of $G_i$ according to Corollary~\ref{cor:binaryLabelling}. Set $\delta_0(v_0v_1)=0$. Let $\delta_{i-1}$ be the edge labelling of $G_{i-1}$ and the new vertex $v_i$ is linked to vertices $u,v \in G_{i-1}$.
 We distinguish two cases:
 \begin{enumerate}[a)]
 	\item If $uv\in E_{i-1}$, then $\delta_i(e)=\delta_{i-1}(e)$ for all $e \in E_{i-1}$ and $\delta_{i}(uv_i)=\delta_{i}(vv_i)=\delta_{i-1}(uv)$.

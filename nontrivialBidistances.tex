@@ -334,6 +334,7 @@ $\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in
 \end{proof}
 
 \begin{thm}
+\label{thm:cutByVertices}
 Let $G=(V,E)$ be a Laman graph. If $V_{c}=\{v_1, \dots v_r\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. Moreover, $G$ has a non-rigid realization.
 \end{thm}
 \begin{proof}
@@ -383,7 +384,7 @@ Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. If $n=1$, then there 
 \begin{proof}[Proof (sketch)]
 If $n=1$, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}, i.e. 0.
 
-For $n=2,3,4$ or $5$, we consider all valid combinations of $c_e$ and $\cv{k}$ according to Lemma~\ref{lem:numCvCe} and Corollary~\ref{cor:validCv}. We construct all possible valid connections of $n$ \trcomps{} for given $c_e$ and $\cv{k}$ by using Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. For most of them, the existence of a bidistance follows from Theorem~\ref{thm:componentWithNonadjacentVertices} or \ref{thm:cutToTwoParts}, otherwise we find a nontrivial bidistance ad hoc.
+For $n=2,3,4$ or $5$, we consider all valid combinations of $c_e$ and $\cv{k}$ according to Lemma~\ref{lem:numCvCe} and Corollary~\ref{cor:validCv}. We construct all possible valid schemes of connections of $n$ \trcomps{} with $c_e$ connecting edges and $\cv{k}$ multiple vertices by using Lemma~\ref{lem:threeEdgesOrVertexAndEdge}. For all of them, the existence of a bidistance follows from Theorem~\ref{thm:componentWithNonadjacentVertices}, \ref{thm:cutByVertices} or \ref{thm:cutToTwoParts}.
 \end{proof}
 
 \begin{thm}

@@ -418,14 +418,26 @@ Let $v\in G=(V,E)$ be constructed by Henneberg move of type I from vertices $u,u
 
 \begin{lem}
 \label{lem:trcompsCannotBeLinked}
-If a Laman graph $G$ is constructed by Henneberg moves, then the number of \trcomps{} does not decrease during the construction.
+If a Laman graph $G$ is constructed by Henneberg moves, then the number of \trcomps{} does not decrease during the construction. Moreover, if the number of connecting vertices decreases by some Henneberg move, then the number of \trcomps{} must increase.
 \end{lem}
 \begin{proof}
-We show that all types of Henneberg moves keep or increase the number of \trcomps{}:
+Let  $G_0, G_1, \dots, G_m=G$ be a sequence of graphs constructed by Henneberg moves in order to obtain $G$.
+We show that the number of \trcomps{} of $G_{i}$ is greater or equal to the number of \trcomps{} of $G_{i-1}$ for all possible types of Henneberg moves:
 \begin{itemize}
-	\item Ia: if the new vertex is connected to an \trcomp{}, then 
+	\item Ia: If the new vertex $v$ is connected to a \trcomp{} of $G_{i-1}$, then $v$ is in the corresponding \trcomp{} of $G_i$. If the new vertex is connected to a connecting edge of $G_{i-1}$, then it forms a new \trcomp{} of $G_i$.
+	\item Ib: Since the new edges of $G_i$ are not in any $C_3\subset G_i$, the number of \trcomps{} of $G_{i-1}$ equals the number of \trcomps{} of $G_{i}$ and there are two more connecting edges in $G_i$.
+	\item II: Let $u,u_1,u_2\in V_{G_{i-1}}$ be such that $u_1u_2\in E_{G_{i-1}}$. The construction of $G_i$ from $G_{i-1}$ is following -- a new vertex $v$ is linked by edges to the vertices $u,u_1$ and $u_2$ and the edge $u_1u_2$ is removed. There are following cases:
+	\begin{itemize}
+		\item IIa: If $uu_1, uu_2\notin E_{G_{i-1}}$, then none of $uv, u_1v$ or $u_2v$ is in any $C_3\subset G_i$. Hence, no \trcomps{} of $G_{i-1}$ can coincide in $G_i$. Moreover, some \trcomp{} of $G_{i-1}$ might be split in $G_{i}$ as the edge $u_1u_2$ is removed.
+		\item IIb: If $uu_1\in E_{G_{i-1}}$ and $uu_2\notin E_{G_{i-1}}$, then $u_1v$ and $uv$ are in the same \trcomp{} of $G_i$ as $uu_1$. (Or they form a new one if $uu_1$ is a connecting edge in $G_{i-1}$.) Since the edge $u_2v$ is not in any $C_3\subset G_i$, no \trcomps{} of $G_{i-1}$ can coincide in $G_i$. Moreover, some \trcomp{} of $G_{i-1}$ might be split in $G_{i}$ as the edge $u_1u_2$ is removed.
+		\item IIc: If $uu_1, uu_2\in E_{G_{i-1}}$, then $uu_1 \sim_{\!\!\bigtriangleup} uu_2$ in $G_{i-1}$ and also  $uu_1 \sim_{\!\!\bigtriangleup} uu_2$ in $G_{i}$. Therefore, the number \trcomps{} remains the same or it increases as the edge $u_1u_2$ is removed.
+	\end{itemize}
 \end{itemize}
 \end{proof}
+
+\begin{rem}
+We do not require that all vertices are in some $C_3\subset G_i$ in the individual steps of construction. It does not matter, there just might be vertices which are not in any \trcomp{}.
+\end{rem}
 
 \begin{lem}
 \label{lem:startWithArbitraryEdge}
@@ -434,14 +446,16 @@ If a \trcomp{} $T$ of a Laman graph can be constructed only by Henneberg moves o
 \begin{proof}
 We prove the claim by induction with respect to $|V_T|$. Clearly, triangle can be constructed from any of its edges. 
 
-Let $G_0, G_1, \dots, G_m=T$ be sequence of graph constructed by Henneberg moves of type Ia in order to obtain $T$. Let $G_i$ be such that it is constructed from $G_{i-1}$ by adjoining $v$ to an edge $uu'$. Now, we may construct $u'$ from the edge $uv$ and then construct the rest of $G_i$, since $G_{i-1}$ can be constructed from the edge $uu'$ by the induction assumption. Then we construct $T$ by the sequence $G_{i+1}, \dots, G_m=T$.
+Let $G_0, G_1, \dots, G_m=T$ be sequence of graphs constructed by Henneberg moves of type Ia in order to obtain $T$. Let $G_i$ be such that it is constructed from $G_{i-1}$ by adjoining $v$ to an edge $uu'$. Now, we may construct $u'$ from the edge $uv$ and then construct the rest of $G_i$, since $G_{i-1}$ can be constructed from the edge $uu'$ by the induction assumption. Then we construct $T$ by the sequence $G_{i+1}, \dots, G_m=T$.
 \end{proof}
 
 \begin{thm}
 Every \trcomp{} $T$ of a Laman graph can be constructed by Henneberg moves of type Ia and a construction can start with arbitrary edge.
 \end{thm}
 \begin{proof}
-We proceed by induction with respect to $|V_T|$. The statement is obvious for triangle. Since $T$ is a Laman graph by Lemma~\ref{lem:noEdgeInSameComponent}, there exists a vertex $v\in V_T$ such that $T$ is constructed from $T'$ by some Henneberg move.
+We proceed by induction with respect to $|V_T|$. The statement is obvious for triangle. Since $T$ is a Laman graph by Lemma~\ref{lem:noEdgeInSameComponent}, there exists a vertex $v\in V_T$ such that $T$ is constructed from $T'$ by some Henneberg move. By Lemma~\ref{lem:trcompsCannotBeLinked}, $T'$ is a \trcomp{} and $v$ is constructed by Ia or IIc. Hence, $T'$ can be constructed only by Ia by the induction assumption and if $v$ is also constructed by Ia, the claim holds. 
+
+Let $v$ be constructed by linking to $u_1, u_2, u\in V_{T'}$ and removing $u_1u_2$. Lemma~\ref{lem:startWithArbitraryEdge} provides a construction of $T'$ by only Ia which starts with $u_1u_2$. Obviously, we can sort all moves which construct a vertex from $u_1u_2$ so that $u$ is connected as the last one. 
 \end{proof}
 
 \end{document}

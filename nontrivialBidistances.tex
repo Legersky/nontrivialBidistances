@@ -412,6 +412,21 @@ Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. There exists a nontri
 
 \section{Construction of \trcomps{} by Henneberg moves}
 
+\begin{lem}
+\label{lem:neigboursInduceTree}
+Let $T$ be a \trcomp{} of a Laman graph. If $v\in V_T$, then the subgraph $N$ of $T$ induced by neighbours of $v$ is a tree.
+\end{lem}
+\begin{proof}
+Let $M$ be the subgraph of $T$ induced by $V_N \cup \{v\}$. The Laman condition implies
+$$
+\deg_T (v)+|E_N|=|E_M| \leq 2|V_M|-3=2(\deg_T(v)+1)-3\,.
+$$
+Hence, $|E_N| \leq \deg_T(v)-1$.
+By the definition of \trcomp{}, for every $u\in V_N$ there must be $u'\in V_N$ such that $uu' \in E_N$. If $N$ is connected, then $|E_N|\geq|V_N|-1=\deg_T(v)-1$. Therefore, $|E_N| = |V_N|-1$ and $N$ is connected, i.e., $N$ is a tree.
+
+Suppose that $N$ is not connected. Let $N_1$ be one of the  connected components. If $v'\notin V_T$ is some new vertex, then the graph $$T'=\left(V_T\cup \{v'\}, (E_T\setminus \{vw|w\in E_{N_1}\})\cup\{v'w|w\in E_{N_1}\}\right)$$ is a \trcomp{}. It is a contradiction since $|E_T|=|E_{T'}|$ but $|V_T|=|V_{T'}|-1$.
+\end{proof}
+
 \begin{defn}
 Let $v\in G=(V,E)$ be constructed by Henneberg move of type I from vertices $u,u'$. If $uu'\in E$, we say that $v$ was constructed from $u,u'$ by \emph{Henneberg move of type Ia}, otherwise by \emph{Henneberg move of type Ib}.
 \end{defn}
@@ -453,9 +468,13 @@ Let $G_0, G_1, \dots, G_m=T$ be sequence of graphs constructed by Henneberg move
 Every \trcomp{} $T$ of a Laman graph can be constructed by Henneberg moves of type Ia and a construction can start with arbitrary edge.
 \end{thm}
 \begin{proof}
-We proceed by induction with respect to $|V_T|$. The statement is obvious for triangle. Since $T$ is a Laman graph by Lemma~\ref{lem:noEdgeInSameComponent}, there exists a vertex $v\in V_T$ such that $T$ is constructed from $T'$ by some Henneberg move. By Lemma~\ref{lem:trcompsCannotBeLinked}, $T'$ is a \trcomp{} and $v$ is constructed by Ia or IIc. Hence, $T'$ can be constructed only by Ia by the induction assumption and if $v$ is also constructed by Ia, the claim holds. 
+We proceed by induction with respect to $|V_T|$. The statement is obvious for triangle. Since $T$ is a Laman graph by Lemma~\ref{lem:noEdgeInSameComponent}, there exists a vertex $v\in V_T$ such that $T$ is constructed from $T'$ by adding $v$ by some Henneberg move $m_{last}$. By Lemma~\ref{lem:trcompsCannotBeLinked}, $T'$ is a \trcomp{} and $m_{last}$ is Ia or IIc. Hence, $T'$ can be constructed only by Ia by the induction assumption and if $v$ is also constructed by Ia, the claim holds. 
 
-Let $v$ be constructed by linking to $u_1, u_2, u\in V_{T'}$ and removing $u_1u_2$. Lemma~\ref{lem:startWithArbitraryEdge} provides a construction of $T'$ by only Ia which starts with $u_1u_2$. Obviously, we can sort all moves which construct a vertex from $u_1u_2$ so that $u$ is connected as the last one. 
+Let $m_{last}$ be IIc, it means that $v$ is linked to $u_1, u_2, u\in V_{T'}$ and  $u_1u_2$ is removed. Lemma~\ref{lem:startWithArbitraryEdge} provides a sequence $m_0, m_1, \dots, m_k$ of Henneberg moves Ia which constructs $T'$ from $u_1u_2$. Suppose that there is a move $m_j$ which constructs some $u'\neq u$  from the edge $u_1u_2$. This is not possible since $m_{last}$ in a construction of $T$ from $T'$ removes the edge $u_1u_2$ which contradict that neighbours of $u'$ induce a tree, see Lemma~\ref{lem:neigboursInduceTree}.
+
+Since $u$ is the only vertex of $T'$ constructed from $u_1u_2$, we may start the construction of $T$ with the edge $u_1u$, then link the vertex $v$ by edges $u_1v$ and $uv$. After that, we link $u_2$ by edges $u_2v$ and $u_2u$. This replaces $m_{last}$ and we can proceed in the construction by the moves $m_1, \dots, m_k$ which constructs $T'\subset T$ from edges $u_1u$ and $u_2u$. Now we have a construction only by moves Ia, so we may find a construction with arbitrary starting edge by Lemma~\ref{lem:startWithArbitraryEdge}.
+
+
 \end{proof}
 
 \end{document}

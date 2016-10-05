@@ -410,4 +410,26 @@ Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. There exists a nontri
 \end{conj}
 
 
+\section{Construction of \trcomps{} by Henneberg moves}
+\begin{defn}
+Let $v\in G=(V,E)$ be constructed by Henneberg move of type I from vertices $u,u'$. If $uu'\in E$, we say that $v$ was constructed from $u,u'$ by \emph{Henneberg move of type Ia}, otherwise by \emph{Henneberg move of type Ib}.
+\end{defn}
+
+\begin{lem}
+\label{lem:startWithArbitraryEdge}
+If a \trcomp{} $T$ of a Laman graph can be constructed only by Henneberg moves of type Ia, then there exists a construction by Henneberg moves of type Ia which starts with an arbitrary edge $uv\in E_T$.
+\end{lem}
+\begin{proof}
+We prove the claim by induction with respect to $|V_T|$. Clearly, triangle can be constructed from any of its edges. 
+
+Let $G_0, G_1, \dots, G_m=T$ be sequence of graph constructed by Henneberg moves of type Ia in order to obtain $T$. Let $G_i$ be such that it is constructed from $G_{i-1}$ by adjoining $v$ to an edge $uu'$. Now, we may construct $u'$ from the edge $uv$ and then construct the rest of $G_i$, since $G_{i-1}$ can be constructed from the edge $uu'$ by the induction assumption. Then we construct $T$ by the sequence $G_{i+1}, \dots, G_m=T$.
+\end{proof}
+
+\begin{thm}
+Every \trcomp{} $T$ of a Laman graph can be constructed by Henneberg moves of type Ia and a construction can start with arbitrary edge.
+\end{thm}
+\begin{proof}
+We proceed by induction with respect to $|V_T|$. The statement is obvious for triangle. Since $T$ is a Laman graph by Lemma~\ref{lem:noEdgeInSameComponent}, there exists a vertex $v\in V_T$ such that $T$ is constructed from $T'$ by some Henneberg move.
+\end{proof}
+
 \end{document}

@@ -493,16 +493,23 @@ A graph $G=(V,E)$ is called \emph{a $k$-tree}, if either $G$ is a complete graph
 \end{defn}
 
 \begin{cor}
-Let $T$ be a graph. The graph $T$ is a Laman \trcomp{} iff it is a 2-tree.
+Let $T$ be a graph such that $|V_T|\geq 3$. The graph $T$ is a Laman \trcomp{} iff it is a 2-tree.
 \end{cor}
-Obviously, any 2-tree is a Laman \trcomp{} since it is constructed by Henneberg moves Ia. On the other hand, Theorem~\ref{thm:everyTrcompByIa} provides a construction of $T$ by Henneverg moves Ia, i.e., by adjoining new vertices to existing edges.
+Obviously, any 2-tree with at least three vertices is a Laman \trcomp{} since it is constructed by Henneberg moves Ia. On the other hand, Theorem~\ref{thm:everyTrcompByIa} provides a construction of $T$ by Henneverg moves Ia, i.e., by adjoining new vertices to existing edges.
+
+\begin{cor}
+A \trcomp{} of a Laman graph is planar.
+\end{cor}
+\begin{proof}
+We proceed by induction on the number of vertices of $T$. Obviously, a triangle is planar. Let $v$ be the last added vertex in a construction adjoined  to an edge $u_1u_2$. By induction assumption, there exists planar embedding of the graph $T\setminus v$ and we may embed $v$ into some neighbourhood of the edge $u_1u_2$ without edge intersections.
+\end{proof}
 
 \begin{defn}
 A graph is called \emph{chordal} iff for every cycle $C\subset G$, $|C|\geq 4$, there exists \emph{a chord}, i.e., there are vertices $u,u\in V_C$ such that $uv\notin E_C$ and $uv\in E$.
 \end{defn}
 
 \begin{lem}
-If a graph $T$ is a \trcomp{} ( not necessarily a Laman graph), then $T$ is a chordal graph.
+If a graph $T$ is a \trcomp{} (not necessarily a Laman graph), then $T$ is a chordal graph.
 \end{lem}
 \begin{proof}
 Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 \sim_{\!\!\bigtriangleup} u_2u_3$, there is a chord $u_1u_3$.

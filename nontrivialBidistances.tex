@@ -496,4 +496,15 @@ A graph $G=(V,E)$ is called \emph{a $k$-tree}, if either $G$ is a complete graph
 Let $T$ be a graph. The graph $T$ is a Laman \trcomp{} iff it is a 2-tree.
 \end{cor}
 Obviously, any 2-tree is a Laman \trcomp{} since it is constructed by Henneberg moves Ia. On the other hand, Theorem~\ref{thm:everyTrcompByIa} provides a construction of $T$ by Henneverg moves Ia, i.e., by adjoining new vertices to existing edges.
+
+\begin{defn}
+A graph is called \emph{chordal} iff for every cycle $C\subset G$, $|C|\geq 4$, there exists \emph{a chord}, i.e., there are vertices $u,u\in V_C$ such that $uv\notin E_C$ and $uv\in E$.
+\end{defn}
+
+\begin{lem}
+If a graph $T$ is a \trcomp{} ( not necessarily a Laman graph), then $T$ is a chordal graph.
+\end{lem}
+\begin{proof}
+Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 \sim_{\!\!\bigtriangleup} u_2u_3$, there is a chord $u_1u_3$.
+\end{proof}
 \end{document}

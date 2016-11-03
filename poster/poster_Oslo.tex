@@ -5,6 +5,7 @@
 
 \usepackage{tabulary}
 \usepackage{caption}
+\usepackage{enumerate}
 
 %\usepackage{cite}
 %\usepackage[english]{babel}
@@ -179,9 +180,20 @@ A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid realization and
 	\item There are two distinct \trcomps{} which have only two connecting vertices and they are connected by one of them.
 	\item There is a \trcomp{} connected only with one multiple vertex and one connecting edge.
 	\item There are three \trcomps{} which are pairwise connected by a multiple vertex.
-	\item 
+	\item There is a set  $V_{c}=\{v_1, \dots v_r\}$ of pairwise non-adjacent connecting vertices of $G$ such that $G\setminus V_c$ is disconnected.
+	\item  There is a set  $E_{c}=\{e_1, \dots e_r\}$ of connecting edges of $G$ such that $G\setminus E_c$ is disconnected.
+	\item There are two \trcomps{} connected by three connecting edges or by a multiple vertex and connecting edge.
 \end{itemize}
 \end{thm}
+}
+
+\block{Conjecture}{
+Let $G$ be a Laman graph. The following statements are equivalent:
+\begin{enumerate}[i)]
+	\item The graph $G$ has a nonrigid realization.
+	\item The graph $G$ allows a nontrivial bidistance.
+	\item There are at least two \trcomps{} in $G$.
+\end{enumerate}
 }
 
 \end{columns}

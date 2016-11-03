@@ -1,4 +1,4 @@
-\documentclass[24pt, a0paper, portrait, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm]{tikzposter}
+\documentclass[a0paper, portrait, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm]{tikzposter}
 \tikzposterlatexaffectionproofoff
 
 
@@ -9,7 +9,7 @@
 %\usepackage{cite}
 %\usepackage[english]{babel}
 %\usepackage[utf8]{inputenc}
-\usepackage{amssymb}
+\usepackage{amssymb, amsmath}
 
 \newtheorem{thm}{Theorem}
 %\newtheorem*{lem}{Lemma}
@@ -22,7 +22,7 @@
 %\newtheorem*{conj}{Conjecture}
 
 \title{Nonrigid realizations of Laman graphs} 
-\author{Jan Legersk\'y, ESR 7, Research Institute for Symbolic Computation, JKU Linz} 
+\author{Jan Legersk\'y \\ ESR 7, Research Institute for Symbolic Computation, JKU Linz, Austria} 
 %\institute{Czech Technical University in Prague}
 
 
@@ -72,15 +72,18 @@
 
 
 
-\settitle{ \centering \vbox{
-%\@titlegraphic\\[\TP@titlegraphictotitledistance] 
-\centering
-\color{titlefgcolor} {\bfseries \Huge \sc \@title \par}
-\vspace*{1em}
-{\huge \@author \par}% \vspace*{1em} {\LARGE \@institute}
-}}
+%\settitle{ \centering \vbox{
+%%\@titlegraphic\\[\TP@titlegraphictotitledistance] 
+%\centering
+%\color{titlefgcolor} {\bfseries \Huge \sc \@title \par}
+%\vspace*{1em}
+%{\huge \@author \par}% \vspace*{1em} {\LARGE \@institute}
+%}}
 
 \newcommand{\RR}{\mathbb{R}}
+\newcommand{\trcomp}{$\triangle$-component}
+\newcommand{\trcomps}{$\triangle$-components}
+\newcommand{\cv}[1]{c_v^{(#1)}}
 
 
 \begin{document}
@@ -93,70 +96,56 @@ asdsjcnksnvcskjdn
 
 \block{Rigidity and Laman graphs}{
 \begin{defn}
-Let $G=(V,E)$ be a simple graph with a set of vertices $V$ and a set of edges $E$. 
+Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of edges $E_G$. 
 \begin{itemize}
-	\item An \emph{embedding} of $G$ is a map $\varepsilon:V\rightarrow \RR^2$. 
-	\item  Let $\lambda:E\rightarrow \RR_+$ be an edge labelling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
+	\item An \emph{embedding} of $G$ is a map $\varepsilon:V_G\rightarrow \RR^2$. 
+	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labelling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
 	%\item A labelled graph $(G,\lambda)$ is \emph{realizable} iff it has a compatible embedding.
 	%\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
 	\item A labelled graph $(G,\lambda)$ is \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up rotations and translations is finite and nonzero. %to equivalence.
 	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labelling $\lambda$.
-	\item A graph $G$ has a \emph{nonrigid realization} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up rotations and translations is infinite.
+	\item A graph $G$ has a \emph{nonrigid realization OR EMBEDDING/LABELLING?} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up rotations and translations is infinite.
 \end{itemize} 
 \end{defn}
 \begin{thm}
-A graph $G$ is generically rigid iff it is so called \emph{Laman graph} that means
+REFERENCE A graph $G$ is generically rigid iff it is so called \emph{Laman graph} that means
 \begin{itemize}
-	\item $|E|=2|V|-3$ and
-	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H=(V_H,E_H)$ of $G$. 
+	\item $|E_G|=2|V_G|-3$ and
+	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H$ of $G$. 
 \end{itemize}  
 \end{thm}
+SOME PICTURE OF NONRIGID REALIZATION OF THREE PRISM GRAPH
+}
+\block{Bidistance}{
+\begin{defn}
+\emph{A bidistance} of a graph $G$ is an edge labelling $\delta:E_G\rightarrow \{0,1\}$ such that for every cycle in $G$, neither 0 or 1 occurs exactly once. A bidistance is \emph{nontrivial} iff $\delta(E_G)=\{0,1\}$.
+\end{defn}
+NOTE ABOUT GENERAL BIDISTANCE IN BIGRAPH???
+\begin{thm}
+If a graph $G$ has a nonrigid realization, then it has a nontrivial bidistance.
+\end{thm}
+PICTURE OF BIDISTANCE OF THREE PRISM GRAPH
+}
+
+\block{Easy case}{
+\begin{thm}
+\label{thm:vertexNotInTriangle}
+Let $G=(V,E)$ be a connected graph such that $|V|\geq 3$. If there is a vertex $v_0 \in V$ such that it is not contained in any triangle $C_3\subset G$, then $G$ allows a nontrivial bidistance. Moreover, $G$ has a nonrigid realization.
+\end{thm}
+PICTURE OF K3,3?
 }
 
 
 
-%\note[targetoffsetx=0cm,targetoffsety=11pt,innersep=0.5cm,angle=-90, width=\colwidth]{\url{jan.legersky@gmail.com}, \url{github.com/Legersky/ParallelAddition}}
-%%\block{}{}
-%
-%\column{0.6}
-%\input{ewm.tex}
-%
-%
-%
-%\begin{subcolumns}
-%\subcolumn{0.43}
-%\input{phase1.tex}
-%\input{phase2img.tex}
-%\subcolumn{0.57}
-%\input{phase1img.tex}
-%\input{phase2.tex}
-%\end{subcolumns}
-%
-%\input{phase1convergence.tex}
-%
-%%\begin{subcolumns}
-%%\subcolumn{0.5}
-%%
-%%
-%%\subcolumn{0.5}
-%%
-%%
-%%\end{subcolumns}
-%
-%
-%\input{phase2convergence.tex}
-%\input{examples.tex}
-%
-%
-%\block{}{
-%C.~Frougny, E.~Pelantov\'a, and M.~Svobodov\'a, \emph{Parallel addition in
-%  non-standard numeration systems}, Theoret. Comput. Sci. \textbf{412} (2011),
-%  5714--5727.
-%
-%%C.~Frougny, E.~Pelantov{\'a}, and M.~Svobodov{\'a}, \emph{Minimal digit sets
-%%  for parallel addition in non-standard numeration systems}, J. Integer Seq.
-%%  \textbf{16} (2013), 36.
-%}
+\column{0.5}
+\block{\trcomps{}}{
+\begin{defn}
+Let $G$ be a connected graph such that for all $v\in V_G$ there is some $C_3\subset G$ such that $v\in C_3$. We define a relation on $E_G\times E_G$ by 
+$$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff e_1=e_2 \text{ or } \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
+Let $E_1, \dots, E_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E_G$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in S_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} if $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
+\end{defn}
+}
+
 
 
 \end{columns}

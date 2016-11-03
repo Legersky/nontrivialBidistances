@@ -140,10 +140,21 @@ PICTURE OF K3,3?
 \column{0.5}
 \block{\trcomps{}}{
 \begin{defn}
-Let $G$ be a connected graph such that for all $v\in V_G$ there is some $C_3\subset G$ such that $v\in C_3$. We define a relation on $E_G\times E_G$ by 
-$$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff e_1=e_2 \text{ or } \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
-Let $E_1, \dots, E_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E_G$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in S_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} if $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
+Let $G$ be a connected graph such that all vertices are in some triangle $C_3\subset G$. We define a relation on $E_G\times E_G$ by 
+$$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff  \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
+Let $E_1, \dots, E_n$ be equivalence classes of the reflexive and transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E_G$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in E_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} iff $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
 \end{defn}
+\begin{defn}
+A vertex $v\in V$ is called \emph{multiple vertex of multiplicity} $k$ if there exists exactly $k$ distinct \trcomps{} which contain $v$. A vertex $u\in V$ is called \emph{connecting vertex} if it is a multiple vertex or an endpoint of some connecting edge.
+\end{defn}
+\begin{thm}
+Let $T$ be a \trcomp{} of a graph $G$. The following statements hold:
+\begin{itemize}
+	\item $|E_T|\geq 2|V_T|-3$.
+	\item If $\delta$ is a bidistance of $G$, then for all $e,e'\in E_T$, $\delta(e)=\delta(e')$.
+	\item The \trcomp{} $T$ has no nonrigid realization.
+\end{itemize}
+\end{thm}
 }
 
 

@@ -106,7 +106,7 @@ Now we focus on graphs which do not satisfy the condition of Theorem~\ref{thm:ve
 \begin{defn}
 Let $G=(V,E)$ be a connected graph such that for all $v\in V$ there is some $C_3\subset G$ such that $v\in C_3$. We define a relation on $E\times E$ by 
 $$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff e_1=e_2 \text{ or } \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
-Let $E_1, \dots, E_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in S_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} if $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
+Let $E_1, \dots, E_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in E_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} if $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
 \end{defn}
 
 \begin{rem}

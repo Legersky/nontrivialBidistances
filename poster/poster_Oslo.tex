@@ -91,7 +91,7 @@
 \begin{columns} 
 \column{0.5}
 \block{Abstract}{
-asdsjcnksnvcskjdn
+TO DO
 }
 
 \block{Rigidity and Laman graphs}{
@@ -153,13 +153,13 @@ Let $T$ be a \trcomp{} of a graph $G$. The following statements hold:
 	\item $|E_T|\geq 2|V_T|-3$.
 	\item If $\delta$ is a bidistance of $G$, then for all $e,e'\in E_T$, $\delta(e)=\delta(e')$.
 	\item The \trcomp{} $T$ has no nonrigid realization.
-	\item Let $|V_T|\geq 3$. The graph $T$ is a Laman \trcomp{} iff it is a 2-tree.
+	\item The \trcomp{} $T$ is a Laman graph iff it is a 2-tree. (A graph $G$ is called \emph{a 2-tree}, if either $G$ are only two adjacent vertices, or there exist a vertex $v\in V_G$ of degree two, whose neighbours are adjacent and $G\setminus v$ is a 2-tree.)
 \end{itemize}
 \end{thm}
 \begin{thm}
-Let $T_1,\dots, T_n$ be a \trcomp{} of a Laman graph $G$.  The following statements hold:
+Let $G$ be a Laman graph with $n$ \trcomp{}.  The following statements hold:
 \begin{itemize}
-	\item Every \trcomp{} $T_i$ is a Laman graph and 2-tree.
+	\item Every \trcomp{} is a planar Laman graph.
 	\item There is no connecting edge with both endpoints in the same \trcomp{}.
 	\item Any two \trcomps{} can be connected by at most three connecting edges or by one multiple vertex with possibly one connecting edge. If there are three connecting edges, then all three cannot have a common vertex.
 	\item If $c_e$ is the number of all connecting edges in $G$ and $\cv{k}$ is the number of multiple vertices of multiplicity $k$ in $G$, then
@@ -171,7 +171,17 @@ $$
 }
 
 \block{Sufficient conditions}{
-
+\begin{thm}
+A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid realization and nontrivial bidistance if some of the following conditions holds:
+\begin{itemize}
+	\item The number of all connecting edges $c_e$ is at least $n$.
+	\item There exists a \trcomp{} in $G$ whose connecting vertices are pairwise nonadjacent.
+	\item There are two distinct \trcomps{} which have only two connecting vertices and they are connected by one of them.
+	\item There is a \trcomp{} connected only with one multiple vertex and one connecting edge.
+	\item There are three \trcomps{} which are pairwise connected by a multiple vertex.
+	\item 
+\end{itemize}
+\end{thm}
 }
 
 \end{columns}

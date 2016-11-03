@@ -289,7 +289,7 @@ $$
 \begin{defn}
 Let $G=(V,E)$ be a graph and $H$ be its subgraph. We say that the $H$ \emph{can be replaced by} a graph $H'$ in $G$ iff
 $$
-V_{H'}\cap V=\{v\in V_H | \exists\, u\in V \colon uv\in E\}\,.
+V_{H'}\cap V=\{v\in V_H | \exists\, u\in V\setminus V_H \colon uv\in E\}\,.
 $$
 The graph obtained by the replacement is defined as
 $$

@@ -1,0 +1,166 @@
+\documentclass[24pt, a0paper, portrait, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm]{tikzposter}
+\tikzposterlatexaffectionproofoff
+
+
+
+\usepackage{tabulary}
+\usepackage{caption}
+
+%\usepackage{cite}
+%\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+
+\newtheorem{thm}{Theorem}
+%\newtheorem*{lem}{Lemma}
+%\newtheorem*{cor}{Corollary}
+%\newtheorem*{rem}{Remark}
+%
+%\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+%\newtheorem*{exmp}{Example}
+%\newtheorem*{conj}{Conjecture}
+
+\title{Nonrigid realizations of Laman graphs} 
+\author{Jan Legersk\'y, ESR 7, Research Institute for Symbolic Computation, JKU Linz} 
+%\institute{Czech Technical University in Prague}
+
+
+\definecolorstyle{Czech} {
+\definecolor{colorOne}{HTML}{34888C}%116699
+\definecolor{colorTwo}{HTML}{C1E1DC}
+\definecolor{colorThree}{HTML}{FFF2BE}
+%\definecolor{colorOne}{HTML}{34888C}%116699
+%\definecolor{colorTwo}{HTML}{7CAA2D}
+%\definecolor{colorThree}{HTML}{F5E356}
+%\definecolor{colorOne}{HTML}{4F6457}%116699
+%\definecolor{colorTwo}{HTML}{D9B44A}
+%\definecolor{colorThree}{HTML}{ACD0C0}
+%\definecolor{colorOne}{HTML}{0D5078}%116699
+%\definecolor{colorTwo}{HTML}{A2C4D9}
+%\definecolor{colorThree}{HTML}{FCF0AD}
+}{
+     % Background Colors
+    \colorlet{backgroundcolor}{colorTwo}
+    \colorlet{framecolor}{colorThree}
+    % Title Colors
+    \colorlet{titlebgcolor}{colorOne}
+    \colorlet{titlefgcolor}{white}
+    % Block Colors
+    \colorlet{blocktitlebgcolor}{white}
+    \colorlet{blocktitlefgcolor}{colorOne}
+    \colorlet{blockbodybgcolor}{white}
+    \colorlet{blockbodyfgcolor}{black}
+    % Innerblock Colors
+    \colorlet{innerblocktitlebgcolor}{white}
+    \colorlet{innerblocktitlefgcolor}{black}
+    \colorlet{innerblockbodybgcolor}{colorThree}
+    \colorlet{innerblockbodyfgcolor}{black}
+    % Note colors
+    \colorlet{notefgcolor}{black}
+    \colorlet{notebgcolor}{colorThree}
+    \colorlet{notefrcolor}{colorThree}
+}
+
+
+\usebackgroundstyle{Default} %Rays
+\usetitlestyle{Filled}
+\usecolorstyle{Czech}
+
+\useblockstyle[bodyoffsety=12mm]{Slide}
+\usenotestyle{Default}
+
+
+
+\settitle{ \centering \vbox{
+%\@titlegraphic\\[\TP@titlegraphictotitledistance] 
+\centering
+\color{titlefgcolor} {\bfseries \Huge \sc \@title \par}
+\vspace*{1em}
+{\huge \@author \par}% \vspace*{1em} {\LARGE \@institute}
+}}
+
+\newcommand{\RR}{\mathbb{R}}
+
+
+\begin{document}
+\maketitle[titletoblockverticalspace=15mm]
+\begin{columns} 
+\column{0.5}
+\block{Abstract}{
+asdsjcnksnvcskjdn
+}
+
+\block{Rigidity and Laman graphs}{
+\begin{defn}
+Let $G=(V,E)$ be a simple graph with a set of vertices $V$ and a set of edges $E$. 
+\begin{itemize}
+	\item An \emph{embedding} of $G$ is a map $\varepsilon:V\rightarrow \RR^2$. 
+	\item  Let $\lambda:E\rightarrow \RR_+$ be an edge labelling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
+	%\item A labelled graph $(G,\lambda)$ is \emph{realizable} iff it has a compatible embedding.
+	%\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
+	\item A labelled graph $(G,\lambda)$ is \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up rotations and translations is finite and nonzero. %to equivalence.
+	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labelling $\lambda$.
+	\item A graph $G$ has a \emph{nonrigid realization} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up rotations and translations is infinite.
+\end{itemize} 
+\end{defn}
+\begin{thm}
+A graph $G$ is generically rigid iff it is so called \emph{Laman graph} that means
+\begin{itemize}
+	\item $|E|=2|V|-3$ and
+	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H=(V_H,E_H)$ of $G$. 
+\end{itemize}  
+\end{thm}
+}
+
+
+
+%\note[targetoffsetx=0cm,targetoffsety=11pt,innersep=0.5cm,angle=-90, width=\colwidth]{\url{jan.legersky@gmail.com}, \url{github.com/Legersky/ParallelAddition}}
+%%\block{}{}
+%
+%\column{0.6}
+%\input{ewm.tex}
+%
+%
+%
+%\begin{subcolumns}
+%\subcolumn{0.43}
+%\input{phase1.tex}
+%\input{phase2img.tex}
+%\subcolumn{0.57}
+%\input{phase1img.tex}
+%\input{phase2.tex}
+%\end{subcolumns}
+%
+%\input{phase1convergence.tex}
+%
+%%\begin{subcolumns}
+%%\subcolumn{0.5}
+%%
+%%
+%%\subcolumn{0.5}
+%%
+%%
+%%\end{subcolumns}
+%
+%
+%\input{phase2convergence.tex}
+%\input{examples.tex}
+%
+%
+%\block{}{
+%C.~Frougny, E.~Pelantov\'a, and M.~Svobodov\'a, \emph{Parallel addition in
+%  non-standard numeration systems}, Theoret. Comput. Sci. \textbf{412} (2011),
+%  5714--5727.
+%
+%%C.~Frougny, E.~Pelantov{\'a}, and M.~Svobodov{\'a}, \emph{Minimal digit sets
+%%  for parallel addition in non-standard numeration systems}, J. Integer Seq.
+%%  \textbf{16} (2013), 36.
+%}
+
+
+\end{columns}
+%\center KM FJFI \v{C}VUT, Trojanova 13, 120 00 Praha 2, Czech Republic,  \url{jan.legersky@gmail.com}
+\end{document}
+
+

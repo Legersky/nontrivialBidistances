@@ -95,7 +95,6 @@
 \column{0.5}
 \block{Abstract}{
 TO DO
-\input{threePrism.tex}
 }
 
 \block{Rigidity and Laman graphs}{
@@ -106,9 +105,9 @@ Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of ed
 	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labelling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
 	%\item A labelled graph $(G,\lambda)$ is \emph{realizable} iff it has a compatible embedding.
 	%\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
-	\item A labelled graph $(G,\lambda)$ is \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up rotations and translations is finite and nonzero. %to equivalence.
+	\item A labelled graph $(G,\lambda)$ is \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up to rotations and translations is finite and nonzero. %to equivalence.
 	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labelling $\lambda$.
-	\item A graph $G$ has a \emph{nonrigid realization OR EMBEDDING/LABELLING?} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up rotations and translations is infinite.
+	\item A graph $G$ has a \emph{nonrigid realization OR EMBEDDING/LABELLING?} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up to rotations and translations is infinite.
 \end{itemize} 
 \end{defn}
 \begin{thm}
@@ -118,7 +117,7 @@ REFERENCE A graph $G$ is generically rigid iff it is so called \emph{Laman graph
 	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H$ of $G$. 
 \end{itemize}  
 \end{thm}
-SOME PICTURE OF NONRIGID REALIZATION OF THREE PRISM GRAPH:
+\input{threePrism.tex}
 }
 \block{Bidistance}{
 \begin{defn}
@@ -157,7 +156,7 @@ Let $T$ be a \trcomp{} of a graph $G$. The following statements hold:
 	\item $|E_T|\geq 2|V_T|-3$.
 	\item If $\delta$ is a bidistance of $G$, then for all $e,e'\in E_T$, $\delta(e)=\delta(e')$.
 	\item The \trcomp{} $T$ has no nonrigid realization.
-	\item The \trcomp{} $T$ is a Laman graph iff it is a 2-tree. (A graph $G$ is called \emph{a 2-tree}, if either $G$ are only two adjacent vertices, or there exist a vertex $v\in V_G$ of degree two, whose neighbours are adjacent and $G\setminus v$ is a 2-tree.)
+	\item The \trcomp{} $T$ is a Laman graph iff it is a 2-tree. (A graph $G$ is called \emph{a 2-tree}, if either $G$ is only one edge, or there exist a vertex $v\in V_G$ of degree two, whose neighbours are adjacent and $G\setminus v$ is a 2-tree.)
 \end{itemize}
 \end{thm}
 \begin{thm}

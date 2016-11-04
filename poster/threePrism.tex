@@ -3,12 +3,12 @@
 \def \posunx {-10}
 \SetVertexNoLabel
    \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
-   \Vertex[y=0 ,x=0+\posunx]{D0}
-   \Vertex[y=4 ,x=0+\posunx]{E0}
-   \Vertex[y=2 ,x=2+\posunx]{F0}
-   \Vertex[y=0 ,x=6+\posunx]{A0}
-   \Vertex[y=2 ,x=4+\posunx]{C0}
-   \Vertex[y=4 ,x=6+\posunx]{B0}
+   \Vertex[x=0+\posunx ,y=0]{D0}
+   \Vertex[x=4+\posunx ,y=0]{E0}
+   \Vertex[x=2+\posunx ,y=2]{F0}
+   \Vertex[x=0+\posunx ,y=6]{A0}
+   \Vertex[x=2+\posunx ,y=4]{C0}
+   \Vertex[x=4+\posunx ,y=6]{B0}
 
 %   \tikzset{EdgeStyle/.append style = {}}
    \Edge(D0)(E0)
@@ -23,12 +23,12 @@
 
 %\draw[help lines] (0,0) grid (8,8);
 \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
-   \Vertex[y=0 ,x=0]{D}
-   \Vertex[y=4 ,x=0]{E}
-   \Vertex[y=2 ,x=2]{F}
-   \Vertex[y=0 ,x=5]{A}
-   \Vertex[y=2 ,x=7]{C}
-   \Vertex[y=4 ,x=5]{B}
+   \Vertex[x=0 ,y=0]{D}
+   \Vertex[x=4 ,y=0]{E}
+   \Vertex[x=2 ,y=2]{F}
+   \Vertex[x=0 ,y=5]{A}
+   \Vertex[x=2 ,y=7]{C}
+   \Vertex[x=4 ,y=5]{B}
    \Edge(D)(E)
    \Edge(D)(F)
    \Edge(D)(A)
@@ -39,10 +39,9 @@
    \Edge(B)(E)
    \Edge(C)(B)
 \tikzset{VertexStyle/.style = {shape = circle,fill = red,minimum size = 10pt, inner sep = 0pt}}
-\def \shiftRed {0.2}
-	\Vertex[y=4+\shiftRed , x=3-\shiftRed]{a} 
-	\Vertex[y=6+\shiftRed , x=5-\shiftRed]{c} 
-	\Vertex[y=8+\shiftRed , x=3-\shiftRed]{b} 
+	\Vertex[x=4.2 , y=3-0.2]{a} 
+	\Vertex[x=6.2 , y=5-0.2]{c} 
+	\Vertex[x=8.2 , y=3-0.2]{b} 
 \tikzset{EdgeStyle/.style = {red}}
 	\Edge(a)(D)
    \Edge(F)(c)
@@ -50,7 +49,7 @@
    \Edge(a)(b)
    \Edge(b)(E)
    \Edge(c)(b)
-\tikzset{EdgeStyle/.style = { dashed, bend right}}
+\tikzset{EdgeStyle/.style = { dashed, bend left}}
 	\Edge(A)(a)
 	\Edge(B)(b)
 	\Edge(C)(c)

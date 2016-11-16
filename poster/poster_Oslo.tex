@@ -24,7 +24,7 @@
 %\newtheorem*{exmp}{Example}
 %\newtheorem*{conj}{Conjecture}
 
-\title{Nonrigid realizations of Laman graphs} 
+\title{Nonrigid labellings of Laman graphs} 
 \author{Jan Legersk\'y \\ ESR 7, Research Institute for Symbolic Computation, JKU Linz, Austria} 
 %\institute{Czech Technical University in Prague}
 
@@ -107,7 +107,7 @@ Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of ed
 	%\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
 	\item A labelled graph $(G,\lambda)$ is \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up to rotations and translations is finite and nonzero. %to equivalence.
 	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labelling $\lambda$.
-	\item A graph $G$ has a \emph{nonrigid realization OR EMBEDDING/LABELLING?} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up to rotations and translations is infinite.
+	\item A graph $G$ has a \emph{nonrigid labelling OR EMBEDDING/LABELLING?} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up to rotations and translations is infinite.
 \end{itemize} 
 \end{defn}
 \input{threePrism.tex}
@@ -123,17 +123,16 @@ REFERENCE A graph $G$ is generically rigid iff it is so called \emph{Laman graph
 \begin{defn}
 \emph{A bidistance} of a graph $G$ is an edge labelling $\delta:E_G\rightarrow \{0,1\}$ such that for every cycle in $G$, neither 0 or 1 occurs exactly once. A bidistance is \emph{nontrivial} iff $\delta(E_G)=\{0,1\}$.
 \end{defn}
-NOTE ABOUT GENERAL BIDISTANCE IN BIGRAPH???
 \begin{thm}
-If a graph $G$ has a nonrigid realization, then it has a nontrivial bidistance.
+If a graph $G$ has a nonrigid labelling, then it has a nontrivial bidistance.
 \end{thm}
 %\input{threePrismWithBidistance.tex}
 }
 
-\block{Easy case}{
+\block{DO NOT USE EASY CASE}{
 \begin{thm}
 \label{thm:vertexNotInTriangle}
-Let $G=(V,E)$ be a connected graph such that $|V|\geq 3$. If there is a vertex $v_0 \in V$ such that it is not contained in any triangle $C_3\subset G$, then $G$ allows a nontrivial bidistance. Moreover, $G$ has a nonrigid realization.
+Let $G=(V,E)$ be a connected graph such that $|V|\geq 3$. If there is a vertex $v_0 \in V$ such that it is not contained in any triangle $C_3\subset G$, then $G$ allows a nontrivial bidistance. Moreover, $G$ has a nonrigid labelling.
 \end{thm}
 PICTURE OF K3,3?
 }
@@ -153,18 +152,18 @@ A vertex $v\in V$ is called \emph{multiple vertex of multiplicity} $k$ if there 
 \begin{thm}
 Let $T$ be a \trcomp{} of a graph $G$. The following statements hold:
 \begin{itemize}
-	\item $|E_T|\geq 2|V_T|-3$.
-	\item If $\delta$ is a bidistance of $G$, then for all $e,e'\in E_T$, $\delta(e)=\delta(e')$.
-	\item The \trcomp{} $T$ has no nonrigid realization.
-	\item The \trcomp{} $T$ is a Laman graph iff it is a 2-tree. (A graph $G$ is called \emph{a 2-tree}, if either $G$ is only one edge, or there exist a vertex $v\in V_G$ of degree two, whose neighbours are adjacent and $G\setminus v$ is a 2-tree.)
+	%\item $|E_T|\geq 2|V_T|-3$.
+%	\item If $\delta$ is a bidistance of $G$, then for all $e,e'\in E_T$, $\delta(e)=\delta(e')$.
+	\item The \trcomp{} $T$ has no nontrivial bidistance and hence no nonrigid labelling.
+%	\item The \trcomp{} $T$ is a Laman graph iff it is a 2-tree. (A graph $G$ is called \emph{a 2-tree}, if either $G$ is only one edge, or there exist a vertex $v\in V_G$ of degree two, whose neighbours are adjacent and $G\setminus v$ is a 2-tree.)
 \end{itemize}
 \end{thm}
 \begin{thm}
 Let $G$ be a Laman graph with $n$ \trcomp{}.  The following statements hold:
 \begin{itemize}
 	\item Every \trcomp{} is a planar Laman graph.
-	\item There is no connecting edge with both endpoints in the same \trcomp{}.
-	\item Any two \trcomps{} can be connected by at most three connecting edges or by one multiple vertex with possibly one connecting edge. If there are three connecting edges, then all three cannot have a common vertex.
+	%\item There is no connecting edge with both endpoints in the same \trcomp{}.
+	%\item Any two \trcomps{} can be connected by at most three connecting edges or by one multiple vertex with possibly one connecting edge. If there are three connecting edges, then all three cannot have a common vertex.
 	\item If $c_e$ is the number of all connecting edges in $G$ and $\cv{k}$ is the number of multiple vertices of multiplicity $k$ in $G$, then
 $$
 3(n-1)=c_e + 2\sum_{k=2}^n \cv{k}(k-1)\,.
@@ -175,7 +174,7 @@ $$
 
 \block{Sufficient conditions}{
 \begin{thm}
-A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid realization and nontrivial bidistance if some of the following conditions holds:
+A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labelling and nontrivial bidistance if some of the following conditions holds:
 \begin{itemize}
 	\item The number of all connecting edges $c_e$ is at least $n$.
 	\item There exists a \trcomp{} in $G$ whose connecting vertices are pairwise nonadjacent.
@@ -192,7 +191,7 @@ A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid realization and
 \block{Conjecture}{
 Let $G$ be a Laman graph. The following statements are equivalent:
 \begin{enumerate}[i)]
-	\item The graph $G$ has a nonrigid realization.
+	\item The graph $G$ has a nonrigid labelling.
 	\item The graph $G$ allows a nontrivial bidistance.
 	\item There are at least two \trcomps{} in $G$.
 \end{enumerate}

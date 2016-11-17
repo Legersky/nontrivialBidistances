@@ -1,0 +1,76 @@
+\begin{tikzfigure}[????????????????//]
+\begin{tikzpicture}
+\def \posunx {0}
+%\SetVertexNoLabel
+\SetVertexLabelOut
+   \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
+   \Vertex[x=0+\posunx ,y=0,Lpos=180]{c}
+   \Vertex[x=4+\posunx ,y=0]{d}
+   \Vertex[x=2+\posunx ,y=3,Lpos=180]{a}
+   \Vertex[x=2+\posunx ,y=-3, Lpos=180]{b}
+   \Vertex[x=8+\posunx ,y=0]{e}
+
+%   \tikzset{EdgeStyle/.append style = {}}
+	\Edge[label=\emph{0}](a)(c)
+	\Edge[label=\emph{0}](c)(b)
+	\Edge[label=\emph{0}](a)(d)
+	\Edge[label=\emph{0}](c)(d)
+	\Edge[label=\emph{0}](b)(d)
+	\Edge[label=\emph{1}](a)(e)
+	\Edge[label=\emph{1}](b)(e)
+%
+%%\draw[help lines] (0,0) grid (8,8);
+%\tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
+%   \Vertex[x=0 ,y=0]{D}
+%   \Vertex[x=4 ,y=0]{E}
+%   \Vertex[x=2 ,y=2]{F}
+%   \Vertex[x=0 ,y=5]{A}
+%   \Vertex[x=2 ,y=7]{C}
+%   \Vertex[x=4 ,y=5]{B}
+%   \Edge(D)(E)
+%   \Edge(D)(F)
+%   \Edge(D)(A)
+%   \Edge(F)(E)
+%   \Edge(F)(C)
+%   \Edge(A)(C)
+%   \Edge(A)(B)
+%   \Edge(B)(E)
+%   \Edge(C)(B)
+%\tikzset{VertexStyle/.style = {shape = circle,fill = red,minimum size = 10pt, inner sep = 0pt}}
+%	\Vertex[x=4.2 , y=3-0.2]{a} 
+%	\Vertex[x=6.2 , y=5-0.2]{c} 
+%	\Vertex[x=8.2 , y=3-0.2]{b} 
+%\tikzset{EdgeStyle/.style = {red}}
+%	\Edge(a)(D)
+%   \Edge(F)(c)
+%   \Edge(a)(c)
+%   \Edge(a)(b)
+%   \Edge(b)(E)
+%   \Edge(c)(b)
+%\tikzset{EdgeStyle/.style = { dashed, bend left}}
+%	\Edge(A)(a)
+%	\Edge(B)(b)
+%	\Edge(C)(c)
+%	
+%\def \posunx {10}
+%\SetVertexNoLabel
+%   \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
+%   \Vertex[x=0+\posunx ,y=0]{D0}
+%   \Vertex[x=4+\posunx ,y=0]{E0}
+%   \Vertex[x=2+\posunx ,y=2]{F0}
+%   \Vertex[x=0+\posunx ,y=6]{A0}
+%   \Vertex[x=2+\posunx ,y=4]{C0}
+%   \Vertex[x=4+\posunx ,y=6]{B0}
+%
+%   \tikzset{EdgeStyle/.style = {}}
+%   \Edge[label=0](D0)(E0)
+%   \Edge[label=0](D0)(F0)
+%   \Edge[label=1](D0)(A0)
+%   \Edge[label=0](F0)(E0)
+%   \Edge[label=1](F0)(C0)
+%   \Edge[label=0](A0)(C0)
+%   \Edge[label=0](A0)(B0)
+%   \Edge[label=1](B0)(E0)
+%   \Edge[label=0](C0)(B0)
+\end{tikzpicture}
+\end{tikzfigure}

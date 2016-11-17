@@ -1,0 +1,35 @@
+\begin{tikzfigure}
+\begin{tikzpicture}
+\def \posunx {0}
+\SetVertexLabelOut
+   \tikzset{VertexStyle/.style = {shape = circle,fill = green,minimum size = 10pt, inner sep = 0pt}}
+   \SetVertexNoLabel
+   \Vertex[x=-.5+\posunx ,y=2.75]{a}
+   \Vertex[x=1+\posunx ,y=2]{b}
+   \tikzset{VertexStyle/.append style = {fill=red}}   
+   \Vertex[x=3+\posunx ,y=2]{c}
+   \Vertex[x=4.5+\posunx ,y=2.75]{d}
+   \tikzset{VertexStyle/.append style = {fill=blue}}   
+   \Vertex[x=0+\posunx ,y=0]{e}
+   \Vertex[x=4+\posunx ,y=0]{f}
+   \Vertex[x=2+\posunx ,y=4]{v}
+
+   \tikzset{EdgeStyle/.append style = {color=green}}
+	\Edge(a)(e)
+	\Edge(e)(b)
+	\Edge(a)(b)
+	\Edge(b)(v)
+	\Edge(a)(v)
+	\tikzset{EdgeStyle/.append style = {color=black}}
+	\Edge(e)(f)
+
+	\tikzset{EdgeStyle/.append style = {color=red}}
+	\Edge(c)(f)
+	\Edge(d)(f)
+	\Edge(c)(d)
+	\Edge(c)(v)
+	\Edge(d)(v)
+\end{tikzpicture}\hspace{2cm}\parbox[b]{15cm}{\small
+   A graph with two \trcomps{} ({\color{red} red}, {\color{green} green}) and one connecting edge (black). The {\color{blue} blue} vertices are so called connecting.
+}
+\end{tikzfigure}

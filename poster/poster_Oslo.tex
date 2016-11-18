@@ -30,9 +30,9 @@
 
 
 \definecolorstyle{Czech} {
-\definecolor{colorOne}{HTML}{34888C}%116699
-\definecolor{colorTwo}{HTML}{C1E1DC}
-\definecolor{colorThree}{HTML}{FFF2BE}
+\definecolor{colorOne}{HTML}{34888C}%116699		
+\definecolor{colorTwo}{HTML}{C1E1DC} 
+\definecolor{colorThree}{HTML}{FFF2BE} 
 %\definecolor{colorOne}{HTML}{34888C}%116699
 %\definecolor{colorTwo}{HTML}{7CAA2D}
 %\definecolor{colorThree}{HTML}{F5E356}
@@ -91,6 +91,24 @@
 
 \begin{document}
 \maketitle%[titletoblockverticalspace=15mm]
+\block{}{
+\begin{minipage}{0.33\textwidth}
+\includegraphics{logos/RISC.png}
+\includegraphics[scale=0.2]{logos/JKU.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.66\textwidth}
+\begin{minipage}{0.5\textwidth}
+\small \center 
+This project has received funding from the European Union's Horizon 2020 research and innovation
+programme under the Marie Sk\l{}odowska-Curie grant agreement No 675789.
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+\includegraphics[scale=2.5]{logos/ARCADES.png}
+\end{minipage}
+\end{minipage}
+}
+
 \begin{columns} 
 \column{0.5}
 \block{Abstract}{
@@ -226,22 +244,18 @@ A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labeling and no
 }
 
 \block{Conjecture}{
+\emph{
 Let $G$ be a Laman graph with all vertices in a \trcomp{}. The following statements are equivalent:
 \begin{enumerate}[i)]
 	\item The graph $G$ has a nonrigid labeling.
 	\item The graph $G$ allows a nontrivial bidistance.
 	\item There are at least two \trcomps{} in $G$.
-\end{enumerate}
-\begin{rem}
+\end{enumerate}}
 Only a proof of $iii) \implies i)$ is missing.
-\end{rem}
 }
 
 \end{columns}
-\block{}{
-\small \center 
-This project has received funding from the European Union's Horizon 2020 research and innovation
-programme under the Marie Sk\l{}odowska-Curie grant agreement No 675789.}
+
 \end{document}
 
 

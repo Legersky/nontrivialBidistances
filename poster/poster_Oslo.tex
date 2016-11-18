@@ -1,4 +1,4 @@
-\documentclass[a1paper, portrait, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm]{tikzposter} %, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm
+\documentclass[a1paper, portrait]{tikzposter} %, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm
 \tikzposterlatexaffectionproofoff
 
 
@@ -90,7 +90,7 @@
 
 
 \begin{document}
-\maketitle[titletoblockverticalspace=15mm]
+\maketitle%[titletoblockverticalspace=15mm]
 \begin{columns} 
 \column{0.5}
 \block{Abstract}{
@@ -171,7 +171,10 @@ We define a relation on $E_G\times E_G$ by
 $$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff  \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
 Let $E_1, \dots, E_n$ be equivalence classes of the reflexive and transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E_G$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in E_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} iff $|E_i|\geq 3$, and a \emph{connecting edge} otherwise. %A vertex is called \emph{connecting vertex} if it contained in more than one \trcomps{} or connecting edges.
 \end{defn}
+%\coloredbox{
 \input{defTrcomp.tex}
+A \trcomp{} has no nontrivial bidistance and hence no nonrigid labeling.
+%}
 %\begin{defn}
 %A vertex $v\in V$ is called \emph{multiple vertex of multiplicity} $k$ if there exists exactly $k$ distinct \trcomps{} which contain $v$. A vertex $u\in V$ is called \emph{connecting vertex} if it is a multiple vertex or an endpoint of some connecting edge.
 %\end{defn}
@@ -184,11 +187,9 @@ Let $E_1, \dots, E_n$ be equivalence classes of the reflexive and transitive clo
 %%	\item The \trcomp{} $T$ is a Laman graph iff it is a 2-tree. (A graph $G$ is called \emph{a 2-tree}, if either $G$ is only one edge, or there exist a vertex $v\in V_G$ of degree two, whose neighbours are adjacent and $G\setminus v$ is a 2-tree.)
 %\end{itemize}
 %\end{thm}
-
-\begin{rem}
-A \trcomp{} has no nontrivial bidistance and hence no nonrigid labeling.
-\end{rem}
-
+%\begin{rem}
+%A \trcomp{} has no nontrivial bidistance and hence no nonrigid labeling.
+%\end{rem}
 %\begin{thm}
 %Let $G$ be a Laman graph with $n$ \trcomp{}.  The following statements hold:
 %\begin{itemize}
@@ -202,6 +203,8 @@ A \trcomp{} has no nontrivial bidistance and hence no nonrigid labeling.
 %\end{itemize}
 %\end{thm}
 }
+
+
 
 \block{Sufficient conditions}{
 \begin{thm}

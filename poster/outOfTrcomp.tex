@@ -1,76 +1,80 @@
 \begin{tikzfigure}[????????????????//]
 \begin{tikzpicture}
+\small
 \def \posunx {0}
-%\SetVertexNoLabel
-\SetVertexLabelOut
+\SetVertexNoLabel
+%\SetVertexLabelOut
    \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
    \Vertex[x=0+\posunx ,y=0,Lpos=180]{c}
    \Vertex[x=4+\posunx ,y=0]{d}
    \Vertex[x=2+\posunx ,y=3,Lpos=180]{a}
    \Vertex[x=2+\posunx ,y=-3, Lpos=180]{b}
-   \Vertex[x=8+\posunx ,y=0]{e}
+    \tikzset{VertexStyle/.append  style= {fill = red}}
+   \Vertex[x=7+\posunx ,y=0]{e}
 
 %   \tikzset{EdgeStyle/.append style = {}}
-	\Edge[label=\emph{0}](a)(c)
-	\Edge[label=\emph{0}](c)(b)
-	\Edge[label=\emph{0}](a)(d)
-	\Edge[label=\emph{0}](c)(d)
-	\Edge[label=\emph{0}](b)(d)
-	\Edge[label=\emph{1}](a)(e)
-	\Edge[label=\emph{1}](b)(e)
-%
-%%\draw[help lines] (0,0) grid (8,8);
-%\tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
-%   \Vertex[x=0 ,y=0]{D}
-%   \Vertex[x=4 ,y=0]{E}
-%   \Vertex[x=2 ,y=2]{F}
-%   \Vertex[x=0 ,y=5]{A}
-%   \Vertex[x=2 ,y=7]{C}
-%   \Vertex[x=4 ,y=5]{B}
-%   \Edge(D)(E)
-%   \Edge(D)(F)
-%   \Edge(D)(A)
-%   \Edge(F)(E)
-%   \Edge(F)(C)
-%   \Edge(A)(C)
-%   \Edge(A)(B)
-%   \Edge(B)(E)
-%   \Edge(C)(B)
-%\tikzset{VertexStyle/.style = {shape = circle,fill = red,minimum size = 10pt, inner sep = 0pt}}
-%	\Vertex[x=4.2 , y=3-0.2]{a} 
-%	\Vertex[x=6.2 , y=5-0.2]{c} 
-%	\Vertex[x=8.2 , y=3-0.2]{b} 
-%\tikzset{EdgeStyle/.style = {red}}
-%	\Edge(a)(D)
-%   \Edge(F)(c)
-%   \Edge(a)(c)
-%   \Edge(a)(b)
-%   \Edge(b)(E)
-%   \Edge(c)(b)
-%\tikzset{EdgeStyle/.style = { dashed, bend left}}
-%	\Edge(A)(a)
-%	\Edge(B)(b)
-%	\Edge(C)(c)
-%	
-%\def \posunx {10}
-%\SetVertexNoLabel
-%   \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
-%   \Vertex[x=0+\posunx ,y=0]{D0}
-%   \Vertex[x=4+\posunx ,y=0]{E0}
-%   \Vertex[x=2+\posunx ,y=2]{F0}
-%   \Vertex[x=0+\posunx ,y=6]{A0}
-%   \Vertex[x=2+\posunx ,y=4]{C0}
-%   \Vertex[x=4+\posunx ,y=6]{B0}
-%
-%   \tikzset{EdgeStyle/.style = {}}
-%   \Edge[label=0](D0)(E0)
-%   \Edge[label=0](D0)(F0)
-%   \Edge[label=1](D0)(A0)
-%   \Edge[label=0](F0)(E0)
-%   \Edge[label=1](F0)(C0)
-%   \Edge[label=0](A0)(C0)
-%   \Edge[label=0](A0)(B0)
-%   \Edge[label=1](B0)(E0)
-%   \Edge[label=0](C0)(B0)
-\end{tikzpicture}
+	\Edge[label=0](a)(c)
+	\Edge[label=0](c)(b)
+	\Edge[label=0](a)(d)
+	\Edge[label=0](c)(d)
+	\Edge[label=0](b)(d)
+	\Edge[label=1](a)(e)
+	\Edge[label=1](b)(e)
+
+
+\def \posunx {9}
+\def \posuny {-3}
+\SetVertexNoLabel
+   \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
+   \Vertex[x=0+\posunx ,y=0+\posuny]{D0}
+   \Vertex[x=4+\posunx ,y=0+\posuny]{E0}
+   \Vertex[x=2+\posunx ,y=2+\posuny]{F0}
+   \Vertex[x=0+\posunx ,y=6+\posuny]{A0}
+   \Vertex[x=2+\posunx ,y=4+\posuny]{C0}
+   \Vertex[x=4+\posunx ,y=6+\posuny]{B0}
+
+   \tikzset{EdgeStyle/.style = {}}
+   \Edge[label=0](D0)(E0)
+   \Edge[label=0](D0)(F0)
+   \Edge[label=0](F0)(E0)
+   \Edge[label=0](A0)(C0)
+   \Edge[label=0](A0)(B0)
+   \Edge[label=0](C0)(B0)
+   \tikzset{EdgeStyle/.style = {red}}
+   \Edge[label=1](B0)(E0)   
+   \Edge[label=1](F0)(C0)
+   \Edge[label=1](D0)(A0)
+   
+   
+   \def \posunx {16}
+      \def \posuny {-2}
+\SetVertexLabelOut
+   \tikzset{VertexStyle/.style = {shape = circle,fill = green,minimum size = 10pt, inner sep = 0pt}}
+   \SetVertexNoLabel
+   \Vertex[x=-.5+\posunx ,y=2.75+\posuny]{a}
+   \Vertex[x=1+\posunx ,y=2+\posuny]{b}
+   \tikzset{VertexStyle/.append style = {fill=red}}   
+   \Vertex[x=3+\posunx ,y=2+\posuny]{c}
+   \Vertex[x=4.5+\posunx ,y=2.75+\posuny]{d}
+   \tikzset{VertexStyle/.append style = {fill=blue}}   
+   \Vertex[x=0+\posunx ,y=0+\posuny]{e}
+   \Vertex[x=4+\posunx ,y=0+\posuny]{f}
+   \Vertex[x=2+\posunx ,y=4+\posuny]{v}
+
+   \tikzset{EdgeStyle/.append style = {color=green}}
+	\Edge(a)(e)
+	\Edge(e)(b)
+	\Edge(a)(b)
+	\Edge(b)(v)
+	\Edge(a)(v)
+	\tikzset{EdgeStyle/.append style = {color=black}}
+	\Edge(e)(f)
+
+	\tikzset{EdgeStyle/.append style = {color=red}}
+	\Edge(c)(f)
+	\Edge(d)(f)
+	\Edge(c)(d)
+	\Edge(c)(v)
+	\Edge(d)(v)
+   \end{tikzpicture}
 \end{tikzfigure}

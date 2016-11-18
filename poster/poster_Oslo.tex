@@ -24,7 +24,7 @@
 %\newtheorem*{exmp}{Example}
 %\newtheorem*{conj}{Conjecture}
 
-\title{Nonrigid labellings of Laman graphs} 
+\title{Nonrigid labelings of Laman graphs} 
 \author{Jan Legersk\'y \\ ESR 7, Research Institute for Symbolic Computation, JKU Linz, Austria} 
 %\institute{Czech Technical University in Prague}
 
@@ -102,12 +102,12 @@ TO DO
 %Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of edges $E_G$. 
 %\begin{itemize}
 %	\item An \emph{embedding} of $G$ is a map $\varepsilon:V_G\rightarrow \RR^2$. 
-%	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labelling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
+%	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labeling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
 %	%\item A labelled graph $(G,\lambda)$ is \emph{realizable} iff it has a compatible embedding.
 %	%\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
 %	\item A labelled graph $(G,\lambda)$ is \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up to rotations and translations is finite and nonzero. %to equivalence.
-%	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labelling $\lambda$.
-%	\item A graph $G$ has a \emph{nonrigid labelling} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up to rotations and translations is infinite.
+%	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labeling $\lambda$.
+%	\item A graph $G$ has a \emph{nonrigid labeling} iff there exists a labeling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up to rotations and translations is infinite.
 %\end{itemize} 
 %\end{defn}
 
@@ -115,12 +115,12 @@ TO DO
 Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of edges $E_G$. 
 \begin{itemize}
 	\item An \emph{embedding} of $G$ is a map $\varepsilon:V_G\rightarrow \RR^2$. 
-	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labelling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
+	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labeling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
 	%\item A labelled graph $(G,\lambda)$ is \emph{realizable} iff it has a compatible embedding.
 	%\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
-	\item Let $\lambda$ be a labelling of $G$ with at least one compatible embedding. The labelling $\lambda$ is called \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up to rotations and translations is finite, and \emph{nonrigid} otherwise.
-%	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labelling $\lambda$.
-%	\item A graph $G$ has a \emph{nonrigid labelling} iff there exists a labelling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up to rotations and translations is infinite.
+	\item Let $\lambda$ be a labeling of $G$ with at least one compatible embedding. The labeling $\lambda$ is called \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up to rotations and translations is finite, and \emph{nonrigid} otherwise.
+%	\item A graph $G$ is \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labeling $\lambda$.
+%	\item A graph $G$ has a \emph{nonrigid labeling} iff there exists a labeling $\lambda$ such that the number of embeddings of $G$ compatible with $\lambda$ is up to rotations and translations is infinite.
 \end{itemize} 
 \end{defn}
 
@@ -134,7 +134,7 @@ Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of ed
 %\end{itemize}  
 %\end{thm}
 \begin{thm}
-REFERENCE A generic labelling of a graph $G$ is rigid iff $G$ is so called \emph{Laman graph}, that means
+REFERENCE A generic labeling of a graph $G$ is rigid iff $G$ is so called \emph{Laman graph}, that means
 \begin{itemize}
 	\item $|E_G|=2|V_G|-3$ and
 	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H$ of $G$. 
@@ -143,10 +143,10 @@ REFERENCE A generic labelling of a graph $G$ is rigid iff $G$ is so called \emph
 }
 \block{Bidistance}{
 \begin{defn}
-\emph{A bidistance} of a graph $G$ is an edge labelling $\delta:E_G\rightarrow \{0,1\}$ such that for every cycle in $G$, neither 0 or 1 occurs exactly once. A bidistance is \emph{nontrivial} iff $\delta(E_G)=\{0,1\}$.
+\emph{A bidistance} of a graph $G$ is an edge labeling $\delta:E_G\rightarrow \{0,1\}$ such that for every cycle in $G$, neither 0 or 1 occurs exactly once. A bidistance is \emph{nontrivial} iff $\delta(E_G)=\{0,1\}$.
 \end{defn}
 \begin{thm}
-If a graph $G$ has a nonrigid labelling, then it has a nontrivial bidistance.
+If a graph $G$ has a nonrigid labeling, then it has a nontrivial bidistance.
 \end{thm}
 %\input{threePrismWithBidistance.tex}
 }
@@ -154,7 +154,7 @@ If a graph $G$ has a nonrigid labelling, then it has a nontrivial bidistance.
 %\block{DO NOT USE EASY CASE}{
 %\begin{thm}
 %\label{thm:vertexNotInTriangle}
-%Let $G=(V,E)$ be a connected graph such that $|V|\geq 3$. If there is a vertex $v_0 \in V$ such that it is not contained in any triangle $C_3\subset G$, then $G$ allows a nontrivial bidistance. Moreover, $G$ has a nonrigid labelling.
+%Let $G=(V,E)$ be a connected graph such that $|V|\geq 3$. If there is a vertex $v_0 \in V$ such that it is not contained in any triangle $C_3\subset G$, then $G$ allows a nontrivial bidistance. Moreover, $G$ has a nonrigid labeling.
 %\end{thm}
 %PICTURE OF K3,3?
 %}
@@ -178,13 +178,13 @@ Let $E_1, \dots, E_n$ be equivalence classes of the reflexive and transitive clo
 %\begin{itemize}
 %	%\item $|E_T|\geq 2|V_T|-3$.
 %%	\item If $\delta$ is a bidistance of $G$, then for all $e,e'\in E_T$, $\delta(e)=\delta(e')$.
-%	\item The \trcomp{} $T$ has no nontrivial bidistance and hence no nonrigid labelling.
+%	\item The \trcomp{} $T$ has no nontrivial bidistance and hence no nonrigid labeling.
 %%	\item The \trcomp{} $T$ is a Laman graph iff it is a 2-tree. (A graph $G$ is called \emph{a 2-tree}, if either $G$ is only one edge, or there exist a vertex $v\in V_G$ of degree two, whose neighbours are adjacent and $G\setminus v$ is a 2-tree.)
 %\end{itemize}
 %\end{thm}
 
 \begin{rem}
-A \trcomp{} has no nontrivial bidistance and hence no nonrigid labelling.
+A \trcomp{} has no nontrivial bidistance and hence no nonrigid labeling.
 \end{rem}
 
 %\begin{thm}
@@ -203,10 +203,9 @@ A \trcomp{} has no nontrivial bidistance and hence no nonrigid labelling.
 
 \block{Sufficient conditions}{
 \begin{thm}
-A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labelling and nontrivial bidistance if some of the following conditions holds:
+A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labeling and nontrivial bidistance if some of the following conditions holds:
 \begin{itemize}
 	\item There is a vertex which is not in any \trcomp{}. 
-\input{outOfTrcomp.tex}
 %	\item ?? The number of all connecting edges is at least $n$.
 %	\item There exists a \trcomp{} in $G$ whose connecting vertices are pairwise nonadjacent.
 %	\item There are two distinct \trcomps{} which have only two connecting vertices and they are connected by one of them.
@@ -217,12 +216,13 @@ A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labelling and n
 %	\item There are two \trcomps{} connected by three connecting edges or by a multiple vertex and connecting edge.
 \end{itemize}
 \end{thm}	
+\input{outOfTrcomp.tex}
 }
 
 \block{Conjecture}{
 Let $G$ be a Laman graph with all vertices in a \trcomp{}. The following statements are equivalent:
 \begin{enumerate}[i)]
-	\item The graph $G$ has a nonrigid labelling.
+	\item The graph $G$ has a nonrigid labeling.
 	\item The graph $G$ allows a nontrivial bidistance.
 	\item There are at least two \trcomps{} in $G$.
 \end{enumerate}

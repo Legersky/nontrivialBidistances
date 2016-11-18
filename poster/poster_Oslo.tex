@@ -1,4 +1,4 @@
-\documentclass[a1paper, portrait]{tikzposter} %, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm
+\documentclass[a1paper, portrait, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm]{tikzposter} %, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm
 \tikzposterlatexaffectionproofoff
 
 
@@ -25,8 +25,8 @@
 %\newtheorem*{conj}{Conjecture}
 
 \title{Nonrigid labelings of Laman graphs} 
-\author{Jan Legersk\'y \\ ESR 7, Research Institute for Symbolic Computation, JKU Linz, Austria} 
-%\institute{Czech Technical University in Prague}
+\author{Jan Legersk\'y} 
+\institute{ESR 7, Research Institute for Symbolic Computation, JKU Linz, Austria}
 
 
 \definecolorstyle{Czech} {
@@ -94,7 +94,9 @@
 \begin{columns} 
 \column{0.5}
 \block{Abstract}{
-TO DO
+It is well known that Laman graphs characterize minimal planar structures which are rigid for a generic choice of distances between vertices. We focus on a non-generic choice of distances which lead to a nonrigid structure. It appears that there is a connection between these labelings and another edge labeling which is called bidistance. 
+
+We introduce a notion of \trcomps{} which provides tools to determine a bidistance and nonrigid labelling in some cases.
 }
 
 \block{Rigidity and Laman graphs}{
@@ -133,8 +135,8 @@ Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of ed
 %	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H$ of $G$. 
 %\end{itemize}  
 %\end{thm}
-\begin{thm}
-REFERENCE A generic labeling of a graph $G$ is rigid iff $G$ is so called \emph{Laman graph}, that means
+\begin{thm}[Laman]
+A generic labeling of a graph $G$ is rigid iff $G$ is so called \emph{Laman graph}, that means
 \begin{itemize}
 	\item $|E_G|=2|V_G|-3$ and
 	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H$ of $G$. 
@@ -145,7 +147,7 @@ REFERENCE A generic labeling of a graph $G$ is rigid iff $G$ is so called \emph{
 \begin{defn}
 \emph{A bidistance} of a graph $G$ is an edge labeling $\delta:E_G\rightarrow \{0,1\}$ such that for every cycle in $G$, neither 0 or 1 occurs exactly once. A bidistance is \emph{nontrivial} iff $\delta(E_G)=\{0,1\}$.
 \end{defn}
-\begin{thm}
+\begin{thm}[Schicho]
 If a graph $G$ has a nonrigid labeling, then it has a nontrivial bidistance.
 \end{thm}
 %\input{threePrismWithBidistance.tex}
@@ -203,6 +205,7 @@ A \trcomp{} has no nontrivial bidistance and hence no nonrigid labeling.
 
 \block{Sufficient conditions}{
 \begin{thm}
+\label{thm:suffCond}
 A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labeling and nontrivial bidistance if some of the following conditions holds:
 \begin{itemize}
 	\item There is a vertex which is not in any \trcomp{}. 
@@ -211,8 +214,8 @@ A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labeling and no
 %	\item There are two distinct \trcomps{} which have only two connecting vertices and they are connected by one of them.
 %	\item There is a \trcomp{} connected only with one multiple vertex and one connecting edge.
 %	\item ?? There are three \trcomps{} which are pairwise connected by a multiple vertex.
-	\item There is a set  $V_{c}$ of pairwise non-adjacent connecting vertices of $G$ such that $G\setminus V_c$ is disconnected.
 	\item There is a set  $E_{c}$ of connecting edges of $G$ such that $G\setminus E_c$ is disconnected.
+	\item There is a set  $V_{c}$ of pairwise non-adjacent connecting vertices of $G$ such that $G\setminus V_c$ is disconnected.
 %	\item There are two \trcomps{} connected by three connecting edges or by a multiple vertex and connecting edge.
 \end{itemize}
 \end{thm}	
@@ -232,7 +235,10 @@ Only a proof of $iii) \implies i)$ is missing.
 }
 
 \end{columns}
-%\center KM FJFI \v{C}VUT, Trojanova 13, 120 00 Praha 2, Czech Republic,  \url{jan.legersky@gmail.com}
+\block{}{
+\small \center 
+This project has received funding from the European Union's Horizon 2020 research and innovation
+programme under the Marie Sk\l{}odowska-Curie grant agreement No 675789.}
 \end{document}
 
 

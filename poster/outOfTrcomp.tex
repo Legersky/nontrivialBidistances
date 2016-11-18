@@ -1,4 +1,4 @@
-\begin{tikzfigure}[????????????????//]
+\begin{tikzfigure}[Nontrivial bidistances given by Theorem~\ref{thm:suffCond}]
 \begin{tikzpicture}
 \small
 \def \posunx {0}
@@ -47,34 +47,36 @@
    
    
    \def \posunx {16}
-      \def \posuny {-2}
+      \def \posuny {-2.75}
+      \def \scale{1.2}
+      \def \scaley{1.4}
 \SetVertexLabelOut
-   \tikzset{VertexStyle/.style = {shape = circle,fill = green,minimum size = 10pt, inner sep = 0pt}}
+   \tikzset{VertexStyle/.style = {shape = circle,fill = black,minimum size = 10pt, inner sep = 0pt}}
    \SetVertexNoLabel
-   \Vertex[x=-.5+\posunx ,y=2.75+\posuny]{a}
-   \Vertex[x=1+\posunx ,y=2+\posuny]{b}
+   \Vertex[x=-.5*\scale+\posunx ,y=2.75*\scaley+\posuny]{a}
+   \Vertex[x=1*\scale+\posunx ,y=2*\scaley+\posuny]{b}
+   \Vertex[x=3*\scale+\posunx ,y=2*\scaley+\posuny]{c}
+   \Vertex[x=4.5*\scale+\posunx ,y=2.75*\scaley+\posuny]{d}
+   \Vertex[x=4*\scale+\posunx ,y=0*\scaley+\posuny]{f}
    \tikzset{VertexStyle/.append style = {fill=red}}   
-   \Vertex[x=3+\posunx ,y=2+\posuny]{c}
-   \Vertex[x=4.5+\posunx ,y=2.75+\posuny]{d}
-   \tikzset{VertexStyle/.append style = {fill=blue}}   
-   \Vertex[x=0+\posunx ,y=0+\posuny]{e}
-   \Vertex[x=4+\posunx ,y=0+\posuny]{f}
-   \Vertex[x=2+\posunx ,y=4+\posuny]{v}
+   \Vertex[x=0*\scale+\posunx ,y=0*\scaley+\posuny]{e}
 
-   \tikzset{EdgeStyle/.append style = {color=green}}
-	\Edge(a)(e)
-	\Edge(e)(b)
-	\Edge(a)(b)
-	\Edge(b)(v)
-	\Edge(a)(v)
+   \Vertex[x=2*\scale+\posunx ,y=4*\scaley+\posuny]{v}
 	\tikzset{EdgeStyle/.append style = {color=black}}
-	\Edge(e)(f)
+%   \tikzset{EdgeStyle/.append style = {color=green}}
+	\Edge[label=1](a)(e)
+	\Edge[label=1](e)(b)
+	\Edge[label=1](a)(b)
+	\Edge[label=1](b)(v)
+	\Edge[label=1](a)(v)
+	
+	\Edge[label=0](e)(f)
 
-	\tikzset{EdgeStyle/.append style = {color=red}}
-	\Edge(c)(f)
-	\Edge(d)(f)
-	\Edge(c)(d)
-	\Edge(c)(v)
-	\Edge(d)(v)
+%	\tikzset{EdgeStyle/.append style = {color=red}}
+	\Edge[label=0](c)(f)
+	\Edge[label=0](d)(f)
+	\Edge[label=0](c)(d)
+	\Edge[label=0](c)(v)
+	\Edge[label=0](d)(v)
    \end{tikzpicture}
 \end{tikzfigure}

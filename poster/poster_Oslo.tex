@@ -1,4 +1,4 @@
-\documentclass[a1paper, portrait]{tikzposter} %, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=-5mm
+\documentclass[a1paper, portrait,innermargin=10mm, blockverticalspace=10mm, colspace=10mm,margin=0mm,]{tikzposter} %,   subcolspace=-5mm
 \tikzposterlatexaffectionproofoff
 
 
@@ -70,7 +70,7 @@
 \usetitlestyle{Filled}
 \usecolorstyle{Czech}
 
-\useblockstyle[bodyoffsety=12mm]{Slide}
+\useblockstyle[bodyoffsety=15mm]{Slide}
 \usenotestyle{Default}
 
 
@@ -90,31 +90,15 @@
 
 
 \begin{document}
-\maketitle%[titletoblockverticalspace=15mm]
-\block{}{
-\begin{minipage}{0.33\textwidth}
-\includegraphics{logos/RISC.png}
-\includegraphics[scale=0.2]{logos/JKU.png}
-\end{minipage}
-\hfill
-\begin{minipage}{0.66\textwidth}
-\begin{minipage}{0.5\textwidth}
-\small \center 
-This project has received funding from the European Union's Horizon 2020 research and innovation
-programme under the Marie Sk\l{}odowska-Curie grant agreement No 675789.
-\end{minipage}
-\begin{minipage}{0.25\textwidth}
-\includegraphics[scale=2.5]{logos/ARCADES.png}
-\end{minipage}
-\end{minipage}
-}
+\maketitle[titletoblockverticalspace=10mm]
+
 
 \begin{columns} 
 \column{0.5}
-\block{Abstract}{
+\block{Abstract}{\vspace{5mm}
 It is well known that Laman graphs characterize minimal planar structures which are rigid for a generic choice of distances between vertices. We focus on a non-generic choice of distances which lead to a nonrigid structure. It appears that there is a connection between these labelings and another edge labeling which is called bidistance. 
 
-We introduce a notion of \trcomps{} which provides tools to determine a bidistance and nonrigid labelling in some cases.
+We introduce a notion of \trcomps{} which provides tools to determine a bidistance and nonrigid labeling in some cases.
 }
 
 \block{Rigidity and Laman graphs}{
@@ -135,7 +119,7 @@ We introduce a notion of \trcomps{} which provides tools to determine a bidistan
 Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of edges $E_G$. 
 \begin{itemize}
 	\item An \emph{embedding} of $G$ is a map $\varepsilon:V_G\rightarrow \RR^2$. 
-	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labeling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff $\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)$.
+	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labeling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff  $$\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)\,.$$
 	%\item A labelled graph $(G,\lambda)$ is \emph{realizable} iff it has a compatible embedding.
 	%\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
 	\item Let $\lambda$ be a labeling of $G$ with at least one compatible embedding. The labeling $\lambda$ is called \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up to rotations and translations is finite, and \emph{nonrigid} otherwise.
@@ -256,6 +240,45 @@ Only a proof of $iii) \implies i)$ is missing.
 
 \end{columns}
 
+\begin{columns} 
+\column{1}
+\block{}{ \vspace{-5mm}
+%\begin{minipage}{0.33\textwidth}
+%	\begin{center}
+%	\includegraphics{logos/RISC.png}\hspace{20mm}
+%	\includegraphics[scale=0.2]{logos/JKU.png}
+%	\end{center}
+%\end{minipage}
+%%\hfill
+%\begin{minipage}{0.66\textwidth}
+%	\begin{minipage}{0.5\textwidth}
+%	\small \center 
+%	This project has received funding from the European Union's Horizon 2020 research and innovation
+%	programme under the Marie Sk\l{}odowska-Curie grant agreement No 675789.
+%	\end{minipage}
+%	\begin{minipage}{0.5\textwidth}
+%	\includegraphics[scale=2.5]{logos/ARCADES.png} \hspace{20mm}
+%	\includegraphics[scale=1]{logos/EU.png}
+%	\end{minipage}
+%\end{minipage}
+\begin{minipage}[t]{0.33\colwidth}
+	\begin{center}
+	\includegraphics[scale=0.8]{logos/EU.png}\hspace{20mm}
+	\includegraphics[scale=2.5]{logos/ARCADES.png} 
+	\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.33\colwidth}\vspace{-30mm}
+	\small \center 	This project has received funding from the European Union's Horizon 2020 research and innovation
+	programme under the Marie Sk\l{}odowska-Curie grant agreement No 675789.
+\end{minipage}
+\begin{minipage}[t]{0.33\colwidth}
+\begin{center}
+	\includegraphics{logos/RISC.png}\hspace{20mm}
+	\includegraphics[scale=0.2]{logos/JKU.png}
+	\end{center}
+\end{minipage}
+}
+\end{columns}
 \end{document}
 
 

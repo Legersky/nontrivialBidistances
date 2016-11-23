@@ -117,7 +117,7 @@ We introduce a notion of \trcomps{} which provides tools to determine a bidistan
 %\end{defn}
 
 \begin{defn}
-Let $G=(V_G,E_G)$ be a simple graph with a set of vertices $V_G$ and a set of edges $E_G$. 
+Let $G=(V_G,E_G)$ be a simple graph with a~set of vertices $V_G$ and a set of edges $E_G$. 
 \begin{itemize}
 	\item An \emph{embedding} of $G$ is a map $\varepsilon:V_G\rightarrow \RR^2$. 
 	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labeling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff  $$\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)\,.$$
@@ -150,7 +150,7 @@ A generic labeling of a graph $G$ is rigid iff $G$ is \emph{Laman graph}, that m
 \begin{defn}
 \emph{A bidistance} of a graph $G$ is an edge labeling $\delta:E_G\rightarrow \{0,1\}$ such that for every cycle in $G$, neither 0 or 1 occurs exactly once. A bidistance is \emph{nontrivial} iff $\delta(E_G)=\{0,1\}$.
 \end{defn}
-\vspace{1.5mm}
+\vspace{1.33mm}
 \begin{thm}[Schicho]
 If a connected graph $G$ has a nonrigid labeling, then it has a nontrivial bidistance.
 \end{thm}
@@ -213,7 +213,7 @@ A \trcomp{} has no nontrivial bidistance and hence no nonrigid labeling.
 \block{Sufficient conditions}{
 \begin{thm}
 \label{thm:suffCond}
-A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labeling and nontrivial bidistance if some of the following conditions holds:
+A Laman graph $G$ with $n$ \trcomps{} has a nonrigid labeling and nontrivial bidistance if some of the following conditions holds:
 \begin{itemize}
 	\item There is a vertex which is not in any \trcomp{}. 
 %	\item ?? The number of all connecting edges is at least $n$.
@@ -226,7 +226,7 @@ A Laman graph $G$ with $n$ \trcomps{}, $n\geq 2$, has a nonrigid labeling and no
 %	\item There are two \trcomps{} connected by three connecting edges or by a multiple vertex and connecting edge.
 \end{itemize}
 \end{thm}	
-\vspace{0.8mm}
+\vspace{0.7mm}
 \input{outOfTrcomp.tex}
 }
 
@@ -245,21 +245,23 @@ Only a proof of $iii) \implies i)$ is missing.
 
 \begin{columns} 
 \column{1}
-\block{}{ \vspace{-5mm}
+\block{}{\vspace{-5mm}
 \begin{minipage}[t]{0.33\colwidth}
 	\begin{center}
-	\includegraphics[scale=0.75]{logos/EU.jpg}\hspace{20mm} 
-	\includegraphics[scale=0.15]{logos/ARCADES.png} 
+	\raisebox{0pt}{
+	\raisebox{-0.5\height}{\includegraphics[scale=0.75]{logos/EU.jpg}\hspace{20mm} }
+	\raisebox{-0.5\height}{\includegraphics[scale=0.12]{logos/ARCADES.png} }
+	}
 	\end{center}
 \end{minipage}
-\begin{minipage}[t]{0.33\colwidth}\vspace{-30mm}
+\begin{minipage}[t]{0.33\colwidth}\vspace{-10mm}
 	\small \center 	This project has received funding from the European Union's Horizon 2020 research and innovation
 	programme under the Marie Sk\l{}odowska-Curie grant agreement No 675789.
 \end{minipage}
 \begin{minipage}[t]{0.33\colwidth}
 \begin{center}
-	\vspace{-40mm}\includegraphics[scale=0.8]{logos/RISC.png}\hspace{20mm}
-	\includegraphics[scale=0.2]{logos/JKU.png}
+	\raisebox{-0.5\height}{\includegraphics[scale=0.8]{logos/RISC.png}\hspace{20mm}}
+\raisebox{-0.5\height}{	\includegraphics[scale=0.2]{logos/JKU.png}}
 	\end{center}
 \end{minipage}
 }

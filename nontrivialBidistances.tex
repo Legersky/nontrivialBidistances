@@ -19,14 +19,15 @@
 \usepackage{enumerate}
 \usepackage[pdftex]{graphicx,color}
 
-\usepackage{comment}
-\excludecomment{proof}
+%\usepackage{comment}
+%\excludecomment{proof}
 
 \newcommand{\komentar}[1]{\textcolor{red}{#1} \newline}
 
 \newcommand{\trcomp}{$\triangle$-component}
 \newcommand{\trcomps}{$\triangle$-components}
 \newcommand{\cv}[1]{c_v^{(#1)}}
+\newcommand{\RR}{\mathbb{R}}
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{lem}{Lemma}[section]
@@ -43,8 +44,24 @@
 If $G$ is a graph, then $V_G$ is the set of vertices of $G$ and $E_G$ is the set of edges of $G$.
 \end{defn}
 
+
 \begin{defn}
-\emph{A graph $G=(V,E)$ has a nontrivial bidistance} if the bigraph $(G,G)$ has a nontrivial bidistance with the trivial weight vector $w$, i.e., $w(e)=0$ for all $e\in E$.
+Let $G$ and $H$ be graphs such that there exists a bijection $\rho: E_G \rightarrow E_H$. A pair $(G,H)$ is called a \emph{bigraph}. If $G=H$, we assume $\rho=\text{id}$.
+\end{defn}
+
+\begin{defn}
+Let $(G,H)$ be a bigraph with a bijection $\rho$, let $(w_e)_{e\in E_G}\in \RR^{|E_G|}$ and let $\bar{e}\in E_G$ be a distinguished edge. A pair of mappings $(d_G,d_H)$, where $d_G:E_G\rightarrow \RR$ and $d_H:E_H\rightarrow \RR$, is called a \emph{bidistance}, if the following conditions holds:
+\begin{itemize}
+\item $d_G(\bar{e})=d_H(\bar{e})=0$,
+\item $d_G(e)+d_H(\rho(e))=w_e$ for all $e\in E_G\setminus \{\bar{e}\}$,
+\item for every cycle in $G$, the minimum of the values of $d_G$ is attained at least twice and analogously for $H$.
+\end{itemize}
+\end{defn}
+
+
+
+\begin{defn}
+\emph{A graph $G=(V,E)$ has a nontrivial bidistance} if the bigraph $(G,G)$ has a nontrivial bidistance with the trivial weight vector $w=(w_e)_{e\in E}$, i.e., $w_e=0$ for all $e\in E$.
 \end{defn}
 
 \begin{rem}
@@ -216,7 +233,7 @@ which gives the claim.
 
 \begin{lem}
 \label{lem:twoConnectingVertices}
-If $u,v\in V$ are two multiple vertices such that their multiplicities are $r$ and $s$, then
+Leg $G=(V,E)$ be a Laman graph. If $u,v\in V$ are two multiple vertices such that their multiplicities are $r$ and $s$, then
 $$
 r+s\leq n+1\,.
 $$
@@ -275,6 +292,16 @@ If $v_1v_2\notin E$, we set
 If a cycle goes through $T_1$ or $T_2$, then it must go through  $v_1, u$ and $v_2$. Therefore, the label 1 is there at least twice. At the same time, there are at least two labels 0 since  $v_1v_2\notin E$.
 
 If we place $v_1$ and $v_2$ into one point, then $T_1$ and $T_2$ can rotate around this point.
+\end{proof}
+
+\begin{thm}
+\label{thm:cutByVertices}
+Let $G=(V,E)$ be a Laman graph. If $V_{c}=\{v_1, \dots v_r\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. Moreover, $G$ has a non-rigid realization.
+\end{thm}
+\begin{proof}
+Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \{v\}$ and $V_N\cup \{v\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C \subset M$, resp. $C \subset N$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $v_i$ and $v_j$ such that $v_i, v_j\in V_c$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels 0 and at least two labels 1 within the cycle.
+
+A non-rigid realization can be obtained by putting all connecting vertices into one point. The \trcomp{} can rotate around this point.
 \end{proof}
 
 \begin{lem}
@@ -339,15 +366,7 @@ $\implies$: The restriction of $\delta_G$ to  $G_{T\rightarrow uv}$ gives the la
 $\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in E_{G_{T\rightarrow uv}}$ and $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(uv)$ for all $e\in E_T$. Since for every cycle going through $uv$, the label $\delta_{G_{T\rightarrow uv}}(uv)$ occurs at least twice, it must occur at least twice in arbitrary cycle going  through $T$.
 \end{proof}
 
-\begin{thm}
-\label{thm:cutByVertices}
-Let $G=(V,E)$ be a Laman graph. If $V_{c}=\{v_1, \dots v_r\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. Moreover, $G$ has a non-rigid realization.
-\end{thm}
-\begin{proof}
-Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \{v\}$ and $V_N\cup \{v\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $M \subset G$, resp. $N \subset G$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $v_i$ and $v_j$ such that $v_i, v_j\in C$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels 0 and at least two labels 1 within the cycle.
 
-A non-rigid realization can be obtained by putting all connecting vertices into one point. The \trcomp{} can rotate around this point.
-\end{proof}
 
 
 \begin{thm}
@@ -361,7 +380,7 @@ Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{}
 If $u_1, \dots, u_s$ are in the different connected component(s) of the graph $G'$ than $v_1, \dots, v_s$, then there exists a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{thm}
 \begin{proof}
-We remark that there might be no \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$ by Lemma~\ref{lem:numEdgesBetweenTwoParts} and Corollary~\ref{cor:replaceTrcompByLaman}.
+We remark that there might be no such \trcomps{} ($r=0$) or no connecting edges ($s=r$), but always $s\geq 3$ by Lemma~\ref{lem:numEdgesBetweenTwoParts} and Corollary~\ref{cor:replaceTrcompByLaman}.
 
 If there is $T_i$ such that $u_i v_i \notin E$, then there exists a nontrivial bidistance by Theorem~\ref{thm:componentWithNonadjacentVertices}.
 Otherwise, we may assume that there are only connecting edges  $u_1 v_1, \dots u_r v_r$ instead of \trcomps{} $T_1, \dots, T_r$ according to Lemma~\ref{lem:trcompToEdge}.

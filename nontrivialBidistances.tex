@@ -563,19 +563,37 @@ If a graph $T$ is a \trcomp{} (not necessarily a Laman graph), then $T$ is a cho
 Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 \sim_{\!\!\bigtriangleup} u_2u_3$, there is a chord $u_1u_3$.
 \end{proof}
 
-\section{new claims}
+\section{Nonrigid Laman subgraph}
 \begin{thm}
 Let $G$ be a Laman graph and let $H$ be its subgraph. If $H$ is Laman and has a nonrigid labeling, then $G$ has nonrigid labeling.
 \end{thm}
 \begin{proof}
-Let $(\lambda_e)_{e\in E_H}$ be a nonrigid labeling of $H$. Fix an edge $\bar{u}\bar{v}\in E_H$. Let $(x_u, y_u)$ be coordinates of vertex $u\in V_H$. Let $X_H\subset \RR^{|V_H|}\times \RR^{|V_H|}$ be the set of solutions   of the following system of equation:
-\begin{align*}
-(x_u-x_v)^2 + (y_u-y_v)^2 &= \lambda_{uv} \quad \text{ for all } uv\in E_H \setminus \{\bar{u}\bar{v}\} \,,\\
+Let $(\lambda_e)_{e\in E_H}$ be a nonrigid labeling of $H$. Fix an edge $\bar{u}\bar{v}\in E_H$. Let variables $(x_u, y_u)$ be coordinates of vertex $u\in V_H$. Let $X_H\subset (\RR\times \RR)^{|V_H|}$ be the set of solutions   of the following system of equation:
+\begin{align}
+\label{eq:forH}
+(x_u-x_v)^2 + (y_u-y_v)^2 &= \lambda_{uv} \quad \text{ for all } uv\in E_H \setminus \{\bar{u}\bar{v}\} \,,\nonumber\\
 x_{\bar{u}}=0,\quad & \quad y_{\bar{u}}=0\,,	\\
-x_{\bar{v}}=\lambda_{\bar{u}\bar{v}}, \quad & \quad   y_{\bar{v}}=0\,.
-\end{align*}
+x_{\bar{v}}=\lambda_{\bar{u}\bar{v}}, \quad & \quad   y_{\bar{v}}=0 \nonumber\,.
+\end{align}
 Each solution $((x_u, y_u))_{u\in V_H}\in X_H$ gives a compatible embedding.
-Since coordinates of $\bar{u}$ and $\bar{v}$ are fixed, no translations or rotations are possible, i.e., the number of solutions is the number of compatible embeddings. Since $(\lambda_e)_{e\in E_H}$ is nonrigid, this number is infinite. Hence, the set of solutions $X_H$ is an algebraic variety  of dimension at least one. Let $P\in X_H$ be a nonsingular point.  Now $\lcodim_P X_H < 2|V_H|$.
+Since coordinates of $\bar{u}$ and $\bar{v}$ are fixed, no translations or rotations are possible, i.e., the number of solutions is the number of compatible embeddings. Since $(\lambda_e)_{e\in E_H}$ is nonrigid, this number is infinite. Hence, the set of solutions $X_H$ is an algebraic variety  of dimension at least one. Let $P=((x^P_u, y^P_u))_{u\in V_H}\in X_H$ be a nonsingular point.  Now $\lcodim_P X_H < 2|V_H|$.
+
+We take an embedding $\varepsilon:G\rightarrow \RR^2$ such that $\varepsilon(u)=(x^P_u, y^P_u)$ for all $u\in V_H$. Set $\lambda_{uv}:=||\varepsilon(u)-\varepsilon(v)||^2$ for all edges $uv \in E_G\setminus E_H$. We introduce new equations for variables $((x_u, y_u))_{u\in V_G\setminus V_H}$:
+\begin{equation}
+\label{eq:forGwithoutH}
+(x_u-x_v)^2 + (y_u-y_v)^2 = \lambda_{uv} \quad \text{ for all } uv\in E_G \setminus E_H\,.
+\end{equation}
+Let $X_G\subset(\RR\times \RR)^{|V_G|}$ be the set of solutions of \eqref{eq:forH} + \eqref{eq:forGwithoutH}. The construction implies that the point $P'=(P,(\varepsilon(u))_{u\in V_G\setminus V_H}))$ is in $X_G$. Since introducing new variables does not change local codimension, we have
+$$
+\lcodim_{P'} X_H \times \RR\times \RR)^{|V_G|-|V_H|}  =\lcodim_P X_H < 2|V_H|\,.
+$$
+Moreover, since a new equation can increase the local codimension by at most one, we have
+\begin{align*}
+\lcodim_{P'} X_G &\leq \lcodim_{P'} X_H \times \RR\times \RR)^{|V_G|-|V_H|} + |E_G|-|E_H| \\
+	&<2|V_H|+ |E_G|-|E_H| \\
+	&=2|V_H|+2|V_G|-3-(2|V_H|-3)=2|V_G|\,.
+\end{align*}
+Hence, the dimension of $X_G$ is at least one, i.e., $|X_G|=\infty$. This means that $(\lambda_e)_{e\in E_G}$ is a nonrigid labeling of $G$.
 \end{proof}
 
 \end{document}

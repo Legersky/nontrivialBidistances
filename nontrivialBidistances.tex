@@ -565,7 +565,7 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 
 \section{Nonrigid Laman subgraph}
 \begin{thm}
-Let $G$ be a Laman graph and let $H$ be its subgraph. If $H$ is Laman and has a nonrigid labeling, then $G$ has nonrigid labeling.
+Let $G$ be a Laman graph and let $H$ be its subgraph. If $H$ is a Laman which has a nonrigid labeling, then $G$ has a nonrigid labeling.
 \end{thm}
 \begin{proof}
 Let $(\lambda_e)_{e\in E_H}$ be a nonrigid labeling of $H$. Fix an edge $\bar{u}\bar{v}\in E_H$. Let variables $(x_u, y_u)$ be coordinates of vertex $u\in V_H$. Let $X_H\subset (\RR\times \RR)^{|V_H|}$ be the set of solutions   of the following system of equation:
@@ -585,15 +585,15 @@ We take an embedding $\varepsilon:G\rightarrow \RR^2$ such that $\varepsilon(u)=
 \end{equation}
 Let $X_G\subset(\RR\times \RR)^{|V_G|}$ be the set of solutions of \eqref{eq:forH} + \eqref{eq:forGwithoutH}. The construction implies that the point $P'=(P,(\varepsilon(u))_{u\in V_G\setminus V_H}))$ is in $X_G$. Since introducing new variables does not change local codimension, we have
 $$
-\lcodim_{P'} X_H \times \RR\times \RR)^{|V_G|-|V_H|}  =\lcodim_P X_H < 2|V_H|\,.
+\lcodim_{P'} X_H \times (\RR\times \RR)^{|V_G|-|V_H|}  =\lcodim_P X_H < 2|V_H|\,.
 $$
 Moreover, since a new equation can increase the local codimension by at most one, we have
 \begin{align*}
-\lcodim_{P'} X_G &\leq \lcodim_{P'} X_H \times \RR\times \RR)^{|V_G|-|V_H|} + |E_G|-|E_H| \\
+\lcodim_{P'} X_G &\leq \lcodim_{P'} X_H \times (\RR\times \RR)^{|V_G|-|V_H|} + |E_G|-|E_H| \\
 	&<2|V_H|+ |E_G|-|E_H| \\
 	&=2|V_H|+2|V_G|-3-(2|V_H|-3)=2|V_G|\,.
 \end{align*}
-Hence, the dimension of $X_G$ is at least one, i.e., $|X_G|=\infty$. This means that $(\lambda_e)_{e\in E_G}$ is a nonrigid labeling of $G$.
+Hence, the dimension of $X_G$ is at least one. This means that there are infinitely many embeddings compatible with $(\lambda_e)_{e\in E_G}$, i.e., $(\lambda_e)_{e\in E_G}$ is a nonrigid labeling of $G$.
 \end{proof}
 
 \end{document}

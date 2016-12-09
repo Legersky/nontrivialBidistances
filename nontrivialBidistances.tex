@@ -44,6 +44,31 @@
 If $G$ is a graph, then $V_G$ is the set of vertices of $G$ and $E_G$ is the set of edges of $G$.
 \end{defn}
 
+\begin{defn}
+Let $G$ be a simple graph.
+\begin{itemize}
+	\item An \emph{embedding} of $G$ is a map $\varepsilon:V_G\rightarrow \RR^2$. 
+	\item Two embeddings $\varepsilon_1$ and $\varepsilon_2$ are equivalent iff there exists a direct Euclidean isometry $\sigma$ of $\RR^2$ such that $\varepsilon_1=\sigma \circ\varepsilon_2$.
+	\item  Let $\lambda:E_G\rightarrow \RR_+$ be an edge labeling of $G$. An embedding $\varepsilon$ is \emph{compatible with} $\lambda$ iff  $$\forall uv=e\in E_G \colon ||\varepsilon(u)-\varepsilon(v)||^2=\lambda(e)\,.$$
+	\item A labelled graph $(G,\lambda)$ is \emph{realizable} iff it has a compatible embedding.
+	\item Let $\lambda$ be a realizable labeling of $G$. The labeling $\lambda$ is called \emph{rigid} iff the number of embeddings of $G$ compatible with $\lambda$ up to equivalence is finite. Otherwise,  $\lambda$ is called \emph{nonrigid}.
+ 	\item A graph $G$ is called \emph{generically rigid} iff $(G,\lambda)$ is rigid for a generic labeling $\lambda$.
+ 	\item A graph $G$ is called \emph{minimally generically rigid} iff $G$ is generically rigid and for all $e\in E_G$, the graph $G\setminus e$ is not generically rigid.
+\end{itemize} 
+\end{defn}
+
+\begin{defn}
+A graph $G$ is called Laman iff
+\begin{itemize}
+	\item $|E_G|=2|V_G|-3$ and
+	\item $|E_H|\leq 2|V_H|-3$ for every subgraph $H$ of $G$. 
+\end{itemize}  
+\end{defn}
+
+\begin{thm}[Laman]
+A graph $G$ is minimally generically rigid iff $G$ is \emph{Laman graph}.
+\end{thm}
+
 
 \begin{defn}
 Let $G$ and $H$ be graphs such that there exists a bijection $\rho: E_G \rightarrow E_H$. A pair $(G,H)$ is called a \emph{bigraph}. If $G=H$, we assume $\rho=\text{id}$.
@@ -535,4 +560,13 @@ If a graph $T$ is a \trcomp{} (not necessarily a Laman graph), then $T$ is a cho
 \begin{proof}
 Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 \sim_{\!\!\bigtriangleup} u_2u_3$, there is a chord $u_1u_3$.
 \end{proof}
+
+\section{new claims}
+\begin{thm}
+Let $G$ be a Laman graph and let $H$ be its subgraph. If $H$ is Laman and has a nonrigid labeling, then $G$ has nonrigid labeling.
+\end{thm}
+\begin{proof}
+Let 
+\end{proof}
+
 \end{document}

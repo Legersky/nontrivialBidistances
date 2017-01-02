@@ -613,8 +613,7 @@ Let $X$ and $Y$ be differentiable manifolds. If $f:X\rightarrow Y$  is a differe
 \end{lem}
 \begin{proof}
 Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\{x \in X \colon \rank J_f(x)<r \}$. A point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the
-"constant rank theorem" (this is in most differential geometry books, even in
-wikipedia), for every point of U - in particular for p itself - there is an open
+"constant rank theorem", for every point of U - in particular for p itself - there is an open
 subset V such that after some differentiable change of coordinates, the map f
 restricted to V becomes linear. If a linear map has discrete fibers, then the
 dimension of the domain is smaller than or equal to the dimension of the codomain.
@@ -632,7 +631,7 @@ f_G(\varepsilon)=((x_u-x_v)^2+(y_u-y_v)^2)_{uv\in E_G}\,.
 $$
 Analogously, we define $\mathcal{E}_H$, which is the projection of $\mathcal{E}_G$ into $(\RR\times\RR)^{|V_H|}$, and $f_H:\mathcal{E}_H \rightarrow (\RR^+)^{|E_H|}$.
 
-Now, the fibre $$A:=f_H^{-1}(\lambda_H)$$ has a positive dimension, since by assumption there are infinitely many embeddings compatible with $\lambda_H$.
+Now, the fibre $$A:=f_H^{-1}(\lambda_H)$$ is an algebraic variety with a positive dimension, since by assumption there are infinitely many embeddings compatible with $\lambda_H$. 
 
 Let $$B:=\{\varepsilon\in \mathcal{E}_G \colon f_H(\varepsilon|_{V_H})=\lambda_H\}$$ be all embeddings of $G$ whose restriction to $H$ is compatible with $\lambda_H$. The dimension of $B$ is $\dim A+2|V_G|-2|V_H|$.
 

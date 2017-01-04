@@ -629,6 +629,7 @@ Let $X'$
 \begin{thm}[Josef]
 Let $G$ be a Laman graph with a subgraph $H$ which is also Laman. If $H$ has a nonrigid labeling $\lambda_Hs$, then there exists a nonrigid labeling $\lambda_G$ of $G$.
 \end{thm}
+
 \begin{proof}
 Fix an edge $\bar{u}\bar{v}\in V_H$. Let $$\mathcal{E}_G=\left\{((x_u,y_u))_{|V_G|}\in (\RR\times\RR)^{|V_G|} \colon x_{\bar{u}}=y_{\bar{u}}=y_{\bar{v}}=0\right\}$$ be the set of all embeddings of $G$ into $\RR^2$ which have the fixed position of the vertex $\bar{u}$ and orientation of the edge $\bar{u}\bar{v}$.
 We define a map $f_G:\mathcal{E}_G \rightarrow (\RR^+)^{|E_G|}$ by 
@@ -651,7 +652,7 @@ Lemma \ref{lem:noInfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies th
 
 \end{proof}
 
-
+\newpage
 \begin{thm}
 If $V\subset \RR^n$ is an irreducible variety of dimension $d$, then the set $X=V\setminus\left\{x\colon x \text{ is singular point of } V\right\}$ is $d$-dimensional differentiable manifold.
 \end{thm}
@@ -660,27 +661,27 @@ Let $f_1,\dots, f_m$ be polynomials which generate the ideal of $V$. Let $f:\RR^
 
 By definition of nonsingular points and irreducibility of $V$, $d=\dim V=\dim T_p=n-\rank J_p(f)$ for all $p\in X$. Hence, $\rank J_p(f)$ is constant in $X$. 
 
-We fix a point $p\in X$. Since $X$ is open, we can apply constant rank theorem (Boothby, Chapter II, Theorem 7.1): there exists open subsets $A\subset X$ and $B\subset f(X)$ with $p\in A$ and $f(p)=0\in B$, open subsets $U\subset \RR^n$ and $W\subset \RR^m$ and diffeomorphisms $\varphi:A\rightarrow U$ and $\psi:B\rightarrow W$such that $\psi \circ f \circ \varphi^{-1}(U)\subset W$ and 
+We fix a point $p\in X$. We apply the constant rank theorem (Boothby, Chapter II, Theorem 7.1): there exists open subsets $A\subset \RR^n$ and $B\subset \RR^m$ with $p\in A$ and $f(p)=0\in B$, open subsets $U\subset \RR^n$ and $W\subset \RR^m$ and diffeomorphisms $\varphi:A\rightarrow U$ and $\psi:B\rightarrow W$such that $\psi \circ f \circ \varphi^{-1}(U)\subset W$ and 
 $$
 \psi \circ f \circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=(\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)\,,
 $$
-where $r=\rank J_p(f)$.
+where $r=\rank J_p(f)$. Since $X$ is open in $V$ (Bochnak, Coste, and Roy, Proposition 3.3.14), we can assume $A$ such that $A\cap V=A\cap X$.
 
-Let $H\subset A$ be a neighbourhood  of $p$. Now
+Set $H:= X\cap A$. The set $H$ is open in $X$ and
 \begin{align*}
- H &= f^{-1}(0) \cap H \\
- &= \left\{\varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=(x_1,\dots, x_n)\in H \colon f(x_1,\dots, x_n)=0\right\} \\
- &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=0\right\} \\
- &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon \psi \circ f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=\psi(0)\right\} \\
- &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon (\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)=\psi(0)\right\} \\
- &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon (\tilde{x}_1,\dots, \tilde{x}_r)=(\psi_1(0),\dots , \psi_r(0))\right\}\,.
+ H &=f^{-1}(0) \cap A = \left\{(x_1,\dots, x_n)\in A \colon f(x_1,\dots, x_n)=0\right\}\,.
 \end{align*}
-Since $\varphi$ is a homeomorphism, the set $S=\left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon (\tilde{x}_1,\dots, \tilde{x}_r)=(\psi_1(0),\dots , \psi_r(0))\right\}$ is open.
-Let  $\pi:\RR^n\rightarrow \RR^{n-r}$ be the projection given by $\pi(\tilde{x}_{1},\dots, \tilde{x}_n)=(\tilde{x}_{r+1},\dots, \tilde{x}_n)$. The mapping $\pi'$ given by restriction of $\pi$ to $(\psi_1(0),\dots , \psi_r(0)) \times \RR^{n-r}$ is diffeomorphism. We can conclude that
-\begin{align*}
- H= \varphi^{-1} \pi'^{-1} S' \,
+If we set $(\tilde{x}_1,\dots, \tilde{x}_n)=\varphi(x_1,\dots, x_n)$, then
+\begin{align*} 
+\varphi(H) &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=0\right\} \\
+ &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon \psi \circ f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=\psi(0)\right\} \\
+ &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon (\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)=\psi(0)\right\} \\
+ &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon (\tilde{x}_1,\dots, \tilde{x}_r)=(\psi_1(0),\dots , \psi_r(0))\right\}\\
+ &= U \cap Z \,,
 \end{align*}
-where $S'=\pi'(S)$ is an open subset of $\RR^{n-r}$. Since $d=n-r$, $X$ is $d$-dimensional manifold.
+where $Z= (\psi_1(0),\dots , \psi_r(0)) \times \RR^{n-r}$.
+
+Let  $\pi:\RR^n\rightarrow \RR^{n-r}$ be the projection given by $\pi(\tilde{x}_{1},\dots, \tilde{x}_n)=(\tilde{x}_{r+1},\dots, \tilde{x}_n)$. The mapping $\pi'=\pi|_Z$ is a diffeomorphism from $Z$ onto $\RR^{n-r}$. Hence, $\pi'\circ \varphi (H)= \pi'( U \cap Z )$ is open in $\RR^{n-r}$, i.e., $(H,\pi'\circ\varphi|_H$ is a chart of $X$. Since $d=n-r$, $X$ is $d$-dimensional manifold.
 \end{proof}
 
 \end{document}

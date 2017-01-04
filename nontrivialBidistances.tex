@@ -608,17 +608,24 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 
 \section{Laman subgraph}
 \begin{lem}[Josef]
-\label{lem:noInfFibre}
+\label{lem:noInfFibreManifolds}
 Let $X$ and $Y$ be differentiable manifolds. If $f:X\rightarrow Y$  is a differentiable map such that each fibre is discrete, then $\dim X \leq \dim Y$.
 \end{lem}
 \begin{proof}
 Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\{x \in X \colon \rank J_f(x)<r \}$. A point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the
 "constant rank theorem", for every point of U - in particular for p itself - there is an open
 subset V such that after some differentiable change of coordinates, the map f
-restricted to V becomes linear. If a linear map has discrete fibers, then the
+restricted to V becomes linear. If a linear map has discrete fibres, then the
 dimension of the domain is smaller than or equal to the dimension of the codomain.
 \end{proof}
 
+\begin{lem}
+\label{lem:noInfFibre}
+Let $X$ and $Y$ be algebraic varieties, $Y$ nonsingular. If $f:X\rightarrow Y$  is a polynomial map  and $\dim X \leq \dim Y$, then there exists $y\in Y$ such that the fibre $f^{-1}(y)$ is infinite.
+\end{lem}
+\begin{proof}
+Let $X'$
+\end{proof}
 
 \begin{thm}[Josef]
 Let $G$ be a Laman graph with a subgraph $H$ which is also Laman. If $H$ has a nonrigid labeling $\lambda_Hs$, then there exists a nonrigid labeling $\lambda_G$ of $G$.

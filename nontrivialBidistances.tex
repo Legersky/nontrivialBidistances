@@ -81,7 +81,7 @@ Let $G$ and $H$ be graphs such that there exists a bijection $\rho: E_G \rightar
 Let $(G,H)$ be a bigraph with a bijection $\rho$, let $(w_e)_{e\in E_G}\in \RR^{|E_G|}$ and let $\bar{e}\in E_G$ be a distinguished edge. A pair of mappings $(d_G,d_H)$, where $d_G:E_G\rightarrow \RR$ and $d_H:E_H\rightarrow \RR$, is called a \emph{bidistance}, if the following conditions holds:
 \begin{itemize}
 \item $d_G(\bar{e})=d_H(\bar{e})=0$,
-\item $d_G(e)+d_H(\rho(e))=w_e$ for all $e\in E_G\setminus \{\bar{e}\}$,
+\item $d_G(e)+d_H(\rho(e))=w_e$ for all $e\in E_G\setminus \left\{\bar{e}\right\}$,
 \item for every cycle in $G$, the minimum of the values of $d_G$ is attained at least twice and analogously for $H$.
 \end{itemize}
 \end{defn}
@@ -107,7 +107,7 @@ The maximum of $d_G$ corresponds to the minimum of $-d_G$ and vice versa. The cl
 
 \begin{cor}
 \label{cor:binaryLabelling}
-A graph $G$ has a nontrivial bidistance $d_G$ iff there exists an edge labeling $\delta:E\rightarrow \{0,1\}$ such that $\delta(E)=\{0,1\}$ and for every cycle in $G$, neither 0 or 1 occurs exactly once.
+A graph $G$ has a nontrivial bidistance $d_G$ iff there exists an edge labeling $\delta:E\rightarrow \left\{0,1\right\}$ such that $\delta(E)=\left\{0,1\right\}$ and for every cycle in $G$, neither 0 or 1 occurs exactly once.
 \end{cor}
 \begin{proof}
 $\implies$: We may assume that $d_G(E)$ has at least one positive element, otherwise take $-d_G$. Set
@@ -141,7 +141,7 @@ Set
 \end{align*} 
 Now consider a cycle $C$ in $G$. If $v_0\notin C$, then $\delta(e)=0$ for all $e\in C$. If $v_0\in C$ then the label 1 occurs exactly twice (for the edges adjacent to $v_0$) and the label 0 at least twice as the length of C is at least four.
 
-If there exists an edge which is not associated to $v_0$, then $\delta(E)=\{0,1\}$. Otherwise, the graph $G$ is a star, i.e., it has clearly a nontrivial bidistance.
+If there exists an edge which is not associated to $v_0$, then $\delta(E)=\left\{0,1\right\}$. Otherwise, the graph $G$ is a star, i.e., it has clearly a nontrivial bidistance.
 
 To obtain a non-rigid realization, put all neighbours of $v_0$ to the same point $p$. This is allowed as they are non-adjacent. Now the vertex $v_0$ can rotate around $p$.
 \end{proof}
@@ -153,7 +153,7 @@ Now we focus on graphs which do not satisfy the condition of Theorem~\ref{thm:ve
 \begin{defn}
 Let $G=(V,E)$ be a connected graph such that for all $v\in V$ there is some $C_3\subset G$ such that $v\in C_3$. We define a relation on $E\times E$ by 
 $$e_1 \sim_{\!\!\bigtriangleup} e_2 \iff e_1=e_2 \text{ or } \exists\, C_3\subset G: e_1, e_2\in C_3\,.$$
-Let $E_1, \dots, E_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\{v\in V | \exists\, e\in E_i \colon v\in e\}$, is called a \emph{\trcomp{} (triangle-component)} if $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
+Let $E_1, \dots, E_n$ be equivalence classes of the transitive closure of $\sim_{\!\!\bigtriangleup}$ on $E$. The subgraph $T_i=(V_i,E_i)$ of $G$, where  $V_i=\left\{v\in V | \exists\, e\in E_i \colon v\in e\right\}$, is called a \emph{\trcomp{} (triangle-component)} if $|E_i|\geq 3$, and a \emph{connecting edge} otherwise.
 \end{defn}
 
 \begin{rem}
@@ -300,13 +300,13 @@ We use Corollary~\ref{cor:binaryLabelling} for the proof. Set
 \delta(e)&=1 \qquad \text{if } e\in T \\
 		&=0 \qquad \text{otherwise.}
 \end{align*} 
-All cycles going through $T$ contains the label 1 at least twice as there is no edge between connecting vertices. Also, there are at least two labels 0, if a cycle is not only in $T$, since there is no connecting edge with both endpoints in $T$ by Lemma~\ref{lem:noEdgeInSameComponent}. Obviously, $\delta(E)=\{0,1\}$ as there are at least two \trcomps{}.
+All cycles going through $T$ contains the label 1 at least twice as there is no edge between connecting vertices. Also, there are at least two labels 0, if a cycle is not only in $T$, since there is no connecting edge with both endpoints in $T$ by Lemma~\ref{lem:noEdgeInSameComponent}. Obviously, $\delta(E)=\left\{0,1\right\}$ as there are at least two \trcomps{}.
 
 A non-rigid realization can be obtained by putting all connecting vertices into one point. This is possible since they are non-adjacent. The \trcomp{} can rotate around this point.
 \end{proof}
 
 \begin{cor}
-Let $T_1$ and $T_2$ be distinct \trcomps{} or connecting edges of a Laman graph $G$. If $T_i$ has only two connecting vertices $u$ and $v_i$ (or $T_i=uv_i$ if $T_i$ is a connecting edge) for $i\in\{1,2\}$, then  the graph $G$ has a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
+Let $T_1$ and $T_2$ be distinct \trcomps{} or connecting edges of a Laman graph $G$. If $T_i$ has only two connecting vertices $u$ and $v_i$ (or $T_i=uv_i$ if $T_i$ is a connecting edge) for $i\in\left\{1,2\right\}$, then  the graph $G$ has a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{cor}
 \begin{proof}
 We have $uv_1\notin E$ or $uv_2\notin E$ or $v_1v_2\notin E$, otherwise $T_1$ and $T_2$ coincide.
@@ -324,17 +324,17 @@ If we place $v_1$ and $v_2$ into one point, then $T_1$ and $T_2$ can rotate arou
 
 \begin{thm}
 \label{thm:cutByVertices}
-Let $G=(V,E)$ be a Laman graph. If $V_{c}=\{v_1, \dots v_r\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. Moreover, $G$ has a non-rigid realization.
+Let $G=(V,E)$ be a Laman graph. If $V_{c}=\left\{v_1, \dots v_r\right\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. Moreover, $G$ has a non-rigid realization.
 \end{thm}
 \begin{proof}
-Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \{v\}$ and $V_N\cup \{v\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C \subset M$, resp. $C \subset N$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $v_i$ and $v_j$ such that $v_i, v_j\in V_c$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels 0 and at least two labels 1 within the cycle.
+Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \left\{v\right\}$ and $V_N\cup \left\{v\right\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C \subset M$, resp. $C \subset N$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $v_i$ and $v_j$ such that $v_i, v_j\in V_c$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels 0 and at least two labels 1 within the cycle.
 
 A non-rigid realization can be obtained by putting all connecting vertices into one point. The \trcomp{} can rotate around this point.
 \end{proof}
 
 \begin{lem}
 \label{lem:numEdgesBetweenTwoParts}
-Let $G=(V,E)$ be a Laman graph. If $H_1=(V_1,E_1)$ and $H_2=(V_2,E_2)$ are induced subgraphs of $G$ such that $V_1 \cap V_2=\emptyset$ and $V=V_1\cup V_2$, then the set $E_c=\{uv\in E | u\in H_1 \text{ and } v\in H_2\}$ contains at least three edges.
+Let $G=(V,E)$ be a Laman graph. If $H_1=(V_1,E_1)$ and $H_2=(V_2,E_2)$ are induced subgraphs of $G$ such that $V_1 \cap V_2=\emptyset$ and $V=V_1\cup V_2$, then the set $E_c=\left\{uv\in E | u\in H_1 \text{ and } v\in H_2\right\}$ contains at least three edges.
 \end{lem}
 \begin{proof}
 The statement follows from
@@ -346,7 +346,7 @@ $$
 \begin{defn}
 Let $G=(V,E)$ be a graph and $H$ be its subgraph. We say that the $H$ \emph{can be replaced by} a graph $H'$ in $G$ iff
 $$
-V_{H'}\cap V=\{v\in V_H | \exists\, u\in V\setminus V_H \colon uv\in E\}\,.
+V_{H'}\cap V=\left\{v\in V_H | \exists\, u\in V\setminus V_H \colon uv\in E\right\}\,.
 $$
 The graph obtained by the replacement is defined as
 $$
@@ -379,7 +379,7 @@ which is  a contradiction with $G$ being a  Laman graph.
 
 \begin{cor}
 \label{cor:replaceTrcompByLaman}
-Let $T$ be a connecting edge or \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$. If $L$ is a Laman graph with the set of vertices $V_L=\{v_1, \dots, v_r\}$ and $T$ is a Laman graph, then the graph $G_{T\rightarrow L}$ is a Laman graph iff $G$ is a Laman graph.
+Let $T$ be a connecting edge or \trcomp{} of a graph $G=(V,E)$ with connecting vertices $v_1, \dots, v_r$. If $L$ is a Laman graph with the set of vertices $V_L=\left\{v_1, \dots, v_r\right\}$ and $T$ is a Laman graph, then the graph $G_{T\rightarrow L}$ is a Laman graph iff $G$ is a Laman graph.
 \end{cor}
 
 \begin{lem}
@@ -399,11 +399,11 @@ $\impliedby$: Define $\delta_G(e)=\delta_{G_{T\rightarrow uv}}(e)$ for all $e\in
 
 \begin{thm}
 \label{thm:cutToTwoParts}
-Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Let $G'$ be the graph obtained from $G$ by replacing $T_i$, resp. $u_iv_i$, by $(\{u_i, v_i\}, \emptyset)$ for all $i\in \{1, \dots, s\}$.
+Let $G=(V,E)$ be a Laman graph. Let  $T_1, \dots, T_r$ be some of the \trcomps{} of $G$ which have only two connecting vertices, namely $u_1, v_1, \dots u_r,v_r$, where  $T_i=(V_i,E_i)$ and $u_i, v_i\in V_i$. Let  $u_{r+1}v_{r+1}, \dots u_s v_s$ be some of the connecting edges of $G$. Let $G'$ be the graph obtained from $G$ by replacing $T_i$, resp. $u_iv_i$, by $(\left\{u_i, v_i\right\}, \emptyset)$ for all $i\in \left\{1, \dots, s\right\}$.
 % Set 
 %\begin{align*}
-%V_{ncon}&=\left\{v\in V_1 \cup \dots \cup V_r | v\notin \{u_1, \dots u_r\}\cup \{v_1, \dots v_r\} \right\} \qquad \text{and} \\
-%E_{con}&=E_1 \cup \dots \cup E_r \cup \{u_{r+1}v_{r+1}, \dots u_s v_s\}\,.
+%V_{ncon}&=\left\left\{v\in V_1 \cup \dots \cup V_r | v\notin \left\{u_1, \dots u_r\right\}\cup \left\{v_1, \dots v_r\right\} \right\right\} \qquad \text{and} \\
+%E_{con}&=E_1 \cup \dots \cup E_r \cup \left\{u_{r+1}v_{r+1}, \dots u_s v_s\right\}\,.
 %\end{align*}
 If $u_1, \dots, u_s$ are in the different connected component(s) of the graph $G'$ than $v_1, \dots, v_s$, then there exists a nontrivial bidistance.  Moreover, $G$ has a non-rigid realization (informal proof...).
 \end{thm}
@@ -415,11 +415,11 @@ Otherwise, we may assume that there are only connecting edges  $u_1 v_1, \dots u
 
 The idea is following: since the graph $G'\subset G$ is disconnected, every cycle in $G$ which does not stay in a connected component of $G'$ must go through the given  connecting edges at least twice.
 
-We may assume that all $u_1, \dots, u_s$ are in the same connected component $M$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\{u_1, \dots, u_s\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\{v_1, \dots, v_s\}$ are in one connected component $N$. Thus $G'$ consists of only two connected components $M$ and $N$, otherwise $G$ is not connected. In fact, $M$ and $N$ are induced subgraphs of $G$ linked by the connecting edges $\{u_1v_1, \dots, u_sv_s\}$.
+We may assume that all $u_1, \dots, u_s$ are in the same connected component $M$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\left\{u_1, \dots, u_s\right\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\left\{v_1, \dots, v_s\right\}$ are in one connected component $N$. Thus $G'$ consists of only two connected components $M$ and $N$, otherwise $G$ is not connected. In fact, $M$ and $N$ are induced subgraphs of $G$ linked by the connecting edges $\left\{u_1v_1, \dots, u_sv_s\right\}$.
 
-Set $\delta(u_i v_i)=1$ for all $i\in \{1, \dots, s\}$ and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C\subset M$ or  $C\subset N$, then all labels are 0. Otherwise, $C$ contains some $u_iv_i$ and $u_jv_j$ such that $u_iv_i\neq u_jv_j$. Hence, the label 1 is in $C$ at least twice. If $u_i\neq u_j$ and $v_j\neq v_j$, then there must be at least one edge in $M\cap C$ and at least one edge in $N\cap C$.  If $u_i=u_j$, then $v_i$ and $v_j$ are non-adjacent, otherwise $u_iv_i \sim_{\!\!\bigtriangleup} u_jv_j$. Thus, there are at least two edges in $C\cap N$. The case $v_i=v_j$ is analogous. Therefore, the label 0 is in $C$ at least twice.
+Set $\delta(u_i v_i)=1$ for all $i\in \left\{1, \dots, s\right\}$ and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C\subset M$ or  $C\subset N$, then all labels are 0. Otherwise, $C$ contains some $u_iv_i$ and $u_jv_j$ such that $u_iv_i\neq u_jv_j$. Hence, the label 1 is in $C$ at least twice. If $u_i\neq u_j$ and $v_j\neq v_j$, then there must be at least one edge in $M\cap C$ and at least one edge in $N\cap C$.  If $u_i=u_j$, then $v_i$ and $v_j$ are non-adjacent, otherwise $u_iv_i \sim_{\!\!\bigtriangleup} u_jv_j$. Thus, there are at least two edges in $C\cap N$. The case $v_i=v_j$ is analogous. Therefore, the label 0 is in $C$ at least twice.
 
-If we choose such a realization that all edges $\{u_1v_1, \dots, u_sv_s\}$ are parallel and have the same length, then $M$ can move around $N$ along a circle.
+If we choose such a realization that all edges $\left\{u_1v_1, \dots, u_sv_s\right\}$ are parallel and have the same length, then $M$ can move around $N$ along a circle.
 \end{proof}
 
 \begin{cor}
@@ -447,7 +447,7 @@ Let $G$ be a Laman graph constructed only by Henneberg moves of type I. The grap
 $\implies$: If there is only one \trcomp{}, then all edges have the same bidistance by Lemma~\ref{lem:bidistanceInTrcomp}.
 
 $\impliedby$:
-Let $(\{v_0,v_1\}, \{v_0v_1\})= G_1, \dots, G_s=G$ be a sequence of graphs given by a sequence of Henneberg moves of type I, $G_i=(V_i,E_i)$. For each $G_i$, we construct by induction an edge labeling $\delta_i$ which corresponds to a bidistance of $G_i$ according to Corollary~\ref{cor:binaryLabelling}. Set $\delta_0(v_0v_1)=0$. Let $\delta_{i-1}$ be the edge labelling of $G_{i-1}$ and the new vertex $v_i$ is linked to vertices $u,v \in G_{i-1}$.
+Let $(\left\{v_0,v_1\right\}, \left\{v_0v_1\right\})= G_1, \dots, G_s=G$ be a sequence of graphs given by a sequence of Henneberg moves of type I, $G_i=(V_i,E_i)$. For each $G_i$, we construct by induction an edge labeling $\delta_i$ which corresponds to a bidistance of $G_i$ according to Corollary~\ref{cor:binaryLabelling}. Set $\delta_0(v_0v_1)=0$. Let $\delta_{i-1}$ be the edge labelling of $G_{i-1}$ and the new vertex $v_i$ is linked to vertices $u,v \in G_{i-1}$.
 We distinguish two cases:
 \begin{enumerate}[a)]
 	\item If $uv\in E_{i-1}$, then $\delta_i(e)=\delta_{i-1}(e)$ for all $e \in E_{i-1}$ and $\delta_{i}(uv_i)=\delta_{i}(vv_i)=\delta_{i-1}(uv)$.
@@ -471,7 +471,7 @@ Let $G$ be a Laman graph with \trcomps{} $T_1,\dots, T_n$. There exists a nontri
 Let $T$ be a \trcomp{} of a Laman graph. If $v\in V_T$, then the subgraph $N$ of $T$ induced by the neighbours of $v$ is a tree.
 \end{lem}
 \begin{proof}
-Let $M$ be the subgraph of $T$ induced by $V_N \cup \{v\}$. The Laman condition implies
+Let $M$ be the subgraph of $T$ induced by $V_N \cup \left\{v\right\}$. The Laman condition implies
 $$
 \deg_T (v)+|E_N|=|E_M| \leq 2|V_M|-3=2(\deg_T(v)+1)-3\,.
 $$
@@ -479,7 +479,7 @@ Hence, $|E_N| \leq \deg_T(v)-1$.
 By the definition of \trcomp{}, for every $u\in V_N$ there must be $u'\in V_N$ such that $uu' \in E_N$. If $N$ is connected, then $|E_N|\geq|V_N|-1=\deg_T(v)-1$. Therefore, $|E_N| = |V_N|-1$ and $N$ is connected, i.e., $N$ is a tree.
 
 Suppose that $N$ is not connected. Let $N_1$ be one of the  connected components of $N$ and let $N_2$ be the union of rest of them. Let $v'\notin V_T$ be some new vertex.  We can construct the graph 
-$$T'=\left(V_T\cup \{v'\}, \left(E_T\setminus \{vw|w\in E_{N_1}\}\right)\cup\{v'w|w\in E_{N_1}\}\right)\,.$$
+$$T'=\left(V_T\cup \left\{v'\right\}, \left(E_T\setminus \left\{vw|w\in E_{N_1}\right\}\right)\cup\left\{v'w|w\in E_{N_1}\right\}\right)\,.$$
 Since edges $E_{N_1}$ are in equivalence (meaning transitive closure of $\sim_{\!\!\bigtriangleup}$) with edges $E_{N_2}$, but there is no edge from $V_{N_1}$ to $V_{N_2}$, the graph $T'$ is a \trcomp{}. It is a contradiction since $|E_T|=|E_{T'}|$, but $|V_T|=|V_{T'}|-1$.
 \end{proof}
 
@@ -580,7 +580,7 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 %Let $(\lambda_e)_{e\in E_H}$ be a nonrigid labeling of $H$. Fix an edge $\bar{u}\bar{v}\in E_H$. Let variables $(x_u, y_u)$ be coordinates of vertex $u\in V_H$. Let $X_H\subset (\RR\times \RR)^{|V_H|}$ be the set of solutions   of the following system of equation:
 %\begin{align}
 %\label{eq:forH}
-%(x_u-x_v)^2 + (y_u-y_v)^2 &= \lambda_{uv} \quad \text{ for all } uv\in E_H \setminus \{\bar{u}\bar{v}\} \,,\nonumber\\
+%(x_u-x_v)^2 + (y_u-y_v)^2 &= \lambda_{uv} \quad \text{ for all } uv\in E_H \setminus \left\{\bar{u}\bar{v}\right\} \,,\nonumber\\
 %x_{\bar{u}}=0,\quad & \quad y_{\bar{u}}=0\,,	\\
 %x_{\bar{v}}=\lambda_{\bar{u}\bar{v}}, \quad & \quad   y_{\bar{v}}=0 \nonumber\,.
 %\end{align}
@@ -612,8 +612,7 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 Let $X$ and $Y$ be differentiable manifolds. If $f:X\rightarrow Y$  is a differentiable map such that each fibre is discrete, then $\dim X \leq \dim Y$.
 \end{lem}
 \begin{proof}
-Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\{x \in X \colon \rank J_f(x)<r \}$. A point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the
-"constant rank theorem", for every point of U - in particular for p itself - there is an open
+Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\left\{x \in X \colon \rank J_f(x)<r \right\}$. A point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the constant rank theorem for manifolds (Boothby, Chapter III, Remark 4.2), for every point of U - in particular for p itself - there is an open
 subset V such that after some differentiable change of coordinates, the map f
 restricted to V becomes linear. If a linear map has discrete fibres, then the
 dimension of the domain is smaller than or equal to the dimension of the codomain.
@@ -621,7 +620,7 @@ dimension of the domain is smaller than or equal to the dimension of the codomai
 
 \begin{lem}
 \label{lem:noInfFibre}
-Let $X$ and $Y$ be algebraic varieties, $Y$ nonsingular. If $f:X\rightarrow Y$  is a polynomial map  and $\dim X \leq \dim Y$, then there exists $y\in Y$ such that the fibre $f^{-1}(y)$ is infinite.
+Let $X$ and $Y$ be algebraic varieties, $Y$ nonsingular. If $f:X\rightarrow Y$  is a polynomial map  and $\dim X > \dim Y$, then there exists $y\in Y$ such that the fibre $f^{-1}(y)$ is infinite.
 \end{lem}
 \begin{proof}
 Let $X'$
@@ -631,18 +630,18 @@ Let $X'$
 Let $G$ be a Laman graph with a subgraph $H$ which is also Laman. If $H$ has a nonrigid labeling $\lambda_Hs$, then there exists a nonrigid labeling $\lambda_G$ of $G$.
 \end{thm}
 \begin{proof}
-Fix an edge $\bar{u}\bar{v}\in V_H$. Let $$\mathcal{E}_G=\{((x_u,y_u))_{|V_G|}\in (\RR\times\RR)^{|V_G|} \colon x_{\bar{u}}=y_{\bar{u}}=y_{\bar{v}}=0\}$$ be the set of all embeddings of $G$ into $\RR^2$ which have the fixed position of the vertex $\bar{u}$ and orientation of the edge $\bar{u}\bar{v}$.
+Fix an edge $\bar{u}\bar{v}\in V_H$. Let $$\mathcal{E}_G=\left\{((x_u,y_u))_{|V_G|}\in (\RR\times\RR)^{|V_G|} \colon x_{\bar{u}}=y_{\bar{u}}=y_{\bar{v}}=0\right\}$$ be the set of all embeddings of $G$ into $\RR^2$ which have the fixed position of the vertex $\bar{u}$ and orientation of the edge $\bar{u}\bar{v}$.
 We define a map $f_G:\mathcal{E}_G \rightarrow (\RR^+)^{|E_G|}$ by 
 $$
 f_G(\varepsilon)=((x_u-x_v)^2+(y_u-y_v)^2)_{uv\in E_G}\,.
 $$
 Analogously, we define $\mathcal{E}_H$, which is the projection of $\mathcal{E}_G$ into $(\RR\times\RR)^{|V_H|}$, and $f_H:\mathcal{E}_H \rightarrow (\RR^+)^{|E_H|}$.
 
-Now, the fibre $$A:=f_H^{-1}(\lambda_H)$$ is an algebraic variety with a positive dimension, since by assumption there are infinitely many embeddings compatible with $\lambda_H$. 
+Now, the fibre $$A:=f_H^{-1}(\lambda_H)$$ is an algebraic variety of a positive dimension, since by assumption there are infinitely many embeddings compatible with $\lambda_H$. 
 
-Let $$B:=\{\varepsilon\in \mathcal{E}_G \colon f_H(\varepsilon|_{V_H})=\lambda_H\}$$ be all embeddings of $G$ whose restriction to $H$ is compatible with $\lambda_H$. The dimension of $B$ is $\dim A+2|V_G|-2|V_H|$.
+Let $$B:=\left\{\varepsilon\in \mathcal{E}_G \colon f_H(\varepsilon|_{V_H})=\lambda_H\right\}$$ be all embeddings of $G$ whose restriction to $H$ is compatible with $\lambda_H$. The dimension of $B$ is $\dim A+2|V_G|-2|V_H|$.
 
-Set $$C:=\{\lambda \in (\RR^+)^{|E_G|} \colon \lambda|_{E_H}=\lambda_H\}\,.$$ Its dimension is $|E_G|-|E_H|$.
+Set $$C:=\left\{\lambda \in (\RR^+)^{|E_G|} \colon \lambda|_{E_H}=\lambda_H\right\}\,.$$ Its dimension is $|E_G|-|E_H|$.
 
 By assumption that $H$ is Laman, we have
 $$
@@ -650,6 +649,38 @@ $$
 $$
 Lemma \ref{lem:noInfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that there exists a labeling $\lambda_G$ of $G$ which has an infinite fibre $f_G^{-1}(\lambda_G)$, i.e., it is nonrigid labeling of $G$.
 
+\end{proof}
+
+
+\begin{thm}
+If $V\subset \RR^n$ is an irreducible variety of dimension $d$, then the set $X=V\setminus\left\{x\colon x \text{ is singular point of } V\right\}$ is $d$-dimensional differentiable manifold.
+\end{thm}
+\begin{proof}
+Let $f_1,\dots, f_m$ be polynomials which generate the ideal of $V$. Let $f:\RR^n\rightarrow\RR^m$ be the differentiable mapping given by $f=(f_1,\dots,f_m)$. 
+
+By definition of nonsingular points and irreducibility of $V$, $d=\dim V=\dim T_p=n-\rank J_p(f)$ for all $p\in X$. Hence, $\rank J_p(f)$ is constant in $X$. 
+
+We fix a point $p\in X$. Since $X$ is open, we can apply constant rank theorem (Boothby, Chapter II, Theorem 7.1): there exists open subsets $A\subset X$ and $B\subset f(X)$ with $p\in A$ and $f(p)=0\in B$, open subsets $U\subset \RR^n$ and $W\subset \RR^m$ and diffeomorphisms $\varphi:A\rightarrow U$ and $\psi:B\rightarrow W$such that $\psi \circ f \circ \varphi^{-1}(U)\subset W$ and 
+$$
+\psi \circ f \circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=(\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)\,,
+$$
+where $r=\rank J_p(f)$.
+
+Let $H\subset A$ be a neighbourhood  of $p$. Now
+\begin{align*}
+ H &= f^{-1}(0) \cap H \\
+ &= \left\{\varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=(x_1,\dots, x_n)\in H \colon f(x_1,\dots, x_n)=0\right\} \\
+ &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=0\right\} \\
+ &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon \psi \circ f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=\psi(0)\right\} \\
+ &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon (\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)=\psi(0)\right\} \\
+ &= \varphi^{-1} \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon (\tilde{x}_1,\dots, \tilde{x}_r)=(\psi_1(0),\dots , \psi_r(0))\right\}\,.
+\end{align*}
+Since $\varphi$ is a homeomorphism, the set $S=\left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in \varphi(H) \colon (\tilde{x}_1,\dots, \tilde{x}_r)=(\psi_1(0),\dots , \psi_r(0))\right\}$ is open.
+Let  $\pi:\RR^n\rightarrow \RR^{n-r}$ be the projection given by $\pi(\tilde{x}_{1},\dots, \tilde{x}_n)=(\tilde{x}_{r+1},\dots, \tilde{x}_n)$. The mapping $\pi'$ given by restriction of $\pi$ to $(\psi_1(0),\dots , \psi_r(0)) \times \RR^{n-r}$ is diffeomorphism. We can conclude that
+\begin{align*}
+ H= \varphi^{-1} \pi'^{-1} S' \,
+\end{align*}
+where $S'=\pi'(S)$ is an open subset of $\RR^{n-r}$. Since $d=n-r$, $X$ is $d$-dimensional manifold.
 \end{proof}
 
 \end{document}

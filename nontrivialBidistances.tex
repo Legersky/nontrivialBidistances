@@ -608,7 +608,7 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 
 \section{Laman subgraph}
 \begin{lem}[Josef]
-\label{lem:noInfFibreManifolds}
+\label{lem:InfFibreManifolds}
 Let $X$ and $Y$ be real differentiable manifolds of dimensions $m$ and $n$. Let $f:X\rightarrow Y$  be a differentiable map. If $m > n$, then there exists a point $y\in Y$ such that the fibre of $y$ is infinite.
 \end{lem}
 \begin{proof}
@@ -620,6 +620,7 @@ Therefore, $\psi\circ f\circ\varphi^{-1}:\RR^m\rightarrow \RR^n $ is a linear ma
 \end{proof}
 
 \begin{thm}
+\label{thm:varietyIsManifold}
 If $V\subset \RR^n$ is an irreducible variety of dimension $d$, then the set $X=V\setminus\left\{x\colon x \text{ is singular point of } V\right\}$ is $d$-dimensional differentiable manifold.
 \end{thm}
 \begin{proof}
@@ -657,22 +658,24 @@ Hence, $\pi\circ \varphi (H)= \pi( U \cap Z )$ is open in $\RR^{n-r}$, i.e., $(H
 
 
 \begin{lem}
-\label{lem:noInfFibre}
-Let $X$ and $Y$ be algebraic varieties, $Y$ nonsingular. If $f:X\rightarrow Y$  is a polynomial map  and $\dim X > \dim Y$, then there exists $y\in Y$ such that the fibre $f^{-1}(y)$ is infinite.
+\label{lem:InfFibre}
+Let $V$ and $W$ be real algebraic varieties, $W$ nonsingular. If $f:V\rightarrow W$  is a polynomial map  and $\dim V > \dim W$, then there exists $y\in W$ such that the fibre $f^{-1}(y)$ is infinite.
 \end{lem}
 \begin{proof}
-Let $X'$
+Let $X$ be an irreducible component of $V$ such that $\dim X=\dim V$. By Theorem~\ref{thm:varietyIsManifold}, the set $X'=X\setminus\left\{x\colon x \text{ is singular point of } X\right\}$ and $W$ are differentiable manifolds of dimensions $\dim V$ and $\dim W$. Now $f|_{X'}$ is a differentiable mapping and  Lemma~\ref{lem:InfFibreManifolds} provides $y\in W$ such that $f^{-1}|_{X'}(y)$ is infinite. Hence, also the fibre $f^{-1}(y)$ is infinite.
 \end{proof}
 
 \begin{thm}[Josef]
-Let $G$ be a Laman graph with a subgraph $H$ which is also Laman. If $H$ has a nonrigid labeling $\lambda_Hs$, then there exists a nonrigid labeling $\lambda_G$ of $G$.
+Let $G$ be a Laman graph with a subgraph $H$ which is also Laman. If $H$ has a nonrigid labeling $\lambda_H$, then there exists a nonrigid labeling $\lambda_G$ of $G$  such that $\lambda_G|_{E_H}=\lambda_H$.
 \end{thm}
 
 \begin{proof}
-Fix an edge $\bar{u}\bar{v}\in V_H$. Let $$\mathcal{E}_G=\left\{((x_u,y_u))_{|V_G|}\in (\RR\times\RR)^{|V_G|} \colon x_{\bar{u}}=y_{\bar{u}}=y_{\bar{v}}=0\right\}$$ be the set of all embeddings of $G$ into $\RR^2$ which have the fixed position of the vertex $\bar{u}$ and orientation of the edge $\bar{u}\bar{v}$.
+Fix an edge $\bar{u}\bar{v}\in V_H$. Let 
+$$\mathcal{E}_G=\left\{\left((x_u,y_u)\right)_{u\in|V_G|}\in \left(\RR\times\RR\right)^{|V_G|} \colon x_{\bar{u}}=y_{\bar{u}}=y_{\bar{v}}=0\right\}$$
+ be the set of all embeddings of $G$ into $\RR^2$ which have the fixed position of the vertex $\bar{u}$ and orientation of the edge $\bar{u}\bar{v}$.
 We define a map $f_G:\mathcal{E}_G \rightarrow (\RR^+)^{|E_G|}$ by 
 $$
-f_G(\varepsilon)=((x_u-x_v)^2+(y_u-y_v)^2)_{uv\in E_G}\,.
+f_G(\varepsilon)=\left( (x_u-x_v)^2+(y_u-y_v)^2 \right)_{uv\in E_G}\,.
 $$
 Analogously, we define $\mathcal{E}_H$, which is the projection of $\mathcal{E}_G$ into $(\RR\times\RR)^{|V_H|}$, and $f_H:\mathcal{E}_H \rightarrow (\RR^+)^{|E_H|}$.
 
@@ -686,7 +689,7 @@ By assumption that $H$ is Laman, we have
 $$
 \dim C=|E_G|-|E_H|=2(|V_G|-|V_H|)<2(|V_G|-|V_H|)+\dim A=\dim B\,.
 $$
-Lemma \ref{lem:noInfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that there exists a labeling $\lambda_G$ of $G$ which has an infinite fibre $f_G^{-1}(\lambda_G)$, i.e., it is nonrigid labeling of $G$.
+Lemma \ref{lem:InfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that there exists a labeling $\lambda_G$ of $G$ which has an infinite fibre $f_G^{-1}(\lambda_G)$, i.e., it is nonrigid labeling of $G$.
 
 \end{proof}
 

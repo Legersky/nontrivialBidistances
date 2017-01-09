@@ -605,6 +605,7 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 %Hence, the dimension of $X_G$ is at least one. This means that there are infinitely many embeddings compatible with $(\lambda_e)_{e\in E_G}$, i.e., $(\lambda_e)_{e\in E_G}$ is a nonrigid labeling of $G$.
 %\end{proof}
 
+\newpage
 
 \section{Laman subgraph}
 \begin{lem}[Josef]
@@ -612,11 +613,11 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 Let $X$ and $Y$ be real differentiable manifolds of dimensions $m$ and $n$. Let $f:X\rightarrow Y$  be a differentiable map. If $m > n$, then there exists a point $y\in Y$ such that the fibre of $y$ is infinite.
 \end{lem}
 \begin{proof}
-Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\left\{x \in X \colon \rank J_f(x)<r \right\}$. A point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, $X\setminus S$ is open in $X$ and there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the constant rank theorem for manifolds (Boothby, Chapter III, Remark 4.2), for every point of $U$ - in particular for $p$ itself - there are charts $(U',\varphi)$ and $(V,\psi)$ of $U$ and $f(U)\subset Y$, i.e., $U'$ is an open subset of $U$, $V$ is an open subset of $Y$, $\varphi:U'\rightarrow \RR^m$ and $\psi:V\rightarrow \RR^n$, such that $\varphi(p)=(0, \dots, 0)$, $\psi(f(p))=(0, \dots, 0)$ and 
+Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\left\{x \in X \colon \rank J_f(x)<r \right\}$, i.e., a point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, $X\setminus S$ is open in $X$ and there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the constant rank theorem for manifolds (Boothby, Chapter III, Remark 4.2), for every point of $U$ - in particular for $p$ itself - there are charts $(U',\varphi)$ and $(V,\psi)$ of $U$ and $f(U)\subset Y$, i.e., $U'$ is an open subset of $U$, $V$ is an open subset of $Y$, $\varphi:U'\rightarrow \RR^m$ and $\psi:V\rightarrow \RR^n$, such that $\varphi(p)=(0, \dots, 0)$, $\psi(f(p))=(0, \dots, 0)$ and 
 $$
 \psi\circ f\circ\varphi^{-1}(x_1, \dots, x_m)=(x_1, \dots, x_r, 0, \dots, 0)\,.
 $$
-Therefore, $\psi\circ f\circ\varphi^{-1}:\RR^m\rightarrow \RR^n $ is a linear map. If $m>n$, then there are infinitely many points in the fibre $(\psi\circ f\circ\varphi^{-1})^{-1}(0,\dots,0)$. Since $\varphi$ and $\psi$ are bijections, there  are infinitely many points in $f^{-1}(y)$ where $y:=f(p)=\psi^{-1}(0,\dots,0)$.
+Therefore, $\psi\circ f\circ\varphi^{-1}:\varphi(U')\rightarrow \RR^n $ is a linear map. If $m>n$, then there are infinitely many points in the fibre $(\psi\circ f\circ\varphi^{-1})^{-1}(0,\dots,0)$. Since $\varphi$ and $\psi$ are bijections, there  are infinitely many points in $f^{-1}(y)$ where $y:=f(p)=\psi^{-1}(0,\dots,0)$.
 \end{proof}
 
 \begin{thm}
@@ -659,7 +660,7 @@ Hence, $\pi\circ \varphi (H)= \pi( U \cap Z )$ is open in $\RR^{n-r}$, i.e., $(H
 
 \begin{lem}
 \label{lem:InfFibre}
-Let $V$ be a real algebraic variety and let $Y$ be a differentiable manifold. If $f:V\rightarrow Y$  is a polynomial map  and $\dim V > \dim Y$, then there exists $y\in Y$ such that the fibre $f^{-1}(y)$ is infinite.
+Let $V$ be a real algebraic variety and let $Y$ be a real differentiable manifold. If $f:V\rightarrow Y$  is a polynomial map  and $\dim V > \dim Y$, then there exists $y\in Y$ such that the fibre $f^{-1}(y)$ is infinite.
 \end{lem}
 \begin{proof}
 Let $X$ be an irreducible component of $V$ such that $\dim X=\dim V$. By Theorem~\ref{thm:varietyIsManifold}, the set $X'=X\setminus\left\{x\colon x \text{ is singular point of } X\right\}$ is a differentiable manifold of dimension $\dim V$. Now $f|_{X'}$ is a differentiable mapping and  Lemma~\ref{lem:InfFibreManifolds} provides $y\in Y$ such that $f^{-1}|_{X'}(y)$ is infinite. Hence, also the fibre $f^{-1}(y)$ is infinite.
@@ -672,28 +673,41 @@ Let $G$ be a Laman graph with a subgraph $H$ which is also Laman. If $H$ has a n
 \begin{proof}
 Fix an edge $\bar{u}\bar{v}\in V_H$. Let 
 $$\mathcal{E}_G=\left\{\left((x_u,y_u)\right)_{u\in|V_G|}\in \left(\RR\times\RR\right)^{|V_G|} \colon x_{\bar{u}}=y_{\bar{u}}=y_{\bar{v}}=0\right\}$$
- be the set of all embeddings of $G$ into $\RR^2$ which have the fixed position of the vertex $\bar{u}$ and orientation of the edge $\bar{u}\bar{v}$.
+ be the set of all embeddings of $V_G$ into $\RR^2$ which have the fixed position of the vertex $\bar{u}$ and orientation of the edge $\bar{u}\bar{v}$.
 We define a map $f_G:\mathcal{E}_G \rightarrow (\RR^+)^{|E_G|}$ by 
 $$
 f_G(\varepsilon)=\left( (x_u-x_v)^2+(y_u-y_v)^2 \right)_{uv\in E_G}\,.
 $$
 Analogously, we define $\mathcal{E}_H$, which is the projection of $\mathcal{E}_G$ into $(\RR\times\RR)^{|V_H|}$, and $f_H:\mathcal{E}_H \rightarrow (\RR^+)^{|E_H|}$.
 
-Now, the fibre $$A:=f_H^{-1}(\lambda_H)$$ is an algebraic variety of a positive dimension, since by assumption there are infinitely many embeddings compatible with $\lambda_H$. 
+Now, the fibre $$A:=f_H^{-1}(\lambda_H)$$ is an algebraic variety of a positive dimension, since  there are infinitely many embeddings compatible with $\lambda_H$ by the  assumption. 
 
-Let $$B:=\left\{\varepsilon\in \mathcal{E}_G \colon f_H(\varepsilon|_{V_H})=\lambda_H\right\}$$ be all embeddings of $G$ whose restriction to $H$ is compatible with $\lambda_H$. The dimension of $B$ is $\dim A+2|V_G|-2|V_H|$, since $B=A \times (\RR\times\RR)^{|V_G|-|V_H|}$.
+Let $B$ be all embeddings of $V_G$ whose projection into $V_H$ is compatible with $\lambda_H$,i.e., 
+$$B=\left\{\varepsilon\in \mathcal{E}_G \colon f_H(\varepsilon|_{V_H})=\lambda_H\right\}\,.$$
+ The dimension of $B$ is $\dim A+2|V_G|-2|V_H|$, since $B=A \times (\RR\times\RR)^{|V_G|-|V_H|}$.
 
 The set $$C:=\left\{\lambda \in (\RR^+)^{|E_G|} \colon \lambda|_{E_H}=\lambda_H\right\}$$ 
 is a differentiable manifold of dimension $|E_G|-|E_H|$.
 
-By assumption that $H$ is Laman, we have
+By the assumption that $H$ is Laman, we have
 $$
 \dim C=|E_G|-|E_H|=2(|V_G|-|V_H|)<2(|V_G|-|V_H|)+\dim A=\dim B\,.
 $$
-Lemma \ref{lem:InfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that there exists a labeling $\lambda_G\in C$ of $G$ which has an infinite fibre $f_G^{-1}(\lambda_G)$, i.e., it is nonrigid labeling of $G$.
+Lemma \ref{lem:InfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that there exists a labeling $\lambda_G\in C$ of $G$ which has an infinite fibre $f_G^{-1}(\lambda_G)$, i.e., it is a nonrigid labeling of $G$.
 
 \end{proof}
 
+\begin{cor}
+Let $G$ be a Laman graph. There is a nonrigid labeling of $G$ if some of the following conditions hold:
+\begin{enumerate}[i)]
+	\item There are \trcomps{} $T_1$ and $T_2$ linked by distinct connecting edges $e_1, e_2$ and $e_3$.
+	\item There are \trcomps{} $T_1$ and $T_2$ linked by a multiple vertex $v$ and connecting edge $e$.
+	\item There are two connecting edges $e_1=uv_1$ and $e_2=uv_2$ with the same vertex $u$ such that $v_1$ and $v_2$ are in the same \trcomp{} $T$.
+	\item There are three \trcomps{} such that each two of them are linked by a multiple vertex.
+\end{enumerate}
+\end{cor}
+\begin{proof}
 
+\end{proof}
 
 \end{document}

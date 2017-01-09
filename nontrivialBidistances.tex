@@ -659,10 +659,10 @@ Hence, $\pi\circ \varphi (H)= \pi( U \cap Z )$ is open in $\RR^{n-r}$, i.e., $(H
 
 \begin{lem}
 \label{lem:InfFibre}
-Let $V$ and $W$ be real algebraic varieties, $W$ nonsingular. If $f:V\rightarrow W$  is a polynomial map  and $\dim V > \dim W$, then there exists $y\in W$ such that the fibre $f^{-1}(y)$ is infinite.
+Let $V$ be a real algebraic variety and let $Y$ be a differentiable manifold. If $f:V\rightarrow Y$  is a polynomial map  and $\dim V > \dim Y$, then there exists $y\in Y$ such that the fibre $f^{-1}(y)$ is infinite.
 \end{lem}
 \begin{proof}
-Let $X$ be an irreducible component of $V$ such that $\dim X=\dim V$. By Theorem~\ref{thm:varietyIsManifold}, the set $X'=X\setminus\left\{x\colon x \text{ is singular point of } X\right\}$ and $W$ are differentiable manifolds of dimensions $\dim V$ and $\dim W$. Now $f|_{X'}$ is a differentiable mapping and  Lemma~\ref{lem:InfFibreManifolds} provides $y\in W$ such that $f^{-1}|_{X'}(y)$ is infinite. Hence, also the fibre $f^{-1}(y)$ is infinite.
+Let $X$ be an irreducible component of $V$ such that $\dim X=\dim V$. By Theorem~\ref{thm:varietyIsManifold}, the set $X'=X\setminus\left\{x\colon x \text{ is singular point of } X\right\}$ is a differentiable manifold of dimension $\dim V$. Now $f|_{X'}$ is a differentiable mapping and  Lemma~\ref{lem:InfFibreManifolds} provides $y\in Y$ such that $f^{-1}|_{X'}(y)$ is infinite. Hence, also the fibre $f^{-1}(y)$ is infinite.
 \end{proof}
 
 \begin{thm}[Josef]
@@ -681,15 +681,16 @@ Analogously, we define $\mathcal{E}_H$, which is the projection of $\mathcal{E}_
 
 Now, the fibre $$A:=f_H^{-1}(\lambda_H)$$ is an algebraic variety of a positive dimension, since by assumption there are infinitely many embeddings compatible with $\lambda_H$. 
 
-Let $$B:=\left\{\varepsilon\in \mathcal{E}_G \colon f_H(\varepsilon|_{V_H})=\lambda_H\right\}$$ be all embeddings of $G$ whose restriction to $H$ is compatible with $\lambda_H$. The dimension of $B$ is $\dim A+2|V_G|-2|V_H|$.
+Let $$B:=\left\{\varepsilon\in \mathcal{E}_G \colon f_H(\varepsilon|_{V_H})=\lambda_H\right\}$$ be all embeddings of $G$ whose restriction to $H$ is compatible with $\lambda_H$. The dimension of $B$ is $\dim A+2|V_G|-2|V_H|$, since $B=A \times (\RR\times\RR)^{|V_G|-|V_H|}$.
 
-Set $$C:=\left\{\lambda \in (\RR^+)^{|E_G|} \colon \lambda|_{E_H}=\lambda_H\right\}\,.$$ Its dimension is $|E_G|-|E_H|$.
+The set $$C:=\left\{\lambda \in (\RR^+)^{|E_G|} \colon \lambda|_{E_H}=\lambda_H\right\}$$ 
+is a differentiable manifold of dimension $|E_G|-|E_H|$.
 
 By assumption that $H$ is Laman, we have
 $$
 \dim C=|E_G|-|E_H|=2(|V_G|-|V_H|)<2(|V_G|-|V_H|)+\dim A=\dim B\,.
 $$
-Lemma \ref{lem:InfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that there exists a labeling $\lambda_G$ of $G$ which has an infinite fibre $f_G^{-1}(\lambda_G)$, i.e., it is nonrigid labeling of $G$.
+Lemma \ref{lem:InfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that there exists a labeling $\lambda_G\in C$ of $G$ which has an infinite fibre $f_G^{-1}(\lambda_G)$, i.e., it is nonrigid labeling of $G$.
 
 \end{proof}
 

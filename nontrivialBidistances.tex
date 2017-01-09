@@ -667,6 +667,7 @@ Let $X$ be an irreducible component of $V$ such that $\dim X=\dim V$. By Theorem
 \end{proof}
 
 \begin{thm}[Josef]
+\label{thm:nonrigidLamanSubgraph}
 Let $G$ be a Laman graph with a subgraph $H$ which is also Laman. If $H$ has a nonrigid labeling $\lambda_H$, then there exists a nonrigid labeling $\lambda_G$ of $G$  such that $\lambda_G|_{E_H}=\lambda_H$.
 \end{thm}
 
@@ -700,14 +701,39 @@ Lemma \ref{lem:InfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that
 \begin{cor}
 Let $G$ be a Laman graph. There is a nonrigid labeling of $G$ if some of the following conditions hold:
 \begin{enumerate}[i)]
-	\item There are \trcomps{} $T_1$ and $T_2$ linked by distinct connecting edges $e_1, e_2$ and $e_3$.
-	\item There are \trcomps{} $T_1$ and $T_2$ linked by a multiple vertex $v$ and connecting edge $e$.
-	\item There are two connecting edges $e_1=uv_1$ and $e_2=uv_2$ with the same vertex $u$ such that $v_1$ and $v_2$ are in the same \trcomp{} $T$.
-	\item There are three \trcomps{} such that each two of them are linked by a multiple vertex.
+	\item There are \trcomps{} $T_1$ and $T_2$ in $G$ linked by distinct connecting edges $e_1, e_2,e_3\in E_G$.
+	\item There are \trcomps{} $T_1$ and $T_2$ in $G$ linked by a multiple vertex $v\in V_{T_1}\cap V_{T_2}$ and connecting edge $e\in E_G$.
+	\item There are two connecting edges $e_1=uv_1,e_2=uv_2\in E_G$ with the same vertex $u$ such that $v_1$ and $v_2$ are in the same \trcomp{} $T$ of $G$.
+	\item There are three \trcomps{} in $G$ such that each two of them are linked by a multiple vertex.
 \end{enumerate}
 \end{cor}
 \begin{proof}
+For each case, we find a subgraph $H$ of $G$ which is a Laman graph and has a nonrigid labelling. A nonrigid labeling of $G$ is then obtained by Theorem~\ref{thm:nonrigidLamanSubgraph}.
 
+\textit{i)}: Let $H=(V_{T_1}\cup V_{T_2},E_{T_1}\cup E_{T_2} \cup \{e_1,e_2,e_3\})$. The graph $H$ is a subgraph of $G$ and it is also a Laman graph:
+$$
+|E_H|=|E_{T_1}| + |E_{T_2}|+3=2|V_{T_1}|-3 +2|V_{T_2}|-3+3=2|V_H|-3\,.
+$$
+Moreover, $H$ has a nonrigid labeling by Theorem~\ref{thm:cutToTwoParts}.
+
+\textit{ii)}: Let $H=(V_{T_1}\cup V_{T_2},E_{T_1}\cup E_{T_2} \cup \{e\})$. The graph $H$ is a subgraph of $G$ and it is also a Laman graph:
+$$
+|E_H|=|E_{T_1}| + |E_{T_2}|+1=2|V_{T_1}|-3 +2|V_{T_2}|-3+1=2(|V_{T_1}| +|V_{T_2}| -1)-3= 2|V_H|-3\,.
+$$
+Since at least one of the vertices of $e$ is non adjacent to $v$, $H$ has a nonrigid labeling by Theorem~\ref{thm:cutByVertices}.
+
+\textit{iii)}: Let $H=(V_{T}\cup \{u\},E_{T}\cup E_{T_2} \cup \{e_1,e_2\})$. The graph $H$ is a subgraph of $G$ and it is also a Laman graph:
+$$
+|E_H|=|E_{T}|+2=2|V_{T}|-3 +2=2(|V_{T}|+1)-3 =2|V_H|-3\,.
+$$
+Since the vertex $u$ is not in any \trcomp{} of $H$, $H$ has a nonrigid labeling by Theorem~\ref{thm:vertexNotInTriangle}.
+
+\textit{iv)}: Let $H=(V_{T_1}\cup V_{T_2}\cup V_{T_3},E_{T_1}\cup E_{T_2}\cup E_{T_3}\})$. The graph $H$ is a subgraph of $G$ and it is also a Laman graph:
+\begin{align*}
+|E_H|&=|E_{T_1}| + |E_{T_2}|+|E_{T_3}|=2|V_{T_1}|-3 +2|V_{T_2}|-3+2|V_{T_3}|-3 \\
+&=2(|V_{T_1}| +|V_{T_2}| +|V_{T_3}|-3)-3= 2|V_H|-3\,.
+\end{align*}
+As at least two of those multiple vertices must be nonadjacent, $H$ has a nonrigid labeling by Theorem~\ref{thm:cutByVertices}.
 \end{proof}
 
 \end{document}

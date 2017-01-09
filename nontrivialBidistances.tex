@@ -33,8 +33,8 @@
 \DeclareMathOperator{\rank}{rank}
 
 \newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}{Lemma}[section]
-\newtheorem{cor}[lem]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
 \newtheorem*{rem}{Remark}
 
 \theoremstyle{definition}
@@ -609,14 +609,52 @@ Let $u_1, u_2, \dots, u_m=u_1$ be a cycle in $T$ such that $m>4$. Since $u_1u_2 
 \section{Laman subgraph}
 \begin{lem}[Josef]
 \label{lem:noInfFibreManifolds}
-Let $X$ and $Y$ be differentiable manifolds. If $f:X\rightarrow Y$  is a differentiable map such that each fibre is discrete, then $\dim X \leq \dim Y$.
+Let $X$ and $Y$ be real differentiable manifolds of dimensions $m$ and $n$. Let $f:X\rightarrow Y$  be a differentiable map. If $m > n$, then there exists a point $y\in Y$ such that the fibre of $y$ is infinite.
 \end{lem}
 \begin{proof}
-Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\left\{x \in X \colon \rank J_f(x)<r \right\}$. A point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the constant rank theorem for manifolds (Boothby, Chapter III, Remark 4.2), for every point of U - in particular for p itself - there is an open
-subset V such that after some differentiable change of coordinates, the map f
-restricted to V becomes linear. If a linear map has discrete fibres, then the
-dimension of the domain is smaller than or equal to the dimension of the codomain.
+Let $p \in X$ be a point where the rank $r$ of the Jacobian $J_f(p)$ is maximal. Let $S:=\left\{x \in X \colon \rank J_f(x)<r \right\}$. A point $x$ is in $S$ iff all minors $r\times r$ of $J_f(x)$ vanish. The minors are polynomial functions of the entries of $J_f(x)$. Since $f$ is differentiable, the set $S$ is the fibre of 0 under continuous mapping, i.e., it is closed. Hence, $X\setminus S$ is open in $X$ and there exists  an open neighbourhood $U$ of $p$ where the Jacobian $J_f$ has the constant rank $r$. By the constant rank theorem for manifolds (Boothby, Chapter III, Remark 4.2), for every point of $U$ - in particular for $p$ itself - there are charts $(U',\varphi)$ and $(V,\psi)$ of $U$ and $f(U)\subset Y$, i.e., $U'$ is an open subset of $U$, $V$ is an open subset of $Y$, $\varphi:U'\rightarrow \RR^m$ and $\psi:V\rightarrow \RR^n$, such that $\varphi(p)=(0, \dots, 0)$, $\psi(f(p))=(0, \dots, 0)$ and 
+$$
+\psi\circ f\circ\varphi^{-1}(x_1, \dots, x_m)=(x_1, \dots, x_r, 0, \dots, 0)\,.
+$$
+Therefore, $\psi\circ f\circ\varphi^{-1}:\RR^m\rightarrow \RR^n $ is a linear map. If $m>n$, then there are infinitely many points in the fibre $(\psi\circ f\circ\varphi^{-1})^{-1}(0,\dots,0)$. Since $\varphi$ and $\psi$ are bijections, there  are infinitely many points in $f^{-1}(y)$ where $y:=f(p)=\psi^{-1}(0,\dots,0)$.
 \end{proof}
+
+\begin{thm}
+If $V\subset \RR^n$ is an irreducible variety of dimension $d$, then the set $X=V\setminus\left\{x\colon x \text{ is singular point of } V\right\}$ is $d$-dimensional differentiable manifold.
+\end{thm}
+\begin{proof}
+Let $f_1,\dots, f_m$ be polynomials which generate the ideal of $V$. Let $f:\RR^n\rightarrow\RR^m$ be the differentiable mapping given by $f=(f_1,\dots,f_m)$. 
+
+By definition of nonsingular points and irreducibility of $V$, $d=\dim V=\dim T_p=n-\rank J_p(f)$ for all $p\in X$. Hence, $\rank J_p(f)$ is constant in $X$. 
+
+We fix a point $p\in X$. We apply the constant rank theorem (Boothby, Chapter II, Theorem 7.1): there exists open subsets $A\subset \RR^n$ and $B\subset \RR^m$ with $p\in A$ and $f(p)=0\in B$, open subsets $U\subset \RR^n$ and $W\subset \RR^m$ and diffeomorphisms $\varphi:A\rightarrow U$ and $\psi:B\rightarrow W$such that $\psi \circ f \circ \varphi^{-1}(U)\subset W$ and 
+$$
+\psi \circ f \circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=(\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)\,,
+$$
+where $r=\rank J_p(f)$. Since $X$ is open in $V$ (Bochnak, Coste, and Roy, Proposition 3.3.14), we can assume $A$ such that $A\cap V=A\cap X$.
+
+Set $H:= X\cap A$. The set $H$ is open in $X$ and
+\begin{align*}
+ H &=f^{-1}(0) \cap A = \left\{(x_1,\dots, x_n)\in A \colon f(x_1,\dots, x_n)=0\right\}\,.
+\end{align*}
+If we set $(\tilde{x}_1,\dots, \tilde{x}_n)=\varphi(x_1,\dots, x_n)$, then
+\begin{align*} 
+\varphi(H) &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=0\right\} \\
+ &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon \psi \circ f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=\psi(0)\right\} \\
+ &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon (\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)=\psi(0)\right\} \\
+ &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon (\tilde{x}_1,\dots, \tilde{x}_r)=(\psi_1(0),\dots , \psi_r(0))\right\}\\
+ &= U \cap Z \,,
+\end{align*}
+where $Z= (\psi_1(0),\dots , \psi_r(0)) \times \RR^{n-r}$.
+
+Let  $\pi:Z\rightarrow \RR^{n-r}$ be the diffeomorphism given by 
+$$\pi(\psi_1(0),\dots , \psi_r(0),\tilde{x}_{r+1},\dots, \tilde{x}_n)=(\tilde{x}_{r+1},\dots, \tilde{x}_n)\,.
+$$
+Hence, $\pi\circ \varphi (H)= \pi( U \cap Z )$ is open in $\RR^{n-r}$, i.e., $(H,\pi\circ\varphi|_H)$ is a chart of $X$. Since $d=n-r$, $X$ is $d$-dimensional manifold.
+\end{proof}
+
+
+
 
 \begin{lem}
 \label{lem:noInfFibre}
@@ -652,36 +690,6 @@ Lemma \ref{lem:noInfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies th
 
 \end{proof}
 
-\newpage
-\begin{thm}
-If $V\subset \RR^n$ is an irreducible variety of dimension $d$, then the set $X=V\setminus\left\{x\colon x \text{ is singular point of } V\right\}$ is $d$-dimensional differentiable manifold.
-\end{thm}
-\begin{proof}
-Let $f_1,\dots, f_m$ be polynomials which generate the ideal of $V$. Let $f:\RR^n\rightarrow\RR^m$ be the differentiable mapping given by $f=(f_1,\dots,f_m)$. 
 
-By definition of nonsingular points and irreducibility of $V$, $d=\dim V=\dim T_p=n-\rank J_p(f)$ for all $p\in X$. Hence, $\rank J_p(f)$ is constant in $X$. 
-
-We fix a point $p\in X$. We apply the constant rank theorem (Boothby, Chapter II, Theorem 7.1): there exists open subsets $A\subset \RR^n$ and $B\subset \RR^m$ with $p\in A$ and $f(p)=0\in B$, open subsets $U\subset \RR^n$ and $W\subset \RR^m$ and diffeomorphisms $\varphi:A\rightarrow U$ and $\psi:B\rightarrow W$such that $\psi \circ f \circ \varphi^{-1}(U)\subset W$ and 
-$$
-\psi \circ f \circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=(\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)\,,
-$$
-where $r=\rank J_p(f)$. Since $X$ is open in $V$ (Bochnak, Coste, and Roy, Proposition 3.3.14), we can assume $A$ such that $A\cap V=A\cap X$.
-
-Set $H:= X\cap A$. The set $H$ is open in $X$ and
-\begin{align*}
- H &=f^{-1}(0) \cap A = \left\{(x_1,\dots, x_n)\in A \colon f(x_1,\dots, x_n)=0\right\}\,.
-\end{align*}
-If we set $(\tilde{x}_1,\dots, \tilde{x}_n)=\varphi(x_1,\dots, x_n)$, then
-\begin{align*} 
-\varphi(H) &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=0\right\} \\
- &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon \psi \circ f\circ \varphi^{-1}(\tilde{x}_1,\dots, \tilde{x}_n)=\psi(0)\right\} \\
- &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon (\tilde{x}_1,\dots, \tilde{x}_r, 0, \dots, 0)=\psi(0)\right\} \\
- &= \left\{(\tilde{x}_1,\dots, \tilde{x}_n)\in U \colon (\tilde{x}_1,\dots, \tilde{x}_r)=(\psi_1(0),\dots , \psi_r(0))\right\}\\
- &= U \cap Z \,,
-\end{align*}
-where $Z= (\psi_1(0),\dots , \psi_r(0)) \times \RR^{n-r}$.
-
-Let  $\pi:\RR^n\rightarrow \RR^{n-r}$ be the projection given by $\pi(\tilde{x}_{1},\dots, \tilde{x}_n)=(\tilde{x}_{r+1},\dots, \tilde{x}_n)$. The mapping $\pi'=\pi|_Z$ is a diffeomorphism from $Z$ onto $\RR^{n-r}$. Hence, $\pi'\circ \varphi (H)= \pi'( U \cap Z )$ is open in $\RR^{n-r}$, i.e., $(H,\pi'\circ\varphi|_H$ is a chart of $X$. Since $d=n-r$, $X$ is $d$-dimensional manifold.
-\end{proof}
 
 \end{document}

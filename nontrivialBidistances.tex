@@ -736,4 +736,20 @@ Since the vertex $u$ is not in any \trcomp{} of $H$, $H$ has a nonrigid labeling
 As at least two of those multiple vertices must be nonadjacent, $H$ has a nonrigid labeling by Theorem~\ref{thm:cutByVertices}.
 \end{proof}
 
+\section{Progress on the conjecture}
+\begin{defn}
+We say that a Laman graph $G=(V,E)$ is \textit{problematic}, if the following conditions hold:
+\begin{enumerate}[i)]
+	\item $\deg(v)\geq 3$ for all $v\in V$.
+	\item All vertices are connecting vertices.
+	\item If $\deg(v) =3$, then exactly two neighbours of $v$ are connected by an edge and both have degree at least 4.
+	\item $c_e\leq n-1$, where $n$ is the number of \trcomps{} of $G$ and $c_e$ is the number of connecting edges.
+	\item The only proper Laman subgraphs of $G$ are \trcomps{}.
+\end{enumerate}
+\end{defn}
+
+\begin{thm}
+Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. If $n+c_e\geq 2$, then $G$ has a nontrivial bidistance and nonrigid labeling.
+\end{thm}
+
 \end{document}

@@ -6,7 +6,7 @@
 % \usepackage[IL2]{fontenc}  
 % \usepackage{amsmath,amsthm} 
 % \usepackage{amsfonts}
-\usepackage{amsmath, amsthm, amssymb, units, dsfont}
+\usepackage{amsmath, amsthm, amssymb} %units, dsfont
 
 \usepackage[fixlanguage]{babelbib}
 \selectbiblanguage{english}
@@ -748,11 +748,11 @@ We say that a Laman graph $G=(V,E)$ is \textit{problematic}, if the following co
 \end{defn}
 
 \begin{thm}
-Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. If $n+c_e\geq 2$, then $G$ has a nontrivial bidistance and nonrigid labeling.
+Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. If $n+c_e\geq 2$, then $G$ has a nontrivial bidistance and nonrigid labeling or $G$ is problematic.
 \end{thm}
 \begin{proof}
 We proceed by induction with respect to the number of vertices. There are two base cases. If $n=1$ and $n+c_e\geq 2$, then there is at least one connecting edge (actually there must be at least two) and hence there is a vertex which is not in any \trcomp{}. By Theorem~\ref{thm:vertexNotInTriangle}, there is a nonrigid labeling and nontrivial bidistance.
-If there are only two triangle components and , then there are two possibilities: 
+If there are only two triangle components, then there are two possibilities: if these two triangle components are connected by a multiple vertex and one connecting edge, then there is a nonrigid labeling by Theorem~\ref{thm:cutByVertices}. Or they are linked by three connecting edges and then there is a nonrigid labeling by Theorem~\ref{thm:cutToTwoParts}.
 \end{proof}
 
 \end{document}

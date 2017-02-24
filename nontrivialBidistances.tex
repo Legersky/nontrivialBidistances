@@ -484,12 +484,12 @@ Since edges $E_{N_1}$ are in equivalence (meaning transitive closure of $\sim_{\
 \end{proof}
 
 \begin{defn}
-Let $v\in G=(V,E)$ be constructed by Henneberg move of type I from vertices $u,u'$. If $uu'\in E$, we say that $v$ was constructed from $u,u'$ by \emph{Henneberg move of type Ia}, otherwise by \emph{Henneberg move of type Ib}.
-\end{defn}
-
-\begin{defn}
-Let a new vertex $v\in G=(V,E)$ be constructed by Henneberg move of type II so that it is linked by edges to the vertices $u,u_1,u_2 \in V$ and the edge $u_1u_2\in E$ is removed. If $uu_1\notin E$ and $uu_2\notin E$, we say that $v$ was constructed by \emph{Henneberg move of type IIa}. If $uu_1\in E$ xor $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIb}. If $uu_1\in E$ and $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIc}.
-
+\label{def:typesOfHennebergMoves}
+Let $G=(V,E)$ and $G'=(V',E')$ be Laman graphs such that $G$ is constructed from $G'$ by adding a vertex $v$ by a Henneberg move:
+\begin{enumerate}[I:]
+	\item Let $v$ be constructed by Henneberg move of type I from vertices $u,u'$. If $uu'\in E$, we say that $v$ was constructed from $u,u'$ by \emph{Henneberg move of type Ia}, otherwise by \emph{Henneberg move of type Ib}.
+	\item Let $v$ be constructed by Henneberg move of type II so that it is linked by edges to the vertices $u,u_1,u_2 \in V$ and the edge $u_1u_2\in E'$ is removed. If $uu_1\notin E$ and $uu_2\notin E$, we say that $v$ was constructed by \emph{Henneberg move of type IIa}. If $uu_1\in E$ xor $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIb}. If $uu_1\in E$ and $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIc}.
+\end{enumerate}
 \end{defn}
 
 \begin{lem}
@@ -738,13 +738,14 @@ As at least two of those multiple vertices must be nonadjacent, $H$ has a nonrig
 
 \section{Progress on the conjecture}
 \begin{defn}
-We say that a Laman graph $G=(V,E)$ is \textit{problematic}, if the following conditions hold:
+Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if the following conditions hold:
 \begin{enumerate}[i)]
 	\item $\deg(v)\geq 3$ for all $v\in V$.
 	\item If $\deg(v) =3$, then exactly two neighbours of $v$ are connected by an edge, both have degree at least 4 and both are connecting vertices.
 	\item $c_e\leq n-1$, where $n$ is the number of \trcomps{} of $G$ and $c_e$ is the number of connecting edges.
 	\item All proper Laman subgraphs of $G$ are \trcomps{}.
 \end{enumerate}
+A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, ??
 \end{defn}
 
 \begin{thm}
@@ -753,6 +754,10 @@ Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. I
 \begin{proof}
 We proceed by induction with respect to the number of vertices. There are two base cases. If $n=1$ and $n+c_e\geq 2$, then there is at least one connecting edge (actually there must be at least two) and hence there is a vertex which is not in any \trcomp{}. By Theorem~\ref{thm:vertexNotInTriangle}, there is a nonrigid labeling and nontrivial bidistance.
 If there are only two triangle components, then there are two possibilities: if these two triangle components are connected by a multiple vertex and one connecting edge, then there is a nonrigid labeling by Theorem~\ref{thm:cutByVertices}. Or they are linked by three connecting edges and then there is a nonrigid labeling by Theorem~\ref{thm:cutToTwoParts}.
+
+Suppose now that $|V|=m$ and the claim holds for all Laman graphs with at most $m-1$ vertices. Let $G'$ be a graph such that $G$ is obtained from $G'$ by adding a vertex $v$ by a Henneberg move. We distinguish five cases according to Definition~\ref{def:typesOfHennebergMoves}.
+
+Ia: 
 \end{proof}
 
 \end{document}

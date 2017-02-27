@@ -488,7 +488,7 @@ Since edges $E_{N_1}$ are in equivalence (meaning transitive closure of $\sim_{\
 Let $G=(V,E)$ and $G'=(V',E')$ be Laman graphs such that $G$ is constructed from $G'$ by adding a vertex $v$ by a Henneberg move:
 \begin{enumerate}[I:]
 	\item Let $v$ be constructed by Henneberg move of type I from vertices $u,u'$. If $uu'\in E$, we say that $v$ was constructed from $u,u'$ by \emph{Henneberg move of type Ia}, otherwise by \emph{Henneberg move of type Ib}.
-	\item Let $v$ be constructed by Henneberg move of type II so that it is linked by edges to the vertices $u,u_1,u_2 \in V$ and the edge $u_1u_2\in E'$ is removed. If $uu_1\notin E$ and $uu_2\notin E$, we say that $v$ was constructed by \emph{Henneberg move of type IIa}. If $uu_1\in E$ xor $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIb}. If $uu_1\in E$ and $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIc}.
+	\item Let $v$ be constructed by Henneberg move of type II so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ and the edge $u_1u_2\in E'$ is removed. If $uu_1\notin E$ and $uu_2\notin E$, we say that $v$ was constructed by \emph{Henneberg move of type IIa}. If $uu_1\in E$ xor $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIb}. If $uu_1\in E$ and $uu_2\in E$, we say that $v$ was constructed by \emph{Henneberg move of type IIc}.
 \end{enumerate}
 \end{defn}
 
@@ -699,6 +699,7 @@ Lemma \ref{lem:InfFibre} applied on the map $f_G|_B:B\rightarrow C$ implies that
 \end{proof}
 
 \begin{cor}
+\label{cor:LamanSubgraphs}
 Let $G$ be a Laman graph. There is a nonrigid labeling of $G$ if some of the following conditions hold:
 \begin{enumerate}[i)]
 	\item There are \trcomps{} $T_1$ and $T_2$ in $G$ linked by distinct connecting edges $e_1, e_2,e_3\in E_G$.
@@ -745,11 +746,11 @@ Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if 
 	\item $c_e\leq n-1$, where $n$ is the number of \trcomps{} of $G$ and $c_e$ is the number of connecting edges.
 	\item All proper Laman subgraphs of $G$ are \trcomps{}.
 \end{enumerate}
-A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, ??
+A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, IIc (such that the removed edge is only in one triangle).
 \end{defn}
 
 \begin{thm}
-Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. If $n+c_e\geq 2$, then $G$ has a nontrivial bidistance and nonrigid labeling or $G$ is problematic.
+Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. If $n+c_e\geq 2$, then $G$ has a nontrivial bidistance and nonrigid labeling, or $G$ is problematic.
 \end{thm}
 \begin{proof}
 We proceed by induction with respect to the number of vertices. There are two base cases. If $n=1$ and $n+c_e\geq 2$, then there is at least one connecting edge (actually there must be at least two) and hence there is a vertex which is not in any \trcomp{}. By Theorem~\ref{thm:vertexNotInTriangle}, there is a nonrigid labeling and nontrivial bidistance.
@@ -757,7 +758,24 @@ If there are only two triangle components, then there are two possibilities: if 
 
 Suppose now that $|V|=m$ and the claim holds for all Laman graphs with at most $m-1$ vertices. Let $G'$ be a graph such that $G$ is obtained from $G'$ by adding a vertex $v$ by a Henneberg move. We distinguish five cases according to Definition~\ref{def:typesOfHennebergMoves}.
 
-Ia: 
+Ia: The number of \trcomps{} and connecting edges in $G$ and $G'$ is the same. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$ and nontrivial bidistance, then any labelling $\lambda$ of $G$ such that $\lambda|_{E'}=\lambda'$ is nonrigid and the nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way.
+
+Ib and IIa: The vertex $v$ is not in any \trcomp{}, so there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:vertexNotInTriangle}.
+
+IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V', w\neq u$ such that $wu_1,wu_2\in E'$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into two \trcomps{} (or connecting edges) in $G$. There is also third \trcomp{} in $G$ which contains $u,v,u_1$ and $u_2$. Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
+
+Now consider the case when there is no such vertex $w$. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$ and nontrivial bidistance, then any labelling $\lambda$ of $G$ such that $\lambda|_{E'\setminus u_1u_2}=\lambda'$ and $||\varepsilon(u_1)^2-\varepsilon(u_2)^2||=\lambda'_{u_1u_2}$ for some embedding $\varepsilon$ compatible with $\lambda$ is nonrigid and the nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way.
+
+IIb: We may assume that there are no vertices which can be constructed by Ia,b or IIa,c, i.e., all vertices of $G$ have degree at least four or can be constructed by IIb. Note that if $t$ denotes the number of vertices of degree three, then $t\geq 6$:
+$$
+2|V|-3=|E|=\frac{1}{2} \sum_{w\in V} \deg w\geq \frac{1}{2}\cdot 4(|V|-t)+\frac{1}{2}\cdot 3 t=2|V|-\frac{t}{2}\,.
+$$
+Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and the edge $u_1u_2\in E'$ is removed. There are several cases:
+\begin{enumerate}
+\item If $\deg u=\deg u_1=\deg v=3$, then there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:cutToTwoParts}.
+\item Let $\deg u=\deg v=3, \deg u_1\geq 4$ and $wu_2\notin E$, where $N_G(u)=\{v,u_1,w\}$. The vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Hence, a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$.
+\item Let $\deg u=\deg v=3, \deg u_1\geq 4$ and $wu_2\in E$, where $N_G(u)=\{v,u_1,w\}$. Again, the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc.
+\end{enumerate}
 \end{proof}
 
 \end{document}

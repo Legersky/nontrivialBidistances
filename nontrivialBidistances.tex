@@ -746,7 +746,7 @@ Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if 
 	\item $c_e\leq n-1$, where $n$ is the number of \trcomps{} of $G$ and $c_e$ is the number of connecting edges.
 	\item All proper Laman subgraphs of $G$ are \trcomps{}.
 \end{enumerate}
-A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, IIc (such that the removed edge is only in one triangle).
+A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, IIc (such that the removed edge is only in one triangle) or Ib and IIb consecutively (see 3. of the proof of the following theorem).
 \end{defn}
 
 \begin{thm}
@@ -770,12 +770,10 @@ IIb: We may assume that there are no vertices which can be constructed by Ia,b o
 $$
 2|V|-3=|E|=\frac{1}{2} \sum_{w\in V} \deg w\geq \frac{1}{2}\cdot 4(|V|-t)+\frac{1}{2}\cdot 3 t=2|V|-\frac{t}{2}\,.
 $$
-Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and the edge $u_1u_2\in E'$ is removed. There are several cases:
-\begin{enumerate}
-\item If $\deg u=\deg u_1=\deg v=3$, then there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:cutToTwoParts}.
-\item Let $\deg u=\deg v=3, \deg u_1\geq 4$ and $wu_2\notin E$, where $N_G(u)=\{v,u_1,w\}$. The vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Hence, a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$.
-\item Let $\deg u=\deg v=3, \deg u_1\geq 4$ and $wu_2\in E$, where $N_G(u)=\{v,u_1,w\}$. Again, the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc.
-\end{enumerate}
+
+If there are three vertices in a triangle in $G$ such that all of them have degree three, then there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:cutToTwoParts}.
+
+If there is a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$, then there are two possibilities. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. The easiest case is if $wu_2\notin E$: the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Hence, a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. If $wu_2\notin E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and the edge $u_1u_2\in E'$ is removed, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtain from $G''$ by adding vertex $u$ by Ib. The sum of connecting edges and \trcomps{} in $G$ is at least five: \trcomp{} induced by vertices $u,v, u_1\in V$, connecting edges $uw$ and $u_2v$, \trcomp{} containing $u_2w$ (or it is just a connecting edge)
 \end{proof}
 
 \end{document}

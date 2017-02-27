@@ -754,8 +754,19 @@ Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if 
 	\item $c_e\leq n-1$, where $n$ is the number of \trcomps{} of $G$ and $c_e$ is the number of connecting edges.
 	\item All proper Laman subgraphs of $G$ are \trcomps{}.
 \end{enumerate}
-A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, IIc (such that the removed edge is only in one triangle) or Ib and IIb consecutively (see 3. of the proof of the following theorem).
+A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, IIc (such that the removed edge is only in one triangle) or Ib and IIb consecutively (see the proof of the following theorem).
 \end{defn}
+
+\begin{lem}
+\label{lem:undoIIb}
+Let $G=(V,E)$ be a Laman graph. If $G$ contains a triangle induced by vertices $u,v, u_1\in V$ such that
+\begin{enumerate}[i)]
+\item $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$,
+\item $wu_1,u_1u_2\notin E$,
+\item $wu_2\notin E$, where $w\in V\setminus \{v, u_1\}$ is the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ is the neighbour of $v$,
+\end{enumerate}
+then there is a Laman graph $G'=(V',E')$ such that $G$ is constructed from $G'$ by IIb, i.e., by linking the vertex $v$  to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and removing the edge $u_1u_2\in E'$, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. 
+\end{lem}
 
 \begin{thm}
 Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. If $n+c_e\geq 2$, then $G$ has a nontrivial bidistance and nonrigid labeling, or $G$ is problematic.
@@ -781,7 +792,7 @@ $$
 
 If there are three vertices in a triangle in $G$ such that all of them have degree three, then there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:cutToTwoParts}.
 
-If there is a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$. We remark that the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. There are two possibilities: the easiest case is  $wu_2\notin E$, since  a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. 
+Let there be a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$. We remark that the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. There are two possibilities: the easiest case is  $wu_2\notin E$, since  a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. 
 
 If $wu_2\in E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed by linking to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and while the edge $u_1u_2\in E'$ is removed, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtained from $G''$ by adding the vertex $u$ by Ib. 
 
@@ -793,11 +804,11 @@ $$
 \lambda''(e) \text{ if } e\in E_{G''}\setminus u_1u_2\\
 \lambda''(u_2w) \text{ if } e=uw\\
 \lambda''(u_1u_2) \text{ if } e=uu_1\\
-c \text{ if } e\in\{uv,u_2v}\\
+c \text{ if } e\in\{uv,u_2v\}\\
 d \text{ if } e=u_1v\,,
 \end{cases}
 $$
-where $c=||\varepsilon(u_2)-P||^2$ and $d=||\varepsilon(u_1)-P||^2$ for some point $P\in\RR^2$ and an embedding $\varepsilon$ of $G''$ compatible with $\lambda''$. 
+where $c=||\varepsilon(u_2)-P||^2$ and $d=||\varepsilon(u_1)-P||^2$ for some point $P\in\RR^2$ and an embedding $\varepsilon$ of $G''$ compatible with $\lambda''$. The existence of nontrivial bidistance follows by Theorem~\ref{thm:nonrigidImplieBidistance} or we can construct it explicitly: the bidistance of the edge $uw$ set the same as bidistance of $wu_2$ in $G''$ and the bidistance of all other new edges set the bidistance of $u_1u_2$ in $G''$.
 \end{proof}
 
 \end{document}

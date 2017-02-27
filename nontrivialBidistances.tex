@@ -772,7 +772,7 @@ Ib and IIa: The vertex $v$ is not in any \trcomp{}, so there is a nonrigid label
 
 IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V', w\neq u$ such that $wu_1,wu_2\in E'$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into two \trcomps{} (or connecting edges) in $G$. There is also third \trcomp{} in $G$ which contains $u,v,u_1$ and $u_2$. Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
 
-Now consider the case when there is no such vertex $w$. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$ and nontrivial bidistance, then any labelling $\lambda$ of $G$ such that $\lambda|_{E'\setminus u_1u_2}=\lambda'$ and $||\varepsilon(u_1)^2-\varepsilon(u_2)^2||=\lambda'_{u_1u_2}$ for some embedding $\varepsilon$ compatible with $\lambda$ is nonrigid and the nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way.
+Now consider the case when there is no such vertex $w$. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$ and nontrivial bidistance, then any labelling $\lambda$ of $G$ such that $\lambda|_{E'\setminus u_1u_2}=\lambda'$ and $||\varepsilon(u_1)-\varepsilon(u_2)||^2=\lambda'_{u_1u_2}$ for some embedding $\varepsilon$ compatible with $\lambda$ is nonrigid and the nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way.
 
 IIb: We may assume that there are no vertices which can be constructed by Ia,b or IIa,c, i.e., all vertices of $G$ have degree at least four or can be constructed by IIb. Note that if $t$ denotes the number of vertices of degree three, then $t\geq 6$:
 $$
@@ -783,7 +783,21 @@ If there are three vertices in a triangle in $G$ such that all of them have degr
 
 If there is a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$. We remark that the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. There are two possibilities: the easiest case is  $wu_2\notin E$, since  a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. 
 
-If $wu_2\in E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and the edge $u_1u_2\in E'$ is removed, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtained from $G''$ by adding the vertex $u$ by Ib. We show that the sum of connecting edges and \trcomps{} in $G''$ is at least two. Suppose in contrary that $G''$ is a \trcomp{}. Since $u_1w\notin E_{G''}$, there must be some some other vertex $w'$ such that $u_1w',u_2w'\in E_{G''}$, i.e., $\deg_{G''} u_2 \geq 3$. Since $\deg_G u_1>3$ the degree of $u_1$ in $G''$ must be at least three. By Corollary~\ref{cor:atLeastTwoDegTwoInTrComp}, there are at least two vertices on degree two in $G''$. Hence, there is a vertex $v'\in V_{G''}\setminus\{u_1,u_2,w\}$ of degree two. But $2=\deg_{G''}v=\deg_G v$ which is a contradiction.
+If $wu_2\in E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed by linking to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and while the edge $u_1u_2\in E'$ is removed, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtained from $G''$ by adding the vertex $u$ by Ib. 
+
+We show that the sum of connecting edges and \trcomps{} in $G''$ is at least two. Suppose in contrary that $G''$ is a \trcomp{}. Since $u_1w\notin E_{G''}$, there must be some some other vertex $w'\in V_{G''}$ such that $u_1w',u_2w'\in E_{G''}$, i.e., $\deg_{G''} u_2 \geq 3$. Since $\deg_G u_1>3$, the degree of $u_1$ in $G''$ must be at least three. By Corollary~\ref{cor:atLeastTwoDegTwoInTrComp}, there are at least two vertices of degree two in $G''$. Hence, there is a vertex $v'\in V_{G''}\setminus\{u_1,u_2,w\}$ of degree two. But $\deg_{G''}v=\deg_G v$ which contradicts that all vertices of $G$ have degree at least three. 
+
+By induction assumption, $G''$ is problematic or it has a nonrigid labelling and nontrivial bidistance. If the former holds, then $G$ is problematic by definition, otherwise we obtain a nonrigid labelling $\lambda$ of $G$ from the nonrigid labelling $\lambda''$ of $G''$ in the following way:
+$$
+\lambda(e)=\begin{cases}
+\lambda''(e) \text{ if } e\in E_{G''}\setminus u_1u_2\\
+\lambda''(u_2w) \text{ if } e=uw\\
+\lambda''(u_1u_2) \text{ if } e=uu_1\\
+c \text{ if } e\in\{uv,u_2v}\\
+d \text{ if } e=u_1v\,,
+\end{cases}
+$$
+where $c=||\varepsilon(u_2)-P||^2$ and $d=||\varepsilon(u_1)-P||^2$ for some point $P\in\RR^2$ and an embedding $\varepsilon$ of $G''$ compatible with $\lambda''$. 
 \end{proof}
 
 \end{document}

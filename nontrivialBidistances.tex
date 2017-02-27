@@ -537,6 +537,14 @@ Let $m_{last}$ be of type IIc, it means that $v$ is linked to $u_1, u_2, u\in V_
 Since $u$ is the only vertex of $T'$ constructed from $u_1u_2$, we may start the construction of $T$ with the edge $u_1u$, then link the vertex $v$ by edges $u_1v$ and $uv$. After that, we link $u_2$ by edges $u_2v$ and $u_2u$. This simulates the move $m_{last}$ and we can proceed in the construction by the moves $m_1, \dots, m_k$ which constructs $T'\subset T$ from edges $u_1u$ and $u_2u$. Now we have a construction only by moves of type Ia, so we may find a construction with an arbitrary starting edge by Lemma~\ref{lem:startWithArbitraryEdge}.
 \end{proof}
 
+\begin{cor}
+\label{cor:atLeastTwoDegTwoInTrComp}
+A Laman \trcomp{} $T$ has at least two vertices of degree two.
+\end{cor}
+\begin{proof}
+If $|V_T|=3$, then there are three vertices of degree two and if $|V_T|=4$, then there are two vertices of degree two. Now, let $|V_T|\geq4$. There are no two adjacent vertices of degree two. Hence, the number of vertices of degree two can only increase by applying Henneberg move Ia.
+\end{proof}
+
 \begin{defn}
 A graph $G=(V,E)$ is called \emph{a $k$-tree}, if either $G$ is a complete graph on $k$ vertices, or there exist a vertex $v\in V$ such that $\deg(v)=k$, the neighbours of $v$ form a $k$-clique and $G\setminus v$ is a $k$-tree.
 \end{defn}
@@ -773,7 +781,9 @@ $$
 
 If there are three vertices in a triangle in $G$ such that all of them have degree three, then there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:cutToTwoParts}.
 
-If there is a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$, then there are two possibilities. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. The easiest case is if $wu_2\notin E$: the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Hence, a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. If $wu_2\notin E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and the edge $u_1u_2\in E'$ is removed, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtain from $G''$ by adding vertex $u$ by Ib. The sum of connecting edges and \trcomps{} in $G$ is at least five: \trcomp{} induced by vertices $u,v, u_1\in V$, connecting edges $uw$ and $u_2v$, \trcomp{} containing $u_2w$ (or it is just a connecting edge)
+If there is a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$. We remark that the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. There are two possibilities: the easiest case is  $wu_2\notin E$, since  a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. 
+
+If $wu_2\in E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and the edge $u_1u_2\in E'$ is removed, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtained from $G''$ by adding the vertex $u$ by Ib. We show that the sum of connecting edges and \trcomps{} in $G''$ is at least two. Suppose in contrary that $G''$ is a \trcomp{}. Since $u_1w\notin E_{G''}$, there must be some some other vertex $w'$ such that $u_1w',u_2w'\in E_{G''}$, i.e., $\deg_{G''} u_2 \geq 3$. Since $\deg_G u_1>3$ the degree of $u_1$ in $G''$ must be at least three. By Corollary~\ref{cor:atLeastTwoDegTwoInTrComp}, there are at least two vertices on degree two in $G''$. Hence, there is a vertex $v'\in V_{G''}\setminus\{u_1,u_2,w\}$ of degree two. But $2=\deg_{G''}v=\deg_G v$ which is a contradiction.
 \end{proof}
 
 \end{document}

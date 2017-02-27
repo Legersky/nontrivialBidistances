@@ -762,8 +762,8 @@ A graph $G$ is called \emph{problematic}, if it is basic problematic or it was d
 Let $G=(V,E)$ be a Laman graph. If $G$ contains a triangle induced by vertices $u,v, u_1\in V$ such that
 \begin{enumerate}[i)]
 \item $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$,
+\item $wu_2\in E$, where $w\in V\setminus \{v, u_1\}$ is the neighbour of $u$, and $u_2\in V\setminus \{u, u_1\}$ is the neighbour of $v$,
 \item $wu_1,u_1u_2\notin E$,
-\item $wu_2\notin E$, where $w\in V\setminus \{v, u_1\}$ is the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ is the neighbour of $v$,
 \end{enumerate}
 then there is a Laman graph $G'=(V',E')$ such that $G$ is constructed from $G'$ by IIb, i.e., by linking the vertex $v$  to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and removing the edge $u_1u_2\in E'$, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. 
 \end{lem}

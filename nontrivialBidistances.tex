@@ -747,14 +747,8 @@ As at least two of those multiple vertices must be nonadjacent, $H$ has a nonrig
 
 \section{Progress on the conjecture}
 \begin{defn}
-Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if the following conditions hold:
-\begin{enumerate}[i)]
-	\item $\deg(v)\geq 3$ for all $v\in V$.
-	\item If $\deg(v) =3$, then exactly two neighbours of $v$ are connected by an edge, both have degree at least 4 and both are connecting vertices.
-	\item $c_e\leq n-1$, where $n$ is the number of \trcomps{} of $G$ and $c_e$ is the number of connecting edges.
-	\item All proper Laman subgraphs of $G$ are \trcomps{}.
-\end{enumerate}
-A graph $G$ is called \emph{problematic}, if it is basic problematic or it was derived from a problematic graph $G'$ by Henneberg move Ia, IIc (such that the removed edge is only in one triangle) or Ib and IIb consecutively (see the proof of the following theorem).
+Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if $\deg(v)\geq 3$ for all $v\in V$ and if $\deg(v) =3$, then exactly two neighbours of $v$ are connected by an edge, both have degree at least 4 and both are connecting vertices.
+A graph $G$ is called \emph{problematic}, if it can be constructed from a basic problematic graph by nonnegative number of Henneberg moves.% Ia, IIc (such that the removed edge is only in one triangle) or Ib and IIb consecutively (see the proof of the following theorem).
 \end{defn}
 
 \begin{lem}
@@ -768,14 +762,14 @@ Let $G=(V,E)$ be a Laman graph. If $G$ contains a triangle induced by vertices $
 then there is a Laman graph $G'=(V',E')$ such that $G$ is constructed from $G'$ by IIb, i.e., by linking the vertex $v$  to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and removing the edge $u_1u_2\in E'$, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. 
 \end{lem}
 \begin{proof}
-According to Theorem~6.4 in (Laman), we can revert Henneberg move II by removing the vertex $v$ and adding the edge between two of its neighbours, namely $u_1$ and $u_2$, if there exists no subgraph $M$ of $G\setminus v$ such that $u_1,u_2\in V_M$ and $|E_M|=2|V_M|-3$. Analogously, the vertex $u$ can be removed and the edge $u_1w$ be added if there is no subgraph $L$ of $G\setminus u$ such that $u_1,w\in V_L$ and $|E_L|=2|V_L|-3$.
+According to Theorem~6.4 in (Laman), we can revert Henneberg move II by removing the vertex $v$ and adding the edge between two of its neighbours, namely $u_1$ and $u_2$, if there exists no subgraph $M$ of $G\setminus v$ such that $u_1,u_2\in V_M$ and $|E_M|=2|V_M|-3$. Or the vertex $u$ can be removed and the edge $u_1w$ be added if there is no subgraph $L$ of $G\setminus u$ such that $u_1,w\in V_L$ and $|E_L|=2|V_L|-3$.
 
 Assume in contrary that such subgraphs $M$ and $L$ exist. Obviously, $u\notin V_M$, resp. $v\notin V_L$, since otherwise the subgraph $(V_M\cup\{v\})$, resp. $(V_L\cup\{u\})$, of $G$ has too many edges. We consider the subgraph $H$ of $G$ induced by $V_H=V_M\cup V_L \cup \{u,v\}$. If $V_M\cap V_L=\{u_1\}$, then
 \begin{align*}
 |E_H|&\geq|E_M|+|E_L|+6=2|V_L|+2|V_M|=2(|V_M \cup V_L|)+2\\
 &=2(|V_M \cup V_L \cup \{u,v\}|)-2=2|V_H|-2\,,
 \end{align*}
-which contradicts Laman condition. If $|V_M\cap V_L|\geq 2$, then the subgraph $M\cup L$ of $G$ induced by $V_M\cup V_L$ satisfies $|E_{M\cup L}=2|V_{M\cup L}|-3$ by Lemma~6.2 in  (Laman) and we have
+which contradicts Laman condition. If $|V_M\cap V_L|\geq 2$, then the subgraph $M\cup L$ of $G$ induced by $V_M\cup V_L$ satisfies $|E_{M\cup L}|=2|V_{M\cup L}|-3$ by Lemma~6.2 in  (Laman) and we have
 \begin{align*}
 |E_H|&=|E_{M\cup L}|+5=2|V_{M\cup L}|-3+5=2(|V_{M\cup L}|+2)-2\\
 &=2(|V_M \cup V_L \cup \{u,v\}|)-2=2|V_H|-2\,,
@@ -796,9 +790,10 @@ Ia: The number of \trcomps{} and connecting edges in $G$ and $G'$ is the same. I
 
 Ib and IIa: The vertex $v$ is not in any \trcomp{}, so there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:vertexNotInTriangle}.
 
-IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V', w\neq u$ such that $wu_1,wu_2\in E'$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into two \trcomps{} (or connecting edges) in $G$. There is also third \trcomp{} in $G$ which contains $u,v,u_1$ and $u_2$. Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
+IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V, w\neq u$ such that $wu_1,wu_2\in E$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into two \trcomps{} (or connecting edges) in $G$. There is also third \trcomp{} in $G$ which contains $u,v,u_1$ and $u_2$. Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
 
-Now consider the case when there is no such vertex $w$. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$ and nontrivial bidistance, then any labelling $\lambda$ of $G$ such that $\lambda|_{E'\setminus u_1u_2}=\lambda'$ and $||\varepsilon(u_1)-\varepsilon(u_2)||^2=\lambda'_{u_1u_2}$ for some embedding $\varepsilon$ compatible with $\lambda$ is nonrigid and the nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way.
+Now consider the case when there is no such vertex $w$. The number of \trcomps{} and connecting edges in $G'$ and $G$ is the same, so we can use induction hypothesis. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$, then a nonrigid labelling $\lambda$ of $G$ can be obtained: let $\varepsilon'$ be an embedding of $G'$ compatible with $\lambda'$ such that there are infinitely many embeddings of $G'$ compatible with $\lambda'$ in the neighbourhood of $\varepsilon'$. Let $P\in\RR^2\setminus\{\varepsilon(w)\colon w\in V_{G'}\}$. Let $\varepsilon$ be embedding of $G$ given by $\varepsilon(v)=P$ and $\varepsilon(w)=\varepsilon'(w)$ otherwise. The nonrigid labelling $\lambda$ is obtained by measuring distances in $\varepsilon$, i.e., $\lambda(ww')=||\varepsilon(w)-\varepsilon(w')||^2$ for all $ww'\in E_G$.
+A nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way as the \trcomps{} in $G$ and $G'$ are basically the same.
 
 IIb: We may assume that there are no vertices which can be constructed by Ia,b or IIa,c, i.e., all vertices of $G$ have degree at least four or can be constructed by IIb. Note that if $t$ denotes the number of vertices of degree three, then $t\geq 6$:
 $$
@@ -807,11 +802,11 @@ $$
 
 If there are three vertices in a triangle in $G$ such that all of them have degree three, then there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:cutToTwoParts}.
 
-Let there be a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$. We remark that the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. There are two possibilities: the easiest case is  $wu_2\notin E$, since  a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. 
+Let there be a triangle induced by vertices $u,v, u_1\in V$ such that $\deg_G u =\deg_G v=3$ and $\deg_G u_1>3$. Let $w\in V\setminus \{v, u_1\}$ be the neighbour of $u$ and $u_2\in V\setminus \{u, u_1\}$ be the neighbour of $v$. We remark that the vertices $w$ and $u_1$ are nonadjacent, otherwise $u$ can be constructed by IIc. There are two possibilities: the easier case is  $wu_2\notin E$, since  a nonrigid labelling and nontrivial bidistance for $G$ are obtained by application of Theorem~\ref{thm:cutByVertices} with $V_c=\{u_1,u_2,w\}$. 
 
-If $wu_2\in E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed by linking to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and while the edge $u_1u_2\in E'$ is removed, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtained from $G''$ by adding the vertex $u$ by Ib. 
+If $wu_2\in E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed such that the vertex $v$ is constructed by linking to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and removing the edge $u_1u_2\in E'$, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. Assume the former one. The degree of $u$ in $G'$ is two. Therefore, $G'$ can be obtained from $G''$ by adding the vertex $u$ by Henneberg move Ib. 
 
-We show that the sum of connecting edges and \trcomps{} in $G''$ is at least two. Suppose in contrary that $G''$ is a \trcomp{}. Since $u_1w\notin E_{G''}$, there must be some some other vertex $w'\in V_{G''}$ such that $u_1w',u_2w'\in E_{G''}$, i.e., $\deg_{G''} u_2 \geq 3$. Since $\deg_G u_1>3$, the degree of $u_1$ in $G''$ must be at least three. By Corollary~\ref{cor:atLeastTwoDegTwoInTrComp}, there are at least two vertices of degree two in $G''$. Hence, there is a vertex $v'\in V_{G''}\setminus\{u_1,u_2,w\}$ of degree two. But $\deg_{G''}v=\deg_G v$ which contradicts that all vertices of $G$ have degree at least three. 
+We show that the sum of connecting edges and \trcomps{} in $G''$ is at least two. Suppose in contrary that $G''$ is a single \trcomp{}. Since $u_1w\notin E_{G''}$, there must be some some other vertex $w'\in V_{G''}$ such that $u_1w',u_2w'\in E_{G''}$, i.e., $\deg_{G''} u_2 \geq 3$. Since $\deg_G u_1>3$, the degree of $u_1$ in $G''$ must be at least three. By Corollary~\ref{cor:atLeastTwoDegTwoInTrComp}, there are at least two vertices of degree two in $G''$. Hence, there is a vertex $v'\in V_{G''}\setminus\{u_1,u_2,w\}$ of degree two. But $\deg_{G''}v'=\deg_G v'$ which contradicts that all vertices of $G$ have degree at least three. 
 
 By induction assumption, $G''$ is problematic or it has a nonrigid labelling and nontrivial bidistance. If the former holds, then $G$ is problematic by definition, otherwise we obtain a nonrigid labelling $\lambda$ of $G$ from the nonrigid labelling $\lambda''$ of $G''$ in the following way:
 $$
@@ -824,6 +819,18 @@ d \text{ if } e=u_1v\,,
 \end{cases}
 $$
 where $c=||\varepsilon(u_2)-P||^2$ and $d=||\varepsilon(u_1)-P||^2$ for some point $P\in\RR^2$ and an embedding $\varepsilon$ of $G''$ compatible with $\lambda''$. The existence of nontrivial bidistance follows by Theorem~\ref{thm:nonrigidImplieBidistance} or we can construct it explicitly: the bidistance of the edge $uw$ set the same as bidistance of $wu_2$ in $G''$ and the bidistance of all other new edges set the bidistance of $u_1u_2$ in $G''$.
+
+The remaining graphs are such that all vertices have degree at least three and if $v$ has degree three, then precisely two neighbours $u,u_1$ of $v$ are adjacent and have degree at least four. Let $u_2$ be the third neighbour of $v$. Assume that $u_1$ is not a connecting vertex. We show that we can revert the last Henneberg move by removing $v$ and adding the edge $u_1u_2$. According to Theorem~6.4 in (Laman), this is possible if there is no subgraph $M$ of $G\setminus v$ such that $u_1,u_2\in V_M$ and $|E_M|=2|V_M|-3$. Suppose in contrary that there is such subgraph $M$. Let $T$ be the \trcomp{} of $u_1, u$ and $v$ in $G$. Since $u_1$ is not connecting vertex, $T'=T\setminus v$ is a \trcomp{} in $G\setminus v$. Since $M$ is connected and $u_2\in V_M$, there must be at least two vertices in $V_{T'}\cap V_M$. By Lemma~6.2 in  (Laman), the subgraph $H$ of $G$ satisfies $|E_H|=2|V_H|-3$. But then there are too many edges in the subgraph induced by $V_H\cup\{v\}$, namely there are edges $u_1v, uv$ and $u_2$ besides the edges of $H$, while there is only one more vertex. Therefore, there is a graph $G'$ such that $G$ is constructed from $G'$ by adding the vertex $v$ and removing the edge $u_1u_2$. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$, then a nonrigid labelling $\lambda$ of $G$ is given as follows: let $\varepsilon'$ be an embedding of $G'$ compatible with $\lambda'$ and let $\varepsilon$ be an embedding of $G$ such that 
+$$
+\varepsilon(w)=\begin{cases}
+\varepsilon'(u_1) \text{ if } w=v\\
+\varepsilon'(P) \text{ for some }P\in \RR^2 \text{ if } w=u_1\\
+\varepsilon'(w) \text{ otherwise.}
+\end{cases}
+$$
+Now $\lambda(ww')=||\varepsilon(v)-\varepsilon(w')||^2$ for all $ww'\in E$. Using nontrivial bidistance $\delta'$ of $G'$, the nontrivial bidistance $\delta$ of $G$ is defined by $\delta(uv)=\delta(u_1v)=\delta'(uu_1)$, $\delta(u_2v)=\delta'(u_1u_2)$ and $\delta(e)=\delta'(e)$ otherwise. We proceed analogically if $u$ is not connecting vertices.
+
+To conclude, we proved the claim for all graphs except for such that all vertices have degree at least three and if some vertex has degree three, then precisely two its neighbours are adjacent, both have degree at least four and both are connecting vertices. But those are basic problematic.
 \end{proof}
 
 \end{document}

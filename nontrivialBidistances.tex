@@ -767,6 +767,21 @@ Let $G=(V,E)$ be a Laman graph. If $G$ contains a triangle induced by vertices $
 \end{enumerate}
 then there is a Laman graph $G'=(V',E')$ such that $G$ is constructed from $G'$ by IIb, i.e., by linking the vertex $v$  to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and removing the edge $u_1u_2\in E'$, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. 
 \end{lem}
+\begin{proof}
+According to Theorem~6.4 in (Laman), we can revert Henneberg move II by removing the vertex $v$ and adding the edge between two of its neighbours, namely $u_1$ and $u_2$, if there exists no subgraph $M$ of $G\setminus v$ such that $u_1,u_2\in V_M$ and $|E_M|=2|V_M|-3$. Analogously, the vertex $u$ can be removed and the edge $u_1w$ be added if there is no subgraph $L$ of $G\setminus u$ such that $u_1,w\in V_L$ and $|E_L|=2|V_L|-3$.
+
+Assume in contrary that such subgraphs $M$ and $L$ exist. Obviously, $u\notin V_M$, resp. $v\notin V_L$, since otherwise the subgraph $(V_M\cup\{v\})$, resp. $(V_L\cup\{u\})$, of $G$ has too many edges. We consider the subgraph $H$ of $G$ induced by $V_H=V_M\cup V_L \cup \{u,v\}$. If $V_M\cap V_L=\{u_1\}$, then
+\begin{align*}
+|E_H|&\geq|E_M|+|E_L|+6=2|V_L|+2|V_M|=2(|V_M \cup V_L|)+2\\
+&=2(|V_M \cup V_L \cup \{u,v\}|)-2=2|V_H|-2\,,
+\end{align*}
+which contradicts Laman condition. If $|V_M\cap V_L|\geq 2$, then the subgraph $M\cup L$ of $G$ induced by $V_M\cup V_L$ satisfies $|E_{M\cup L}=2|V_{M\cup L}|-3$ by Lemma~6.2 in  (Laman) and we have
+\begin{align*}
+|E_H|&=|E_{M\cup L}|+5=2|V_{M\cup L}|-3+5=2(|V_{M\cup L}|+2)-2\\
+&=2(|V_M \cup V_L \cup \{u,v\}|)-2=2|V_H|-2\,,
+\end{align*}
+which is also a contradiction.
+\end{proof}
 
 \begin{thm}
 Let $G=(V,E)$ be a Laman graph with $n$ \trcomps{} and $c_e$ connecting edges. If $n+c_e\geq 2$, then $G$ has a nontrivial bidistance and nonrigid labeling, or $G$ is problematic.

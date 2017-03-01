@@ -802,7 +802,7 @@ Ia: The number of \trcomps{} and connecting edges in $G$ and $G'$ is the same. I
 Ib and IIa: The vertex $v$ is not in any \trcomp{}, so there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:vertexNotInTriangle}.
 
 
-IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V, w\neq u$ such that $wu_1,wu_2\in E$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into three \trcomps{} (or connecting edges) in $G$: the first one contains the edge $u_1w$, the second one contains the edge $u_2w$ and the third one contains $u,v,u_1$ and $u_2$, see Figure~\ref{fig:IIcWithothervertex}. Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
+IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V, w\neq u$ such that $wu_1,wu_2\in E$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into three \trcomps{} (or connecting edges) in $G$: the first one contains the edge $u_1w$, the second one contains the edge $u_2w$ and the third one contains $u,v,u_1$ and $u_2$, see Figure~\ref{fig:IIcWithothervertex} (grey areas illustrates \trcomps{}). Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
 \begin{figure}[htb!]
 \centering
 \input{img/IIcWithothervertex.tex}
@@ -810,7 +810,7 @@ IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1
 \label{fig:IIcWithothervertex}
 \end{figure}
 
-Now consider the case when there is no such vertex $w$. The number of \trcomps{} and connecting edges in $G'$ and $G$ is the same, so we can use induction hypothesis. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$, then a nonrigid labelling $\lambda$ of $G$ can be obtained: let $\varepsilon'$ be an embedding of $G'$ compatible with $\lambda'$ such that there are infinitely many embeddings of $G'$ compatible with $\lambda'$ in the neighbourhood of $\varepsilon'$. Let $P\in\RR^2\setminus\{\varepsilon(w)\colon w\in V_{G'}\}$. Let $\varepsilon$ be embedding of $G$ given by $\varepsilon(v)=P$ and $\varepsilon(w)=\varepsilon'(w)$ otherwise, see Figure~\ref{fig:IIc}. The nonrigid labelling $\lambda$ is obtained by measuring distances in $\varepsilon$, i.e., $\lambda(ww')=||\varepsilon(w)-\varepsilon(w')||^2$ for all $ww'\in E_G$. Now there is an embedding of $G$ compatible with $\lambda$ corresponding to every embedding in the neighbourhood of $\varepsilon'$.
+Now consider the case when there is no such vertex $w$. The number of \trcomps{} and connecting edges in $G'$ and $G$ is the same, so we can use induction hypothesis. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$, then a nonrigid labelling $\lambda$ of $G$ can be obtained: let $\varepsilon'$ be an embedding of $G'$ compatible with $\lambda'$ such that there are infinitely many embeddings of $G'$ compatible with $\lambda'$ in the neighbourhood of $\varepsilon'$. Let $P\in\RR^2\setminus\{\varepsilon(w)\colon w\in V_{G'}\}$. Let $\varepsilon$ be embedding of $G$ given by $\varepsilon(v)=P$ and $\varepsilon(w)=\varepsilon'(w)$ otherwise, see Figure~\ref{fig:IIc}. The nonrigid labelling $\lambda$ is obtained by measuring distances in $\varepsilon$, i.e., $\lambda(ww')=||\varepsilon(w)-\varepsilon(w')||^2$ for all $ww'\in E_G$. Now there is an embedding of $G$ compatible with $\lambda$ corresponding to every embedding of $G'$ compatible with $\lambda'$ in the neighbourhood of $\varepsilon'$.
 A nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way as the \trcomps{} in $G$ and $G'$ are basically the same.
 \begin{figure}[htb!]
 \centering
@@ -849,7 +849,7 @@ By induction assumption, $G''$ is problematic or it has a nonrigid labelling and
 \caption{Embedding $\varepsilon$}
 \label{fig:IIbembedding}
 \end{figure}
-The existence of nontrivial bidistance follows by Theorem~\ref{thm:nonrigidImplieBidistance} or we can construct it explicitly: the bidistance of the edge $uw$ set the same as bidistance of $wu_2$ in $G''$ and the bidistance of all other new edges set the bidistance of $u_1u_2$ in $G''$, Figure~\ref{fig:IIbbidist} shows an example.
+The existence of nontrivial bidistance follows by Theorem~\ref{thm:nonrigidImplieBidistance} or we can construct it explicitly: let the bidistance of the edge $uw$ be the same as bidistance of $wu_2$ in $G''$ and the bidistance of all other new edges be the bidistance of $u_1u_2$ in $G''$. Figure~\ref{fig:IIbbidist} shows an example.
 \begin{figure}[htb!]
 \centering
 \input{img/IIbbidist.tex}

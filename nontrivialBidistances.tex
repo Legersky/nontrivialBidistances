@@ -22,10 +22,6 @@
 \usepackage{pgf,tikz}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
-\definecolor{qqqqff}{rgb}{0.,0.,1.}
-\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
-
-\usepackage{tkz-graph}
 
 %\usepackage{comment}
 %\excludecomment{proof}
@@ -769,8 +765,14 @@ Let $G=(V,E)$ be a Laman graph. If $G$ contains a triangle induced by vertices $
 \end{enumerate}
 then there is a Laman graph $G'=(V',E')$ such that $G$ is constructed from $G'$ by IIb, i.e., by linking the vertex $v$  to the vertices $u,u_1,u_2 \in V'$ such that $uu_1\in E',uu_2\notin E'$ and removing the edge $u_1u_2\in E'$, or the situation is symmetric by replacing $v$ by $u$ and $w$ by $u_2$. 
 \end{lem}
-\input{undoIIb.tex}
+\begin{figure}[htb!]
+\centering
+\input{img/undoIIb.tex}
+\caption{Undoing Henneberg move IIb}
+\label{fig:undoIIb}
+\end{figure}
 \begin{proof}
+See Figure~\ref{fig:undoIIb} for the sketch of the situation.
 According to Theorem~6.4 in (Laman), we can revert Henneberg move II by removing the vertex $v$ and adding the edge between two of its neighbours, namely $u_1$ and $u_2$, if there exists no subgraph $M$ of $G\setminus v$ such that $u_1,u_2\in V_M$ and $|E_M|=2|V_M|-3$. Or the vertex $u$ can be removed and the edge $u_1w$ be added if there is no subgraph $L$ of $G\setminus u$ such that $u_1,w\in V_L$ and $|E_L|=2|V_L|-3$.
 
 Assume in contrary that such subgraphs $M$ and $L$ exist. Obviously, $u\notin V_M$, resp. $v\notin V_L$, since otherwise the subgraph $(V_M\cup\{v\})$, resp. $(V_L\cup\{u\})$, of $G$ has too many edges. We consider the subgraph $H$ of $G$ induced by $V_H=V_M\cup V_L \cup \{u,v\}$. If $V_M\cap V_L=\{u_1\}$, then
@@ -799,7 +801,13 @@ Ia: The number of \trcomps{} and connecting edges in $G$ and $G'$ is the same. I
 
 Ib and IIa: The vertex $v$ is not in any \trcomp{}, so there is a nonrigid labelling and nontrivial bidistance by Theorem~\ref{thm:vertexNotInTriangle}.
 
-IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V, w\neq u$ such that $wu_1,wu_2\in E$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into two \trcomps{} (or connecting edges) in $G$. There is also third \trcomp{} in $G$ which contains $u,v,u_1$ and $u_2$. Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
+IIc: Let $v$ be constructed so that it is linked by edges to the vertices $u,u_1,u_2 \in V'$ such that $uu_1,uu_2\in E'$ and the edge $u_1u_2\in E'$ is removed. First, assume that there is $w\in V, w\neq u$ such that $wu_1,wu_2\in E$. The \trcomp{} in $G'$ containing the triangle induced by $w, u_1, u_2$ is split into three \trcomps{} (or connecting edges) in $G$: the first one contains the edge $u_1w$, the second one contains the edge $u_2w$ and the third one contains $u,v,u_1$ and $u_2$, see Figure~\ref Hence, there is a nontrivial bidistance and nonrigid labelling by Corollary~\ref{cor:LamanSubgraphs}, \textit{iv)}.
+\begin{figure}[htb!]
+\centering
+\input{img/IIcWithothervertex.tex}
+\caption{IIc with vertex $w$}
+\label{fig:IIcWithothervertex}
+\end{figure}
 
 Now consider the case when there is no such vertex $w$. The number of \trcomps{} and connecting edges in $G'$ and $G$ is the same, so we can use induction hypothesis. If $G'$ is problematic, then $G$ is problematic by definition. If $G'$ has a nonrigid labelling $\lambda'$, then a nonrigid labelling $\lambda$ of $G$ can be obtained: let $\varepsilon'$ be an embedding of $G'$ compatible with $\lambda'$ such that there are infinitely many embeddings of $G'$ compatible with $\lambda'$ in the neighbourhood of $\varepsilon'$. Let $P\in\RR^2\setminus\{\varepsilon(w)\colon w\in V_{G'}\}$. Let $\varepsilon$ be embedding of $G$ given by $\varepsilon(v)=P$ and $\varepsilon(w)=\varepsilon'(w)$ otherwise. The nonrigid labelling $\lambda$ is obtained by measuring distances in $\varepsilon$, i.e., $\lambda(ww')=||\varepsilon(w)-\varepsilon(w')||^2$ for all $ww'\in E_G$.
 A nontrivial bidistance for $G$ is obtained from the one for $G'$ in the obvious way as the \trcomps{} in $G$ and $G'$ are basically the same.

@@ -832,7 +832,7 @@ If $wu_2\in E$, then Lemma~\ref{lem:undoIIb} justifies that $G'$ can be indeed s
 
 We show that the sum of connecting edges and \trcomps{} in $G''$ is at least two. Suppose in contrary that $G''$ is a single \trcomp{}. Since $u_1w\notin E_{G''}$, there must be some some other vertex $w'\in V_{G''}$ such that $u_1w',u_2w'\in E_{G''}$, i.e., $\deg_{G''} u_2 \geq 3$. Since $\deg_G u_1>3$, the degree of $u_1$ in $G''$ must be at least three. By Corollary~\ref{cor:atLeastTwoDegTwoInTrComp}, there are at least two vertices of degree two in $G''$. Hence, there is a vertex $v'\in V_{G''}\setminus\{u_1,u_2,w\}$ of degree two. But $\deg_{G''}v'=\deg_G v'$ which contradicts that all vertices of $G$ have degree at least three. 
 
-By induction assumption, $G''$ is problematic or it has a nonrigid labelling and nontrivial bidistance. If the former holds, then $G$ is problematic by definition, otherwise we obtain a nonrigid labelling $\lambda$ of $G$ from the nonrigid labelling $\lambda''$ of $G''$ in the following way: let $\varepsilon''$ be an embedding of $G''$ compatible with $\lambda''$ such that there are infinitely many embeddings of $G''$ compatible with $\lambda''$ in the neighbourhood of $\varepsilon''$. We define an embedding $\varepsilon$ of $G$ such that $\varepsilon|_{V_{G''}}=\varepsilon''$, $\varepsilon(u)$ satisfies $||\varepsilon(u)-\varepsilon(u_1)||^2=\lambda''(u_1u_2)=:a^2$ and $||\varepsilon(u)-\varepsilon(w)||^2=\lambda''(wu_2)=:b^2$, and $\varepsilon(v)$ satisfies $||\varepsilon(u)-\varepsilon(v)|| =||\varepsilon(v)-\varepsilon(u_2)||$. Now we obtain $\lambda$ be measuring distances in $\varepsilon$, i.e., $\lambda(u'v')=||\varepsilon(u')-\varepsilon(v')||^2$ for all $u'v'\in E_G$. The construction of $\lambda$ guaranties that there is an embedding of $G$ compatible with $\lambda$ corresponding to every embedding compatible with $\lambda''$ in the neighbourhood of $\varepsilon'$.
+By induction assumption, $G''$ is problematic or it has a nonrigid labelling and nontrivial bidistance. If the former holds, then $G$ is problematic by definition, otherwise we obtain a nonrigid labelling $\lambda$ of $G$ from the nonrigid labelling $\lambda''$ of $G''$ in the following way: let $\varepsilon''$ be an embedding of $G''$ compatible with $\lambda''$ such that there are infinitely many embeddings of $G''$ compatible with $\lambda''$ in the neighbourhood of $\varepsilon''$. We define an embedding $\varepsilon$ of $G$ such that $\varepsilon|_{V_{G''}}=\varepsilon''$, $\varepsilon(u)$ satisfies $||\varepsilon(u)-\varepsilon(u_1)||^2=\lambda''(u_1u_2)=:a^2$ and $||\varepsilon(u)-\varepsilon(w)||^2=\lambda''(wu_2)=:b^2$, and $\varepsilon(v)$ satisfies $||\varepsilon(u)-\varepsilon(v)|| =||\varepsilon(v)-\varepsilon(u_2)||$. Now we obtain $\lambda$ be measuring distances in $\varepsilon$, i.e., $\lambda(u'v')=||\varepsilon(u')-\varepsilon(v')||^2$ for all $u'v'\in E_G$. The construction of $\lambda$ guaranties that there is an embedding of $G$ compatible with $\lambda$ corresponding to every embedding compatible with $\lambda''$ in the neighbourhood of $\varepsilon''$.
 %$$
 %\lambda(e)=\begin{cases}
 %\lambda''(e) \text{ if } e\in E_{G''}\setminus u_1u_2\\
@@ -866,7 +866,15 @@ $$
 \varepsilon'(w) \text{ otherwise.}
 \end{cases}
 $$
-Now $\lambda(ww')=||\varepsilon(v)-\varepsilon(w')||^2$ for all $ww'\in E$. Using nontrivial bidistance $\delta'$ of $G'$, the nontrivial bidistance $\delta$ of $G$ is defined by $\delta(uv)=\delta(u_1v)=\delta'(uu_1)$, $\delta(u_2v)=\delta'(u_1u_2)$ and $\delta(e)=\delta'(e)$ otherwise. We proceed analogically if $u$ is not connecting vertices.
+Now $\lambda(ww')=||\varepsilon(v)-\varepsilon(w')||^2$ for all $ww'\in E$. Again, the construction of $\lambda$ guaranties that there is an embedding of $G$ compatible with $\lambda$ corresponding to every embedding compatible with $\lambda'$ in the neighbourhood of $\varepsilon'$.
+\begin{figure}[htb!]
+\centering
+\input{img/IIbnotConnectingVertex.tex}
+\caption{Bidistance}
+\label{fig:IIbnotConnectingVertex}
+\end{figure}
+
+Using nontrivial bidistance $\delta'$ of $G'$, the nontrivial bidistance $\delta$ of $G$ is defined by $\delta(uv)=\delta(u_1v)=\delta'(uu_1)$, $\delta(u_2v)=\delta'(u_1u_2)$ and $\delta(e)=\delta'(e)$ otherwise. We proceed analogically if $u$ is not a connecting vertex.
 
 To conclude, we proved the claim for all graphs except for such that all vertices have degree at least three and if some vertex has degree three, then precisely two its neighbours are adjacent, both have degree at least four and both are connecting vertices. But those are basic problematic.
 \end{proof}

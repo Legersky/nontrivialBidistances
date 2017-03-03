@@ -181,7 +181,7 @@ It is enough to prove that $e \sim_{\!\!\bigtriangleup} e'$ implies that $d_G(e)
 
 
 \begin{defn}
-Let $G=(V,E)$ be a graph. A vertex $v\in V$ is called \emph{multiple vertex of multiplicity} $k$ if there exists exactly $k$ distinct \trcomps{} which contain $v$. A vertex $u\in V$ is called \emph{connecting vertex} if it is a multiple vertex or an endpoint of some connecting edge.
+Let $G=(V,E)$ be a graph. A vertex $v\in V$ is called \emph{multiple vertex of multiplicity} $k$ if there exists exactly $k\geq 2$ distinct \trcomps{} which contain $v$. A vertex $u\in V$ is called \emph{connecting vertex} if it is a multiple vertex or an endpoint of some connecting edge.
 \end{defn}
 
 \begin{lem}
@@ -427,6 +427,7 @@ If we choose such a realization that all edges $\left\{u_1v_1, \dots, u_sv_s\rig
 \end{proof}
 
 \begin{cor}
+\label{cor:manyConnectingEdges}
 If $G$ is a Laman graph with $n$ \trcomps{} such that $\sum_{k=2}^n \cv{k}(k-1) < n-1$ (or equivalently $c_e>n-1$), then $G$ has a nontrivial bidistance.
 \end{cor}
 \begin{proof}
@@ -751,7 +752,15 @@ As at least two of those multiple vertices must be nonadjacent, $H$ has a nonrig
 
 \section{Progress on the conjecture}
 \begin{defn}
-Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if $\deg(v)\geq 3$ for all $v\in V$ and if $\deg(v) =3$, then exactly two neighbours of $v$ are connected by an edge, both have degree at least 4 and both are connecting vertices.
+\label{def:problematicGraphs}
+Let $G=(V,E)$ be a Laman graph. The graph $G$ is \textit{basic problematic}, if:
+\begin{enumerate}[i)]
+	\item  $\deg(v)\geq 3$ for all $v\in V$,
+	\item  if $\deg(v) =3$, then exactly two neighbours of $v$ are connected by an edge, both have degree at least 4 and both are connecting vertices,
+	\item  all vertices are in some \trcomp{},
+	\item $c_e<n$, where $c_e$ is the number of connecting edges and $n$ is the number of \trcomps{} in $G$,
+	\item there is no \trcomp{} linked only by connecting edges, i.e., without multiple vertices.
+\end{enumerate}
 A graph $G$ is called \emph{problematic}, if it can be constructed from a basic problematic graph by nonnegative number of Henneberg moves.% Ia, IIc (such that the removed edge is only in one triangle) or Ib and IIb consecutively (see the proof of the following theorem).
 \end{defn}
 
@@ -876,7 +885,7 @@ Now $\lambda(ww')=||\varepsilon(v)-\varepsilon(w')||^2$ for all $ww'\in E$. Agai
 
 Using nontrivial bidistance $\delta'$ of $G'$, the nontrivial bidistance $\delta$ of $G$ is defined by $\delta(uv)=\delta(u_1v)=\delta'(uu_1)$, $\delta(u_2v)=\delta'(u_1u_2)$ and $\delta(e)=\delta'(e)$ otherwise. We proceed analogically if $u$ is not a connecting vertex.
 
-To conclude, we proved the claim for all graphs except for such that all vertices have degree at least three and if some vertex has degree three, then precisely two its neighbours are adjacent, both have degree at least four and both are connecting vertices. But those are basic problematic.
+To conclude, we proved the claim for all graphs except for such that all vertices have degree at least three and if some vertex has degree three, then precisely two its neighbours are adjacent, both have degree at least four and both are connecting vertices, i.e, they satisfy \textit{i)} and \textit{ii)} in Definition~\ref{def:problematicGraphs}. Obviously, we can find a nonrigid labeling and nontrivial bidistance if negation of some of the conditions \textit{iii)-iv)} is satisfied by Theorem~\ref{thm:vertexNotInTriangle}, Corollary~\ref{cor:manyConnectingEdges} or Theorem~\ref{thm:cutToTwoParts}.
 \end{proof}
 
 \end{document}

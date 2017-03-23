@@ -20,6 +20,7 @@
 \usepackage[pdftex]{graphicx,color}
 
 \usepackage{pgf,tikz}
+\usepackage{tkz-graph}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 
@@ -331,7 +332,7 @@ If we place $v_1$ and $v_2$ into one point, then $T_1$ and $T_2$ can rotate arou
 Let $G=(V,E)$ be a Laman graph. If $V_{c}=\left\{v_1, \dots v_r\right\}$ are some of the connecting vertices of $G$ which are pairwise non-adjacent and $G\setminus V_c$ is disconnected, then $G$ has a nontrivial bidistance. Moreover, $G$ has a non-rigid realization.
 \end{thm}
 \begin{proof}
-Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \left\{v\right\}$ and $V_N\cup \left\{v\right\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C \subset M$, resp. $C \subset N$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $v_i$ and $v_j$ such that $v_i, v_j\in V_c$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $u_i$ are non-adjacent. Hence, there are at least two labels 0 and at least two labels 1 within the cycle.
+Let $M$ and $N$ be the disconnected parts of $G\setminus V_c$. Let $M_v$ and $N_v$ be the subgraphs of $G$ which are induced by $V_M\cup \left\{v\right\}$ and $V_N\cup \left\{v\right\}$. Set $\delta(e)=1$ if $e\in E_{M_v}$, and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C \subset M$, resp. $C \subset N$, then all labels in $C$ are 0, resp. 1. If $C$ goes through both $M$ and $N$, then there exist $v_i$ and $v_j$ such that $v_i, v_j\in V_c$. At least two edges of $C$ must be in $M$ and the same for $N$ since $v_j$ and $v_i$ are non-adjacent. Hence, there are at least two labels 0 and at least two labels 1 within the cycle.
 
 A non-rigid realization can be obtained by putting all connecting vertices into one point. The \trcomp{} can rotate around this point.
 \end{proof}
@@ -421,10 +422,30 @@ The idea is following: since the graph $G'\subset G$ is disconnected, every cycl
 
 We may assume that all $u_1, \dots, u_s$ are in the same connected component $M$, because if we can construct a bidistance in such case, then we may just forgot all connecting edges associated to the elements of $\left\{u_1, \dots, u_s\right\}$ which are not in the given connected component in the general case. By the same argument, we may assume that $\left\{v_1, \dots, v_s\right\}$ are in one connected component $N$. Thus $G'$ consists of only two connected components $M$ and $N$, otherwise $G$ is not connected. In fact, $M$ and $N$ are induced subgraphs of $G$ linked by the connecting edges $\left\{u_1v_1, \dots, u_sv_s\right\}$.
 
-Set $\delta(u_i v_i)=1$ for all $i\in \left\{1, \dots, s\right\}$ and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C\subset M$ or  $C\subset N$, then all labels are 0. Otherwise, $C$ contains some $u_iv_i$ and $u_jv_j$ such that $u_iv_i\neq u_jv_j$. Hence, the label 1 is in $C$ at least twice. If $u_i\neq u_j$ and $v_j\neq v_j$, then there must be at least one edge in $M\cap C$ and at least one edge in $N\cap C$.  If $u_i=u_j$, then $v_i$ and $v_j$ are non-adjacent, otherwise $u_iv_i \sim_{\!\!\bigtriangleup} u_jv_j$. Thus, there are at least two edges in $C\cap N$. The case $v_i=v_j$ is analogous. Therefore, the label 0 is in $C$ at least twice.
+Set $\delta(u_i v_i)=1$ for all $i\in \left\{1, \dots, s\right\}$ and $\delta(e)=0$ otherwise. Let $C$ be a cycle in $G$. If $C\subset M$ or  $C\subset N$, then all labels are 0. Otherwise, $C$ contains some $u_iv_i$ and $u_jv_j$ such that $u_iv_i\neq u_jv_j$. Hence, the label 1 is in $C$ at least twice. If $u_i\neq u_j$ and $v_j\neq v_j$, then there must be at least one edge in $M\cap C$ and at least one edge in $N\cap C$. \komentar{this is not true for general graph and probably neither for Laman graph!!! see variant below}  If $u_i=u_j$, then $v_i$ and $v_j$ are non-adjacent, otherwise $u_iv_i \sim_{\!\!\bigtriangleup} u_jv_j$. Thus, there are at least two edges in $C\cap N$. The case $v_i=v_j$ is analogous. Therefore, the label 0 is in $C$ at least twice.
 
 If we choose such a realization that all edges $\left\{u_1v_1, \dots, u_sv_s\right\}$ are parallel and have the same length, then $M$ can move around $N$ along a circle.
 \end{proof}
+
+
+\begin{thm}
+\label{thm:connectingEdgesCut}
+Let $G=(V,E)$ be a connected graph, $|E|\geq 2$. If there is a set $E_c$ of connecting edges of $G$ such that $E_c$ separates $G$ and the subgraph of $G$ induced by $E_c$ contains no path of length four, then $G$ is rg-colourable.
+\end{thm}
+\begin{proof}
+Let $E'_c$ be a minimal subset of $E_c$ which separates $G$. The idea is following: since the graph $G'=(V, E\setminus E'_c)$ is disconnected, every cycle in $G$ which does not stay in a connected component of $G'$ must contain at least two edges from $E'_c$. Set
+$$
+\delta(e)=\begin{cases} \text{red} & \text{if } e\in E'_c \\
+		\text{green} & \text{otherwise,} \end{cases}
+$$
+for all $uv \in E$. The existence of an almost g-cycle with a red edge $u_rv_r$ contradicts minimality of $E'_c$: since $u_r$ and $v_r$ are connected by an g-path, they belong to the same connected component in $G'$. Hence $E'_c\setminus\{u_ru_v\}$ separates $G$. 
+
+On the other hand, assume that there exists an almost r-cycle $C$. Since there is no path of length four in the subgraph of $G$ induced by $E_c$, the length of $C$ is three or four. The length three contradicts the fact the red edges are in $E_c$, i.e., they are connecting edges by the assumption. If $C$ has length four and the red edges are $ u_1u_2, u_2u_3, u_3u_4$, then $G'$ has at least three connected components, since there are no almost g-cycles, i.e., $u_1$ and $u_4$ are in the different component then $u_2$ and $u_3$, and $u_2$ and $u_3$ are not in the same component. But the minimality of $E'_c$ implies that $G'$ has only two connected component which is a contradiction.
+
+The surjectivity of $\delta$ follows from minimality of $E_c$ and the assumption $|E|\geq 2$.
+\end{proof}
+
+
 
 \begin{cor}
 \label{cor:manyConnectingEdges}
@@ -433,7 +454,7 @@ If $G$ is a Laman graph with $n$ \trcomps{} such that $\sum_{k=2}^n \cv{k}(k-1) 
 \begin{proof}
 The equivalent assumption condition follows from Lemma~\ref{lem:numCvCe}.
 
-Each multiple vertex with multiplicity $k$ can connect at most $k-1$ \trcomps{} to the previous one. Thus, at most $1+\sum_{k=2}^n \cv{k}(k-1)$ \trcomps{} can be connected by multiple vertices. Therefore, if $1+\sum_{k=2}^n \cv{k}(k-1) <n$, then there exists a \trcomp{} connected only by connecting edges. Theorem~\ref{thm:cutToTwoParts} implies that $G$ has a nontrivial bidistance.
+Each multiple vertex with multiplicity $k$ can connect at most $k-1$ \trcomps{} to the previous one. Thus, at most $1+\sum_{k=2}^n \cv{k}(k-1)$ \trcomps{} can be connected by multiple vertices. Therefore, if $1+\sum_{k=2}^n \cv{k}(k-1) <n$, then there exists a \trcomp{} connected only by connecting edges. Theorem~\ref{thm:cutToTwoParts} implies that $G$ has a nontrivial bidistance. \komentar{potrebuje okomentovat varianty kdyz connecting edges tvor path delsi nez tri !!!}
 \end{proof}
 
 \begin{thm}
